@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Dr Bones"
+run/main_scene="res://playground/test.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[gui]
+
+theme/custom="res://playground/theme.tres"

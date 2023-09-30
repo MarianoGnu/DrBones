@@ -1,0 +1,96 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c4beiekqxdbk3"]
+
+[ext_resource type="Texture2D" uid="uid://bijy207w7he2p" path="res://playground/Potion-Craft-shop-screenshot.jpg" id="1_vdvn3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_daf5c"]
+texture = ExtResource("1_vdvn3")
+texture_margin_top = 5.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(23, 1001, 1477, 52)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkjw2"]
+texture = ExtResource("1_vdvn3")
+texture_margin_left = 24.0
+texture_margin_top = 23.0
+texture_margin_right = 25.0
+texture_margin_bottom = 26.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h571l"]
+texture = ExtResource("1_vdvn3")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(1376, 295, 69, 51)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hw6fl"]
+texture = ExtResource("1_vdvn3")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(140, 35, 504, 329)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liisc"]
+texture = ExtResource("1_vdvn3")
+texture_margin_left = 15.0
+texture_margin_top = 17.0
+texture_margin_right = 14.0
+texture_margin_bottom = 19.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(1505, 882, 388, 170)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o1q1h"]
+texture = ExtResource("1_vdvn3")
+texture_margin_left = 21.0
+texture_margin_top = 14.0
+texture_margin_right = 21.0
+texture_margin_bottom = 21.0
+expand_margin_top = 14.0
+region_rect = Rect2(1505, 273, 392, 609)
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lv7lc"]
+texture = ExtResource("1_vdvn3")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+region_rect = Rect2(1695, 197, 105, 93)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfajf"]
+content_margin_top = 20.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_vdvn3")
+texture_margin_left = 14.0
+texture_margin_top = 19.0
+texture_margin_right = 13.0
+texture_margin_bottom = 16.0
+region_rect = Rect2(1507, 197, 112, 93)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_86x3x"]
+texture = ExtResource("1_vdvn3")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(1513, 877, 18, 9)
+
+[resource]
+FooterPanel/base_type = &"PanelContainer"
+FooterPanel/styles/panel = SubResource("StyleBoxTexture_daf5c")
+MainPanel/base_type = &"PanelContainer"
+MainPanel/styles/panel = SubResource("StyleBoxTexture_vkjw2")
+PanelLight/base_type = &"PanelContainer"
+PanelLight/styles/panel = SubResource("StyleBoxTexture_h571l")
+ScenePanel/base_type = &"PanelContainer"
+ScenePanel/styles/panel = SubResource("StyleBoxTexture_hw6fl")
+SecondaryPanel/base_type = &"PanelContainer"
+SecondaryPanel/styles/panel = SubResource("StyleBoxTexture_liisc")
+TabContainer/colors/font_outline_color = Color(0.238281, 0.117188, 0.0273438, 1)
+TabContainer/constants/outline_size = 5
+TabContainer/constants/side_margin = 2
+TabContainer/styles/panel = SubResource("StyleBoxTexture_o1q1h")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxTexture_lv7lc")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_lv7lc")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_qfajf")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_lv7lc")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxTexture_86x3x")
