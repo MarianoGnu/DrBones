@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c4beiekqxdbk3"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c4beiekqxdbk3"]
 
 [ext_resource type="Texture2D" uid="uid://bijy207w7he2p" path="res://playground/Potion-Craft-shop-screenshot.jpg" id="1_vdvn3"]
 
@@ -7,6 +7,14 @@ texture = ExtResource("1_vdvn3")
 texture_margin_top = 5.0
 axis_stretch_horizontal = 1
 region_rect = Rect2(23, 1001, 1477, 52)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gh2oc"]
+texture = ExtResource("1_vdvn3")
+texture_margin_top = 1.0
+axis_stretch_horizontal = 1
+region_rect = Rect2(599, 1000, 322, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w61nr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkjw2"]
 texture = ExtResource("1_vdvn3")
@@ -74,9 +82,34 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(1513, 877, 18, 9)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd52l"]
+texture = ExtResource("1_vdvn3")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(20, 1001, 1483, 57)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jbyf"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_5v162"]
+color = Color(0.215686, 0.109804, 0.0470588, 0.705882)
+thickness = 8
+vertical = true
+
 [resource]
 FooterPanel/base_type = &"PanelContainer"
 FooterPanel/styles/panel = SubResource("StyleBoxTexture_daf5c")
+HSeparator/styles/separator = SubResource("StyleBoxTexture_gh2oc")
+InvisibleTabContainer/base_type = &"TabContainer"
+InvisibleTabContainer/styles/panel = SubResource("StyleBoxEmpty_w61nr")
+InvisibleTabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_w61nr")
+InvisibleTabContainer/styles/tab_hovered = SubResource("StyleBoxEmpty_w61nr")
+InvisibleTabContainer/styles/tab_selected = SubResource("StyleBoxEmpty_w61nr")
+InvisibleTabContainer/styles/tab_unselected = SubResource("StyleBoxEmpty_w61nr")
+InvisibleTabContainer/styles/tabbar_background = SubResource("StyleBoxEmpty_w61nr")
 MainPanel/base_type = &"PanelContainer"
 MainPanel/styles/panel = SubResource("StyleBoxTexture_vkjw2")
 PanelLight/base_type = &"PanelContainer"
@@ -94,3 +127,13 @@ TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_lv7lc")
 TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_qfajf")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_lv7lc")
 TabContainer/styles/tabbar_background = SubResource("StyleBoxTexture_86x3x")
+ToolBoxButton/base_type = &"Button"
+ToolBoxButton/colors/icon_hover_pressed_color = Color(0.360784, 0.360784, 0.12549, 1)
+ToolBoxButton/colors/icon_pressed_color = Color(0.360784, 0.360784, 0.12549, 1)
+ToolBoxButton/styles/disabled = SubResource("StyleBoxTexture_dd52l")
+ToolBoxButton/styles/focus = SubResource("StyleBoxEmpty_8jbyf")
+ToolBoxButton/styles/hover = SubResource("StyleBoxTexture_dd52l")
+ToolBoxButton/styles/normal = SubResource("StyleBoxTexture_dd52l")
+ToolBoxButton/styles/pressed = SubResource("StyleBoxTexture_dd52l")
+VSeparator/constants/separation = 0
+VSeparator/styles/separator = SubResource("StyleBoxLine_5v162")
