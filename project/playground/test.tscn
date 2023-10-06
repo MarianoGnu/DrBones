@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=6 format=3 uid="uid://bxuyig65r05md"]
 
+[ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://workbench.tscn" id="1_bjsc8"]
 [ext_resource type="Texture2D" uid="uid://bijy207w7he2p" path="res://playground/Potion-Craft-shop-screenshot.jpg" id="1_k38vh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7b0cd"]
@@ -45,6 +46,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 theme_type_variation = &"ScenePanel"
+
+[node name="Workbench" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer" instance=ExtResource("1_bjsc8")]
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

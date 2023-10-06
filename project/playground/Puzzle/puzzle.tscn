@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ba5shpahw1uhw"]
+[gd_scene load_steps=20 format=3 uid="uid://ba5shpahw1uhw"]
 
 [ext_resource type="Shader" path="res://playground/Puzzle/puzzle_part.gdshader" id="1_uc4rk"]
 [ext_resource type="Texture2D" uid="uid://bviw7k8vw2ohb" path="res://playground/Puzzle/complete.png" id="2_oacgd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://34fqhi8kvx7d" path="res://playground/Puzzle/part1.png" id="3_wu75h"]
 [ext_resource type="Texture2D" uid="uid://b7kolnqwtueve" path="res://playground/Puzzle/part2.png" id="4_rcjsg"]
 [ext_resource type="Texture2D" uid="uid://cevw17njkitsk" path="res://playground/Puzzle/part3.png" id="5_0afac"]
+[ext_resource type="Script" path="res://playground/Puzzle/puzzle_part.gd" id="5_87t5v"]
 [ext_resource type="Script" path="res://playground/Puzzle/joint.gd" id="5_n4g2b"]
 [ext_resource type="Script" path="res://playground/Puzzle/mouse_pick.gd" id="6_8vd6p"]
 [ext_resource type="Texture2D" uid="uid://bgggu2ibp2naq" path="res://playground/Puzzle/part4.png" id="6_ymtfm"]
@@ -122,6 +123,7 @@ use_parent_material = true
 position = Vector2(204, 194)
 mesh = SubResource("ArrayMesh_fwbh2")
 texture = ExtResource("3_wu75h")
+script = ExtResource("5_87t5v")
 
 [node name="Joint" type="Area2D" parent="Part1"]
 position = Vector2(106, -78)
@@ -144,6 +146,7 @@ use_parent_material = true
 position = Vector2(204, 194)
 mesh = SubResource("ArrayMesh_m3je7")
 texture = ExtResource("4_rcjsg")
+script = ExtResource("5_87t5v")
 
 [node name="Joint" type="Area2D" parent="Part2"]
 position = Vector2(106, -78)
@@ -177,6 +180,7 @@ use_parent_material = true
 position = Vector2(204, 194)
 mesh = SubResource("ArrayMesh_dokse")
 texture = ExtResource("5_0afac")
+script = ExtResource("5_87t5v")
 
 [node name="Joint" type="Area2D" parent="Part3"]
 position = Vector2(50, -29)
@@ -222,6 +226,7 @@ use_parent_material = true
 position = Vector2(204, 194)
 mesh = SubResource("ArrayMesh_hx3rh")
 texture = ExtResource("6_ymtfm")
+script = ExtResource("5_87t5v")
 
 [node name="Joint" type="Area2D" parent="Part4"]
 position = Vector2(-27, 61)
@@ -245,6 +250,7 @@ use_parent_material = true
 position = Vector2(204, 194)
 mesh = SubResource("ArrayMesh_0ok0t")
 texture = ExtResource("7_so1kd")
+script = ExtResource("5_87t5v")
 
 [node name="Joint" type="Area2D" parent="Part5"]
 position = Vector2(-69, 44)
