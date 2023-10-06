@@ -1,19 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=16 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://workbench.tscn" id="1_bjsc8"]
-[ext_resource type="Texture2D" uid="uid://bijy207w7he2p" path="res://playground/Potion-Craft-shop-screenshot.jpg" id="1_k38vh"]
+[ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_gf4a2"]
+[ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="1_nplp3"]
+[ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_waht3"]
+[ext_resource type="Texture2D" uid="uid://b03wiqsp1dgf3" path="res://playground/Fondo Assets/Puerta.PNG" id="4_v6pge"]
+[ext_resource type="Texture2D" uid="uid://4p5bu8ebblcn" path="res://playground/Fondo Assets/Marco de puerta.PNG" id="5_dtfvu"]
+[ext_resource type="Texture2D" uid="uid://dx5auppo5i70b" path="res://playground/Fondo Assets/Marco Selector.PNG" id="6_2f6m0"]
+[ext_resource type="Texture2D" uid="uid://0smyq1g3yb30" path="res://playground/Fondo Assets/Placa.PNG" id="7_438th"]
+[ext_resource type="Texture2D" uid="uid://bbdpjroaqswhd" path="res://playground/Fondo Assets/Pua Selectora.PNG" id="8_gtfkd"]
+[ext_resource type="Texture2D" uid="uid://cbkwus00i5eso" path="res://playground/Fondo Assets/Back Entrance.PNG" id="9_2xey2"]
+[ext_resource type="Texture2D" uid="uid://74kvaae7n2t2" path="res://playground/Fondo Assets/Fondo Entrada de atras.PNG" id="10_w47f7"]
+[ext_resource type="Texture2D" uid="uid://cqshxwsh48ow" path="res://playground/Fondo Assets/Antorcha.PNG" id="11_2h3xr"]
+[ext_resource type="Texture2D" uid="uid://dnnrv1fj1tq0g" path="res://playground/Fondo Assets/Fuego.PNG" id="12_3nujt"]
+[ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="13_lo7bc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7b0cd"]
-atlas = ExtResource("1_k38vh")
-region = Rect2(1637, 400, 102, 102)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0dqss"]
-atlas = ExtResource("1_k38vh")
-region = Rect2(1747, 402, 101, 99)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yuc6p"]
-atlas = ExtResource("1_k38vh")
-region = Rect2(1750, 750, 99, 108)
+[sub_resource type="Curve2D" id="Curve2D_j21v8"]
+_data = {
+"points": PackedVector2Array(-41.0368, 26.3337, 41.0368, -26.3337, 986.8, 202.4, -69.2957, 18.8988, 69.2957, -18.8988, 1072.8, 170.4, -71.8155, -1.25992, 71.8155, 1.25992, 1180.8, 159.4, -74.3353, -22.6786, 74.3353, 22.6786, 1281.8, 168.4, -41.7998, -23.026, 41.7998, 23.026, 1376.8, 207.4)
+}
+point_count = 5
 
 [node name="Test" type="Control"]
 layout_mode = 3
@@ -23,7 +29,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Floor" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gf4a2")
+expand_mode = 1
+
+[node name="Walls" type="TextureRect" parent="Floor"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,104 +47,187 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"MainPanel"
+texture = ExtResource("1_nplp3")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
-theme_override_constants/separation = 0
+[node name="FondoPuerta" type="TextureRect" parent="Floor/Walls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.520833
+anchor_top = 0.214815
+anchor_right = 0.898438
+anchor_bottom = 0.798148
+offset_left = 6.10352e-05
+texture = ExtResource("3_waht3")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 0
+[node name="PuertaL" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0110345
+anchor_right = 0.503448
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(3, 315)
+texture = ExtResource("4_v6pge")
+expand_mode = 1
+flip_h = true
+metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-theme_type_variation = &"ScenePanel"
+[node name="PuertaR" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485517
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(360, 625)
+texture = ExtResource("4_v6pge")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Workbench" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer" instance=ExtResource("1_bjsc8")]
-layout_mode = 2
+[node name="MarcoDePuerta" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.121379
+anchor_top = 0.18254
+anchor_right = 1.11448
+anchor_bottom = 1.00317
+offset_bottom = -6.10352e-05
+texture = ExtResource("5_dtfvu")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 0
+[node name="MarcoSelector" type="TextureRect" parent="Floor/Walls/FondoPuerta/MarcoDePuerta"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.408124
+anchor_right = 1.0
+anchor_bottom = 0.10058
+grow_horizontal = 2
+texture = ExtResource("6_2f6m0")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_type_variation = &"PanelLight"
+[node name="Path2D" type="Path2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector"]
+show_behind_parent = true
+position = Vector2(-912, -136)
+curve = SubResource("Curve2D_j21v8")
 
-[node name="TabContainer" type="TabContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-size_flags_vertical = 3
+[node name="Sign1" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
+position = Vector2(986.8, 202.4)
+rotation = -0.570525
 
-[node name="Skulls" type="HFlowContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer"]
-layout_mode = 2
+[node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign1"]
+position = Vector2(0, -80)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_438th")
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Skulls"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_7b0cd")
+[node name="Sign2" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
+position = Vector2(1114.63, 159.101)
+rotation = -0.223097
+progress = 136.196
 
-[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Skulls"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_0dqss")
+[node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign2"]
+position = Vector2(0, -80)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_438th")
 
-[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Skulls"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_yuc6p")
+[node name="Sign3" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
+position = Vector2(1250.08, 158.994)
+rotation = 0.266491
+progress = 272.391
 
-[node name="TextureRect4" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Skulls"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_yuc6p")
+[node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign3"]
+position = Vector2(0, -80)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_438th")
 
-[node name="TextureRect5" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Skulls"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_7b0cd")
+[node name="Sign4" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
+position = Vector2(1376.8, 207.4)
+rotation = 0.503506
+progress = 408.628
 
-[node name="TextureRect6" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Skulls"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_yuc6p")
+[node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign4"]
+position = Vector2(0, -80)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_438th")
 
-[node name="Ribs" type="HFlowContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer"]
+[node name="Selector" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
+position = Vector2(986.8, 202.4)
+rotation = -0.570525
+
+[node name="PuaSelectora" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Selector"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_gtfkd")
+offset = Vector2(0, -104)
+
+[node name="BackEntrance" type="TextureRect" parent="Floor/Walls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1875
+anchor_top = 0.404321
+anchor_right = 0.343229
+anchor_bottom = 0.795062
+texture = ExtResource("9_2xey2")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="FondoEntradaDeAtras" type="TextureRect" parent="Floor/Walls/BackEntrance"]
+layout_mode = 0
+anchor_left = 0.183946
+anchor_top = 0.111374
+anchor_right = 0.816054
+anchor_bottom = 0.99763
+texture = ExtResource("10_w47f7")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Antorcha" type="TextureRect" parent="Floor/Walls"]
+layout_mode = 0
+anchor_left = 0.352083
+anchor_top = 0.112963
+anchor_right = 0.404167
+anchor_bottom = 0.244444
+texture = ExtResource("11_2h3xr")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Fuego" type="TextureRect" parent="Floor/Walls/Antorcha"]
+show_behind_parent = true
+layout_mode = 0
+anchor_left = 0.11
+anchor_top = -0.15493
+anchor_right = 0.59
+anchor_bottom = 0.34507
+texture = ExtResource("12_3nujt")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Table" type="TextureRect" parent="Floor/Walls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.793519
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_lo7bc")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Workbench" parent="." instance=ExtResource("1_bjsc8")]
 visible = false
-layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-
-[node name="TextureRect7" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Ribs"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_yuc6p")
-
-[node name="TextureRect8" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Ribs"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_7b0cd")
-
-[node name="Limbs" type="HFlowContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer"]
-visible = false
-layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_constants/v_separation = 0
-
-[node name="TextureRect7" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Limbs"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_7b0cd")
-
-[node name="TextureRect8" type="TextureRect" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer/TabContainer/Limbs"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_yuc6p")
-
-[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_type_variation = &"SecondaryPanel"
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-layout_mode = 2
-theme_type_variation = &"FooterPanel"
-
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer"]
-layout_mode = 2
-text = "Message Here"
+layout_mode = 1

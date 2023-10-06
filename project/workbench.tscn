@@ -19,7 +19,7 @@ metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(600, 400)
+custom_minimum_size = Vector2(1200, 700)
 layout_mode = 2
 theme_type_variation = &"MainPanel"
 
