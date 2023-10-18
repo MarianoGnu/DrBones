@@ -1,6 +1,9 @@
-[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c4beiekqxdbk3"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://c4beiekqxdbk3"]
 
 [ext_resource type="Texture2D" uid="uid://bijy207w7he2p" path="res://playground/Potion-Craft-shop-screenshot.jpg" id="1_vdvn3"]
+[ext_resource type="Texture2D" uid="uid://dwk813gt54ib1" path="res://playground/Panels/MainPanel.png" id="2_2igkv"]
+[ext_resource type="Texture2D" uid="uid://x26ev5bkqg31" path="res://playground/Panels/LightPanel.png" id="3_xtqfr"]
+[ext_resource type="Texture2D" uid="uid://dyrlwiil0caon" path="res://playground/Panels/DarkPanel.png" id="4_ndrni"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_daf5c"]
 texture = ExtResource("1_vdvn3")
@@ -17,26 +20,47 @@ region_rect = Rect2(599, 1000, 322, 5)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w61nr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkjw2"]
-texture = ExtResource("1_vdvn3")
-texture_margin_left = 24.0
-texture_margin_top = 23.0
-texture_margin_right = 25.0
-texture_margin_bottom = 26.0
+content_margin_left = 39.0
+content_margin_top = 40.0
+content_margin_right = 39.0
+content_margin_bottom = 40.0
+texture = ExtResource("2_2igkv")
+texture_margin_left = 39.0
+texture_margin_top = 40.0
+texture_margin_right = 39.0
+texture_margin_bottom = 40.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
+region_rect = Rect2(0, 0, 318, 320)
 draw_center = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h571l"]
-texture = ExtResource("1_vdvn3")
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("3_xtqfr")
+texture_margin_left = 45.0
+texture_margin_top = 45.0
+texture_margin_right = 45.0
+texture_margin_bottom = 45.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-region_rect = Rect2(1376, 295, 69, 51)
+region_rect = Rect2(39, 40, 240, 240)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hw6fl"]
-texture = ExtResource("1_vdvn3")
+content_margin_left = 18.0
+content_margin_top = 18.0
+content_margin_right = 18.0
+content_margin_bottom = 18.0
+texture = ExtResource("4_ndrni")
+texture_margin_left = 45.0
+texture_margin_top = 45.0
+texture_margin_right = 45.0
+texture_margin_bottom = 45.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
-region_rect = Rect2(140, 35, 504, 329)
+region_rect = Rect2(39, 40, 240, 240)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liisc"]
 texture = ExtResource("1_vdvn3")
