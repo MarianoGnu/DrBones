@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ba5shpahw1uhw"]
+[gd_scene load_steps=21 format=3 uid="uid://ba5shpahw1uhw"]
 
 [ext_resource type="Shader" path="res://playground/Puzzle/puzzle_part.gdshader" id="1_uc4rk"]
 [ext_resource type="Texture2D" uid="uid://bviw7k8vw2ohb" path="res://playground/Puzzle/complete.png" id="2_oacgd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://playground/Puzzle/mouse_pick.gd" id="6_8vd6p"]
 [ext_resource type="Texture2D" uid="uid://bgggu2ibp2naq" path="res://playground/Puzzle/part4.png" id="6_ymtfm"]
 [ext_resource type="Texture2D" uid="uid://or1fie2wvxwq" path="res://playground/Puzzle/part5.png" id="7_so1kd"]
+[ext_resource type="Script" path="res://playground/Puzzle/GlueZone.gd" id="8_whp6d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jmepx"]
 shader = ExtResource("1_uc4rk")
@@ -139,6 +140,12 @@ script = ExtResource("6_8vd6p")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part1/MousePick"]
 polygon = PackedVector2Array(72, -109, 54, -136, 52, -167, 77, -190, 126, -197, 143, -178, 152, -145, 150, -125, 135, -103, 106, -78, 60, -92)
+
+[node name="GlueZone" type="Area2D" parent="Part1"]
+script = ExtResource("8_whp6d")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part1/GlueZone"]
+polygon = PackedVector2Array(137, -118, 152, -102, 108, -63, 41, -84, 61, -107, 100, -98)
 
 [node name="Part2" type="MeshInstance2D" parent="."]
 use_parent_material = true

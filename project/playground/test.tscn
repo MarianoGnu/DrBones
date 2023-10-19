@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bxuyig65r05md"]
 
-[ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://workbench.tscn" id="1_bjsc8"]
+[ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://playground/Puzzle/workbench.tscn" id="1_bjsc8"]
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_gf4a2"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="1_nplp3"]
 [ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_waht3"]

@@ -1,6 +1,8 @@
 class_name PuzzlePart extends MeshInstance2D
 
+var glued_root: PuzzlePart = self
 var _rect: Rect2
+
 
 func _ready() -> void:
 	var array_mesh = mesh as ArrayMesh
@@ -23,3 +25,10 @@ func get_global_rect():
 	var local_rect: Rect2 = _rect
 	local_rect.position += global_position
 	return local_rect
+
+func get_joint_with_match_id(p_match_id) -> PuzzleJoint:
+	for child in get_children():
+		if child is PuzzleJoint and child.match_id == p_match_id:
+			return child
+	print_debug("Requested joint with unmatched id %d" % p_match_id)
+	return null
