@@ -5,15 +5,35 @@ class_name GlueZone extends Area2D
 	set = _set_match_id
 
 @onready var puzzle: Puzzle = owner as Puzzle
-@onready var joint_parts: Array[PuzzlePart] = puzzle.get_parts_with_match_id(match_id)
 
+var _joint_parts: Array[PuzzlePart] = []
 var _remote_transforms: Array[RemoteTransform2D]
+var _visuals := Polygon2D.new()
 
 var is_glued: bool = false:
 	set = _set_is_glued
+var is_clean: bool = false:
+	set = _set_is_clean
+
+func _ready() -> void:
+	_visuals.color = Color.LIME_GREEN
+	_visuals.z_index = 5
+	add_child(_visuals)
+	if Engine.is_editor_hint():
+		return
+	_joint_parts = puzzle.get_parts_with_match_id(match_id)
+	for child in get_children():
+		if child is CollisionPolygon2D:
+			_visuals.polygon = child.polygon
+			break
+	_update_visuals()
 
 func can_glue() -> bool:
-	for part in joint_parts:
+	if Engine.is_editor_hint():
+		return false
+	if is_glued:
+		return false
+	for part in _joint_parts:
 		var joint: PuzzleJoint = part.get_joint_with_match_id(match_id)
 		if not joint.is_joint_connected():
 			return false
@@ -26,8 +46,10 @@ func _set_match_id(id) -> void:
 
 func _set_is_glued(glued: bool) -> void:
 	is_glued = glued
+	if Engine.is_editor_hint():
+		return
 	if is_glued and _remote_transforms.is_empty():
-		for part in joint_parts:
+		for part in _joint_parts:
 			if part == get_parent():
 				# Glue zone is a child of a root part, we can skip it
 				continue
@@ -37,8 +59,9 @@ func _set_is_glued(glued: bool) -> void:
 			add_child(glue)
 			glue.remote_path = part.get_path()
 			_remote_transforms.push_back(glue)
+		is_clean = false
 	elif not is_glued and not _remote_transforms.is_empty():
-		for part in joint_parts:
+		for part in _joint_parts:
 			if part == get_parent():
 				# Glue zone is a child of a root part
 				continue
@@ -47,3 +70,11 @@ func _set_is_glued(glued: bool) -> void:
 		for glue in _remote_transforms:
 			glue.queue_free()
 		_remote_transforms.clear()
+		is_clean = true
+
+func _set_is_clean(clean: bool) -> void:
+	is_clean = clean
+	_update_visuals()
+
+func _update_visuals() -> void:
+	_visuals.visible = is_glued and not is_clean

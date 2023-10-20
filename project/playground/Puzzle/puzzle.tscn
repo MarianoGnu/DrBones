@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://playground/Puzzle/mouse_pick.gd" id="6_8vd6p"]
 [ext_resource type="Texture2D" uid="uid://bgggu2ibp2naq" path="res://playground/Puzzle/part4.png" id="6_ymtfm"]
 [ext_resource type="Texture2D" uid="uid://or1fie2wvxwq" path="res://playground/Puzzle/part5.png" id="7_so1kd"]
-[ext_resource type="Script" path="res://playground/Puzzle/GlueZone.gd" id="8_whp6d"]
+[ext_resource type="Script" path="res://playground/Puzzle/glue_zone.gd" id="8_ihltt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jmepx"]
 shader = ExtResource("1_uc4rk")
@@ -142,10 +142,10 @@ script = ExtResource("6_8vd6p")
 polygon = PackedVector2Array(72, -109, 54, -136, 52, -167, 77, -190, 126, -197, 143, -178, 152, -145, 150, -125, 135, -103, 106, -78, 60, -92)
 
 [node name="GlueZone" type="Area2D" parent="Part1"]
-script = ExtResource("8_whp6d")
+script = ExtResource("8_ihltt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part1/GlueZone"]
-polygon = PackedVector2Array(137, -118, 152, -102, 108, -63, 41, -84, 61, -107, 100, -98)
+polygon = PackedVector2Array(137, -118, 152, -102, 106, -68, 43, -90, 55, -106, 103, -90)
 
 [node name="Part2" type="MeshInstance2D" parent="."]
 use_parent_material = true
@@ -180,6 +180,15 @@ script = ExtResource("6_8vd6p")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part2/MousePick"]
 polygon = PackedVector2Array(139, -106, 175, -115, 192, -100, 199, -87, 198, -48, 165, -14, 113, -42, 74, -2, 31, -3, 50, -29, 10, -43, 61, -93, 109, -79)
+
+[node name="GlueZone2" type="Area2D" parent="Part2"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("8_ihltt")
+match_id = 6
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part2/GlueZone2"]
+polygon = PackedVector2Array(12, -51, 58, -36, 43, -8, 84, -6, 69, 7, 21, 4, 36, -24, 3, -38)
 
 [node name="Part3" type="MeshInstance2D" parent="."]
 use_parent_material = true
@@ -227,6 +236,24 @@ script = ExtResource("6_8vd6p")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part3/MousePick"]
 polygon = PackedVector2Array(49, -30, 31, -2, 74, -2, 3, 69, -61, 54, -77, 29, -50, 32, 13, -40)
 
+[node name="GlueZone3" type="Area2D" parent="Part3"]
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("8_ihltt")
+match_id = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part3/GlueZone3"]
+polygon = PackedVector2Array(-60, 47, 11, 63, 5, 77, -63, 59)
+
+[node name="GlueZone4" type="Area2D" parent="Part3"]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("8_ihltt")
+match_id = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part3/GlueZone4"]
+polygon = PackedVector2Array(-83, 28, -74, 27, -54, 51, -61, 60)
+
 [node name="Part4" type="MeshInstance2D" parent="."]
 use_parent_material = true
 position = Vector2(204, 194)
@@ -245,11 +272,31 @@ match_id = 7
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Part4/Joint"]
 shape = SubResource("CircleShape2D_0vy7t")
 
+[node name="Joint2" type="Area2D" parent="Part4"]
+position = Vector2(-94, 71)
+collision_layer = 256
+collision_mask = 256
+input_pickable = false
+script = ExtResource("5_n4g2b")
+match_id = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Part4/Joint2"]
+shape = SubResource("CircleShape2D_0vy7t")
+
 [node name="MousePick" type="Area2D" parent="Part4"]
 script = ExtResource("6_8vd6p")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part4/MousePick"]
 polygon = PackedVector2Array(-58, 53, 3, 68, 25, 115, 21, 144, -3, 160, -46, 161, -83, 143, -98, 110, -93, 72)
+
+[node name="GlueZone5" type="Area2D" parent="Part4"]
+collision_layer = 256
+collision_mask = 256
+script = ExtResource("8_ihltt")
+match_id = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part4/GlueZone5"]
+polygon = PackedVector2Array(-64, 49, -51, 59, -86, 77, -95, 119, -111, 107, -103, 65)
 
 [node name="Part5" type="MeshInstance2D" parent="."]
 use_parent_material = true
@@ -267,6 +314,17 @@ script = ExtResource("5_n4g2b")
 match_id = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Part5/Joint"]
+shape = SubResource("CircleShape2D_0vy7t")
+
+[node name="Joint2" type="Area2D" parent="Part5"]
+position = Vector2(-94, 71)
+collision_layer = 256
+collision_mask = 256
+input_pickable = false
+script = ExtResource("5_n4g2b")
+match_id = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Part5/Joint2"]
 shape = SubResource("CircleShape2D_0vy7t")
 
 [node name="MousePick" type="Area2D" parent="Part5"]
