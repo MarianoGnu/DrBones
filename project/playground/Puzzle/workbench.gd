@@ -28,6 +28,7 @@ func _ready() -> void:
 	_puzzle_container.remove_child(sample_puzzle)
 	load_puzzle(sample_puzzle)
 	show()
+	Audio.play_game_bgm()
 
 func load_puzzle(new_puzzle: Puzzle) -> void:
 	assert(new_puzzle != null and not new_puzzle.is_inside_tree())

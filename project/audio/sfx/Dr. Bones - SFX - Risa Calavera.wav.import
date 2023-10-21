@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dabsd83gtumsl"
+path="res://.godot/imported/Dr. Bones - SFX - Risa Calavera.wav-8bd6c393e99f1d234b36a1d518a60c71.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Dr. Bones - SFX - Risa Calavera.wav"
+dest_files=["res://.godot/imported/Dr. Bones - SFX - Risa Calavera.wav-8bd6c393e99f1d234b36a1d518a60c71.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://co2ra1ottghkp"
+path="res://.godot/imported/Dr. Bones - SFX - Huesos Rotos 2.wav-df763d5e199d2e19f756ae01afd58844.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Dr. Bones - SFX - Huesos Rotos 2.wav"
+dest_files=["res://.godot/imported/Dr. Bones - SFX - Huesos Rotos 2.wav-df763d5e199d2e19f756ae01afd58844.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

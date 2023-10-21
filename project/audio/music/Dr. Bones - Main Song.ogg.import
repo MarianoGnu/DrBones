@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://coygnt7dlmf1l"
+path="res://.godot/imported/Dr. Bones - Main Song.ogg-40c16bfe976a96a6850cdb2093bbc078.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Dr. Bones - Main Song.ogg"
+dest_files=["res://.godot/imported/Dr. Bones - Main Song.ogg-40c16bfe976a96a6850cdb2093bbc078.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

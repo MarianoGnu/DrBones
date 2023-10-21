@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bj8h5is04et87"
+path="res://.godot/imported/Dr. Bones - SFX - Switch Selector.wav-febd62cf168e7f00d8ab9ae21a26bace.sample"
+
+[deps]
+
+source_file="res://audio/sfx/Dr. Bones - SFX - Switch Selector.wav"
+dest_files=["res://.godot/imported/Dr. Bones - SFX - Switch Selector.wav-febd62cf168e7f00d8ab9ae21a26bace.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
