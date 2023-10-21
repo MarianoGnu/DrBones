@@ -7,7 +7,7 @@ enum {
 	TOOL_COUNT
 }
 
-const _DEBUG_PRINTS_ENABLED: bool = false
+const _DEBUG_PRINTS_AND_DRAW_ENABLED: bool = false
 
 @export var parts: Array[PuzzlePart] = []
 var tool: int = TOOL_MOVE:
@@ -21,9 +21,10 @@ var _hovered_glue_zone: Array[GlueZone] = []
 var _dragging_part: PuzzlePart = null
 var _is_dragging: bool = false:
 	get: return _dragging_part != null
-	set(v): assert(false, "Read only property")
+	set(_v): assert(false, "Read only property")
 var _drag_acum: Vector2
 var _drag_part_start_pos: Vector2
+var _drag_part_start_rect: Rect2
 
 func _ready() -> void:
 	for part in parts:
@@ -53,21 +54,26 @@ func _handle_move_tool(event: InputEvent) -> void:
 				_dragging_part = null
 			elif not _is_dragging and event.pressed and _hovered_mouse_pick.size():
 				_dragging_part = _hovered_mouse_pick[0].get_dragged_part()
-				_drag_part_start_pos = _dragging_part.global_position
+				_drag_part_start_pos = _dragging_part.position
+				_drag_part_start_rect = _dragging_part.get_glued_rect()
 				_drag_acum = Vector2.ZERO
 	if event is InputEventMouseMotion and _is_dragging:
 		_drag_acum += event.relative
-		_dragging_part.global_position = _drag_part_start_pos + _drag_acum
-		var puzzle_rect: Rect2 = get_global_rect()
-		var rect: Rect2 = _dragging_part.get_global_rect()
+		var target_position: Vector2 = _drag_part_start_pos + _drag_acum
+		var puzzle_rect := Rect2(Vector2(), size)
+		var rect: Rect2 = _drag_part_start_rect
+		rect.position += _drag_acum
 		if rect.position.x < puzzle_rect.position.x:
-			_dragging_part.position.x += puzzle_rect.position.x - rect.position.x
+			target_position.x += puzzle_rect.position.x - rect.position.x
 		elif rect.end.x > puzzle_rect.end.x:
-			_dragging_part.position.x += puzzle_rect.end.x - rect.end.x
+			target_position.x += puzzle_rect.end.x - rect.end.x
 		if rect.position.y < puzzle_rect.position.y:
-			_dragging_part.position.y += puzzle_rect.position.y - rect.position.y
+			target_position.y += puzzle_rect.position.y - rect.position.y
 		elif rect.end.y > puzzle_rect.end.y:
-			_dragging_part.position.y += puzzle_rect.end.y - rect.end.y
+			target_position.y += puzzle_rect.end.y - rect.end.y
+		for part in get_parts_glued_to(_dragging_part.glued_root):
+			part.position = target_position
+		queue_redraw()
 
 func _handle_glue_tool(event: InputEvent) -> void:
 	if event is InputEventMouseButton \
@@ -78,12 +84,18 @@ func _handle_glue_tool(event: InputEvent) -> void:
 				if zone.can_glue():
 					zone.is_glued = true
 					break
-		
-	pass
 
 func _handle_clean_tool(_event: InputEvent) -> void:
 	# TODO
 	pass
+
+func _draw() -> void:
+	if not _DEBUG_PRINTS_AND_DRAW_ENABLED or _dragging_part == null:
+		return
+	var rect: Rect2 = _dragging_part.get_glued_global_rect()
+	rect.position -= global_position
+	draw_rect(rect, Color.ORANGE_RED, false, 2)
+	draw_rect(Rect2(Vector2(), size), Color.LIGHT_SEA_GREEN, false, 2)
 
 func get_parts_with_match_id(p_match_id: int) -> Array[PuzzlePart]:
 	var matching_parts: Array[PuzzlePart] = []
@@ -95,6 +107,13 @@ func get_parts_with_match_id(p_match_id: int) -> Array[PuzzlePart]:
 	assert(matching_parts.size() >= 2, "Unexpected size of collection, there should be at least " +
 			"2 parts with the same ID in order to glue them")
 	return matching_parts
+
+func get_parts_glued_to(p_glue_root) -> Array[PuzzlePart]:
+	var glued_parts: Array[PuzzlePart] = []
+	for part in parts:
+		if part.glued_root == p_glue_root:
+			glued_parts.append(part)
+	return glued_parts
 
 func _on_mouse_pick_mouse_entered(picker: PuzzleMousePick):
 	if not _hovered_mouse_pick.has(picker):
@@ -117,5 +136,5 @@ func _on_glue_zone_mouse_exited(zone: GlueZone):
 		_print_color(Color.ORANGE_RED, "Hover zone remove " + zone.get_parent().name)
 
 func _print_color(color: Color, text: String):
-	if _DEBUG_PRINTS_ENABLED:
+	if _DEBUG_PRINTS_AND_DRAW_ENABLED:
 		print_rich("[color=%s]%s[/color]" % [color.to_html(false), text])

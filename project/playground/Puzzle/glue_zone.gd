@@ -7,7 +7,6 @@ class_name GlueZone extends Area2D
 @onready var puzzle: Puzzle = owner as Puzzle
 
 var _joint_parts: Array[PuzzlePart] = []
-var _remote_transforms: Array[RemoteTransform2D]
 var _visuals := Polygon2D.new()
 
 var is_glued: bool = false:
@@ -48,7 +47,7 @@ func _set_is_glued(glued: bool) -> void:
 	is_glued = glued
 	if Engine.is_editor_hint():
 		return
-	if is_glued and _remote_transforms.is_empty():
+	if is_glued:
 		for part in _joint_parts:
 			if part == get_parent():
 				# Glue zone is a child of a root part, we can skip it
@@ -58,18 +57,14 @@ func _set_is_glued(glued: bool) -> void:
 			glue.name = "Glue_" + part.name
 			add_child(glue)
 			glue.remote_path = part.get_path()
-			_remote_transforms.push_back(glue)
 		is_clean = false
-	elif not is_glued and not _remote_transforms.is_empty():
+	elif not is_glued:
 		for part in _joint_parts:
 			if part == get_parent():
 				# Glue zone is a child of a root part
 				continue
 			# drag and drop root becomes itself
 			part.glued_root = part 
-		for glue in _remote_transforms:
-			glue.queue_free()
-		_remote_transforms.clear()
 		is_clean = true
 
 func _set_is_clean(clean: bool) -> void:

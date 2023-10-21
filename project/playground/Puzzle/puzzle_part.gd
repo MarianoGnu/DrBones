@@ -1,6 +1,7 @@
 class_name PuzzlePart extends MeshInstance2D
 
-var glued_root: PuzzlePart = self
+var glued_root: PuzzlePart = self:
+	get = get_glued_root
 var _rect: Rect2
 
 
@@ -19,12 +20,34 @@ func _ready() -> void:
 func get_rect():
 	var local_rect: Rect2 = _rect
 	local_rect.position += position
+	if glued_root != self:
+		local_rect = local_rect.merge(glued_root.get_rect())
 	return local_rect
 
 func get_global_rect():
 	var local_rect: Rect2 = _rect
 	local_rect.position += global_position
+	if glued_root != self:
+		local_rect = local_rect.merge(glued_root.get_global_rect())
 	return local_rect
+
+func get_glued_rect() -> Rect2:
+	var puzzle: Puzzle = owner as Puzzle
+	assert(puzzle, "Unexpected scene hierarchy for this PuzzlePart")
+	var glued_rect: Rect2 = get_rect()
+	var glued_parts: Array[PuzzlePart] = puzzle.get_parts_glued_to(glued_root)
+	for part in glued_parts:
+		glued_rect = glued_rect.merge(part.get_rect())
+	return glued_rect
+
+func get_glued_global_rect() -> Rect2:
+	var puzzle: Puzzle = owner as Puzzle
+	assert(puzzle, "Unexpected scene hierarchy for this PuzzlePart")
+	var glued_rect: Rect2 = get_global_rect()
+	var glued_parts: Array[PuzzlePart] = puzzle.get_parts_glued_to(glued_root)
+	for part in glued_parts:
+		glued_rect = glued_rect.merge(part.get_global_rect())
+	return glued_rect
 
 func get_joint_with_match_id(p_match_id) -> PuzzleJoint:
 	for child in get_children():
@@ -32,3 +55,8 @@ func get_joint_with_match_id(p_match_id) -> PuzzleJoint:
 			return child
 	print_debug("Requested joint with unmatched id %d" % p_match_id)
 	return null
+
+func get_glued_root() -> PuzzlePart:
+	if glued_root == self:
+		return self
+	return glued_root.get_glued_root()
