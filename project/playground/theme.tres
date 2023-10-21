@@ -1,21 +1,8 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://c4beiekqxdbk3"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://c4beiekqxdbk3"]
 
-[ext_resource type="Texture2D" uid="uid://bijy207w7he2p" path="res://playground/Potion-Craft-shop-screenshot.jpg" id="1_vdvn3"]
 [ext_resource type="Texture2D" uid="uid://dwk813gt54ib1" path="res://playground/Panels/MainPanel.png" id="2_2igkv"]
 [ext_resource type="Texture2D" uid="uid://x26ev5bkqg31" path="res://playground/Panels/LightPanel.png" id="3_xtqfr"]
 [ext_resource type="Texture2D" uid="uid://dyrlwiil0caon" path="res://playground/Panels/DarkPanel.png" id="4_ndrni"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_daf5c"]
-texture = ExtResource("1_vdvn3")
-texture_margin_top = 5.0
-axis_stretch_horizontal = 1
-region_rect = Rect2(23, 1001, 1477, 52)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gh2oc"]
-texture = ExtResource("1_vdvn3")
-texture_margin_top = 1.0
-axis_stretch_horizontal = 1
-region_rect = Rect2(599, 1000, 322, 5)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w61nr"]
 
@@ -62,72 +49,12 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 region_rect = Rect2(39, 40, 240, 240)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_liisc"]
-texture = ExtResource("1_vdvn3")
-texture_margin_left = 15.0
-texture_margin_top = 17.0
-texture_margin_right = 14.0
-texture_margin_bottom = 19.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(1505, 882, 388, 170)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o1q1h"]
-texture = ExtResource("1_vdvn3")
-texture_margin_left = 21.0
-texture_margin_top = 14.0
-texture_margin_right = 21.0
-texture_margin_bottom = 21.0
-expand_margin_top = 14.0
-region_rect = Rect2(1505, 273, 392, 609)
-draw_center = false
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lv7lc"]
-texture = ExtResource("1_vdvn3")
-texture_margin_left = 16.0
-texture_margin_top = 16.0
-texture_margin_right = 15.0
-texture_margin_bottom = 15.0
-region_rect = Rect2(1695, 197, 105, 93)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfajf"]
-content_margin_top = 20.0
-content_margin_bottom = 10.0
-texture = ExtResource("1_vdvn3")
-texture_margin_left = 14.0
-texture_margin_top = 19.0
-texture_margin_right = 13.0
-texture_margin_bottom = 16.0
-region_rect = Rect2(1507, 197, 112, 93)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_86x3x"]
-texture = ExtResource("1_vdvn3")
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(1513, 877, 18, 9)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd52l"]
-texture = ExtResource("1_vdvn3")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 5.0
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(20, 1001, 1483, 57)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jbyf"]
-
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_5v162"]
 color = Color(0.215686, 0.109804, 0.0470588, 0.705882)
 thickness = 8
 vertical = true
 
 [resource]
-FooterPanel/base_type = &"PanelContainer"
-FooterPanel/styles/panel = SubResource("StyleBoxTexture_daf5c")
-HSeparator/styles/separator = SubResource("StyleBoxTexture_gh2oc")
-InvisibleTabContainer/base_type = &"TabContainer"
 InvisibleTabContainer/styles/panel = SubResource("StyleBoxEmpty_w61nr")
 InvisibleTabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_w61nr")
 InvisibleTabContainer/styles/tab_hovered = SubResource("StyleBoxEmpty_w61nr")
@@ -140,24 +67,5 @@ PanelLight/base_type = &"PanelContainer"
 PanelLight/styles/panel = SubResource("StyleBoxTexture_h571l")
 ScenePanel/base_type = &"PanelContainer"
 ScenePanel/styles/panel = SubResource("StyleBoxTexture_hw6fl")
-SecondaryPanel/base_type = &"PanelContainer"
-SecondaryPanel/styles/panel = SubResource("StyleBoxTexture_liisc")
-TabContainer/colors/font_outline_color = Color(0.238281, 0.117188, 0.0273438, 1)
-TabContainer/constants/outline_size = 5
-TabContainer/constants/side_margin = 2
-TabContainer/styles/panel = SubResource("StyleBoxTexture_o1q1h")
-TabContainer/styles/tab_disabled = SubResource("StyleBoxTexture_lv7lc")
-TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_lv7lc")
-TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_qfajf")
-TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_lv7lc")
-TabContainer/styles/tabbar_background = SubResource("StyleBoxTexture_86x3x")
-ToolBoxButton/base_type = &"Button"
-ToolBoxButton/colors/icon_hover_pressed_color = Color(0.360784, 0.360784, 0.12549, 1)
-ToolBoxButton/colors/icon_pressed_color = Color(0.360784, 0.360784, 0.12549, 1)
-ToolBoxButton/styles/disabled = SubResource("StyleBoxTexture_dd52l")
-ToolBoxButton/styles/focus = SubResource("StyleBoxEmpty_8jbyf")
-ToolBoxButton/styles/hover = SubResource("StyleBoxTexture_dd52l")
-ToolBoxButton/styles/normal = SubResource("StyleBoxTexture_dd52l")
-ToolBoxButton/styles/pressed = SubResource("StyleBoxTexture_dd52l")
 VSeparator/constants/separation = 0
 VSeparator/styles/separator = SubResource("StyleBoxLine_5v162")
