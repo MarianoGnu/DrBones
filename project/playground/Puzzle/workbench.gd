@@ -27,7 +27,7 @@ func _ready() -> void:
 	var sample_puzzle: Puzzle = %SamplePuzzle
 	_puzzle_container.remove_child(sample_puzzle)
 	load_puzzle(sample_puzzle)
-	show()
+#	show()
 	Audio.play_game_bgm()
 
 func load_puzzle(new_puzzle: Puzzle) -> void:

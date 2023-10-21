@@ -1,25 +1,336 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=46 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://playground/Puzzle/workbench.tscn" id="1_bjsc8"]
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_gf4a2"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="1_nplp3"]
 [ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_waht3"]
 [ext_resource type="Texture2D" uid="uid://b03wiqsp1dgf3" path="res://playground/Fondo Assets/Puerta.PNG" id="4_v6pge"]
+[ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="4_vth6o"]
 [ext_resource type="Texture2D" uid="uid://4p5bu8ebblcn" path="res://playground/Fondo Assets/Marco de puerta.PNG" id="5_dtfvu"]
 [ext_resource type="Texture2D" uid="uid://dx5auppo5i70b" path="res://playground/Fondo Assets/Marco Selector.PNG" id="6_2f6m0"]
 [ext_resource type="Texture2D" uid="uid://0smyq1g3yb30" path="res://playground/Fondo Assets/Placa.PNG" id="7_438th"]
 [ext_resource type="Texture2D" uid="uid://bbdpjroaqswhd" path="res://playground/Fondo Assets/Pua Selectora.PNG" id="8_gtfkd"]
+[ext_resource type="Texture2D" uid="uid://c4usl5myysekf" path="res://playground/Icons/Icons.png" id="8_hcxss"]
 [ext_resource type="Texture2D" uid="uid://cbkwus00i5eso" path="res://playground/Fondo Assets/Back Entrance.PNG" id="9_2xey2"]
+[ext_resource type="Script" path="res://playground/sign_button.gd" id="10_tbbx1"]
 [ext_resource type="Texture2D" uid="uid://74kvaae7n2t2" path="res://playground/Fondo Assets/Fondo Entrada de atras.PNG" id="10_w47f7"]
 [ext_resource type="Texture2D" uid="uid://cqshxwsh48ow" path="res://playground/Fondo Assets/Antorcha.PNG" id="11_2h3xr"]
+[ext_resource type="Script" path="res://playground/selector.gd" id="11_myexd"]
 [ext_resource type="Texture2D" uid="uid://dnnrv1fj1tq0g" path="res://playground/Fondo Assets/Fuego.PNG" id="12_3nujt"]
 [ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="13_lo7bc"]
+[ext_resource type="Texture2D" uid="uid://ckiq6xfdehfb7" path="res://bones/characters/skelly_boi_transparent.png" id="15_dn4tq"]
+[ext_resource type="Texture2D" uid="uid://myu2tku5m5mb" path="res://bones/broken/complete/Brazo.PNG" id="17_hn5fk"]
+[ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="19_q074d"]
+[ext_resource type="AudioStream" uid="uid://2mek1rrrbtpt" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 2.wav" id="20_8jlkv"]
+[ext_resource type="AudioStream" uid="uid://bj8h5is04et87" path="res://audio/sfx/Dr. Bones - SFX - Switch Selector.wav" id="21_j7m0q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
+shader = ExtResource("4_vth6o")
+
+[sub_resource type="Animation" id="Animation_l45a4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PuertaL:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PuertaR:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nmnm7"]
+resource_name = "close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PuertaL:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PuertaR:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ri6xv"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PuertaL:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PuertaR:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s0rkj"]
+_data = {
+"RESET": SubResource("Animation_l45a4"),
+"close": SubResource("Animation_nmnm7"),
+"open": SubResource("Animation_ri6xv")
+}
 
 [sub_resource type="Curve2D" id="Curve2D_j21v8"]
 _data = {
-"points": PackedVector2Array(-41.0368, 26.3337, 41.0368, -26.3337, 986.8, 202.4, -69.2957, 18.8988, 69.2957, -18.8988, 1072.8, 170.4, -71.8155, -1.25992, 71.8155, 1.25992, 1180.8, 159.4, -74.3353, -22.6786, 74.3353, 22.6786, 1281.8, 168.4, -41.7998, -23.026, 41.7998, 23.026, 1376.8, 207.4)
+"points": PackedVector2Array(-41.0368, 26.3337, 41.0368, -26.3337, 986.8, 202.4, -43.4381, 9.01827, 43.4381, -9.01827, 1072.8, 170.4, -44.5436, -0.864976, 44.5436, 0.864976, 1180.8, 159.4, -28.2535, -6.32701, 28.2535, 6.32701, 1281.8, 168.4, -41.7998, -23.026, 41.7998, 23.026, 1376.8, 207.4)
 }
 point_count = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kupw"]
+atlas = ExtResource("8_hcxss")
+region = Rect2(8, 0, 185, 156)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wl2"]
+atlas = ExtResource("8_hcxss")
+region = Rect2(354, 9, 158, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wsng"]
+atlas = ExtResource("8_hcxss")
+region = Rect2(313, 198, 217, 168)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35orb"]
+atlas = ExtResource("8_hcxss")
+region = Rect2(0, 225, 193, 136)
+
+[sub_resource type="Gradient" id="Gradient_1o888"]
+offsets = PackedFloat32Array(0, 0.174224, 0.286396, 0.498807, 1)
+colors = PackedColorArray(1, 1, 1, 0.219608, 1, 1, 1, 0.458824, 1, 1, 1, 0.247059, 1, 1, 1, 0.478431, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bj1vk"]
+gradient = SubResource("Gradient_1o888")
+fill = 1
+fill_from = Vector2(0.5, 0.517094)
+fill_to = Vector2(1, 0.521368)
+
+[sub_resource type="Animation" id="Animation_qe5st"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.41876, 4.41876)]
+}
+
+[sub_resource type="Animation" id="Animation_exn5w"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 0.858824), Color(1, 1, 1, 0.8), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4.41876, 4.41876), Vector2(5.384, 5.384), Vector2(4.90138, 4.90138), Vector2(4.419, 4.419)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rbaw"]
+_data = {
+"RESET": SubResource("Animation_qe5st"),
+"idle": SubResource("Animation_exn5w")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ivh8r"]
+polygon = PackedVector2Array(13.2226, -15.945, 13.4328, 32.7917, 15.8032, 32.0016, 16.3339, -16.1394)
+
+[sub_resource type="Animation" id="Animation_lnk0y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_vd526"]
+resource_name = "idle"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("19_q074d")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_8jlkv")
+}],
+"times": PackedFloat32Array(0.6, 1.9)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86ele"]
+_data = {
+"RESET": SubResource("Animation_lnk0y"),
+"idle": SubResource("Animation_vd526")
+}
+
+[sub_resource type="Animation" id="Animation_uupr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(107.093, -1503.96)]
+}
+
+[sub_resource type="Animation" id="Animation_siceq"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(107.093, -1503.96), Vector2(107.093, -1493.96), Vector2(107.093, -1523.96), Vector2(107.093, -1503.96)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvc18"]
+_data = {
+"RESET": SubResource("Animation_uupr3"),
+"idle": SubResource("Animation_siceq")
+}
 
 [node name="Test" type="Control"]
 layout_mode = 3
@@ -64,20 +375,24 @@ stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="PuertaL" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
+material = SubResource("ShaderMaterial_0j058")
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0110345
-anchor_right = 0.503448
+anchor_left = -0.0114942
+anchor_right = 0.501149
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-pivot_offset = Vector2(3, 315)
+scale = Vector2(1e-05, 1)
 texture = ExtResource("4_v6pge")
 expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="PuertaR" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
+material = SubResource("ShaderMaterial_0j058")
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.485517
@@ -85,11 +400,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-pivot_offset = Vector2(360, 625)
+scale = Vector2(1e-05, 1)
+pivot_offset = Vector2(223.8, 188.8)
 texture = ExtResource("4_v6pge")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="DoorAnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/FondoPuerta"]
+unique_name_in_owner = true
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_s0rkj")
+}
 
 [node name="MarcoDePuerta" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
 layout_mode = 1
@@ -119,7 +442,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Path2D" type="Path2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector"]
 show_behind_parent = true
-position = Vector2(-912, -136)
+position = Vector2(-911.2, -135.601)
 curve = SubResource("Curve2D_j21v8")
 
 [node name="Sign1" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
@@ -131,19 +454,49 @@ position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_438th")
 
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign1/Placa"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.5
+offset_top = -99.0
+offset_right = -152.5
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("AtlasTexture_8kupw")
+flat = true
+icon_alignment = 1
+script = ExtResource("10_tbbx1")
+
 [node name="Sign2" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
-position = Vector2(1114.63, 159.101)
-rotation = -0.223097
-progress = 136.196
+position = Vector2(1114.72, 162.67)
+rotation = -0.143053
+progress = 135.43
 
 [node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign2"]
 position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_438th")
 
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign2/Placa"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.5
+offset_top = -99.0
+offset_right = -152.5
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("AtlasTexture_80wl2")
+flat = true
+icon_alignment = 1
+script = ExtResource("10_tbbx1")
+
 [node name="Sign3" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
-position = Vector2(1250.08, 158.994)
-rotation = 0.266491
+position = Vector2(1251.39, 163.256)
+rotation = 0.118444
 progress = 272.391
 
 [node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign3"]
@@ -151,24 +504,60 @@ position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_438th")
 
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign3/Placa"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.5
+offset_top = -99.0
+offset_right = -152.5
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("AtlasTexture_5wsng")
+flat = true
+icon_alignment = 1
+script = ExtResource("10_tbbx1")
+
 [node name="Sign4" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1376.8, 207.4)
 rotation = 0.503506
-progress = 408.628
+progress = 406.33
 
 [node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign4"]
 position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("7_438th")
 
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign4/Placa"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.5
+offset_top = -99.0
+offset_right = -152.5
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("AtlasTexture_35orb")
+flat = true
+icon_alignment = 1
+script = ExtResource("10_tbbx1")
+metadata/_edit_use_anchors_ = true
+
 [node name="Selector" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
+unique_name_in_owner = true
 position = Vector2(986.8, 202.4)
 rotation = -0.570525
+script = ExtResource("11_myexd")
 
 [node name="PuaSelectora" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Selector"]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_gtfkd")
 offset = Vector2(0, -104)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Selector"]
+stream = ExtResource("21_j7m0q")
 
 [node name="BackEntrance" type="TextureRect" parent="Floor/Walls"]
 layout_mode = 1
@@ -203,6 +592,27 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
+[node name="CanvasModulate" type="CanvasModulate" parent="Floor/Walls/Antorcha"]
+visible = false
+position = Vector2(21.4004, 8.79998)
+scale = Vector2(5.14269, 5.14269)
+color = Color(0.690196, 0.690196, 0.690196, 1)
+
+[node name="Light" type="PointLight2D" parent="Floor/Walls/Antorcha"]
+visible = false
+show_behind_parent = true
+position = Vector2(21.4004, 8.79998)
+scale = Vector2(4.41876, 4.41876)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_bj1vk")
+height = 390.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/Antorcha/Light"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_1rbaw")
+}
+
 [node name="Fuego" type="TextureRect" parent="Floor/Walls/Antorcha"]
 show_behind_parent = true
 layout_mode = 0
@@ -214,6 +624,59 @@ texture = ExtResource("12_3nujt")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor/Walls/Antorcha"]
+position = Vector2(21.4004, 8.79998)
+scale = Vector2(5.14269, 5.14269)
+occluder = SubResource("OccluderPolygon2D_ivh8r")
+
+[node name="SkellyBoiTransparent" type="Sprite2D" parent="Floor/Walls"]
+position = Vector2(249, 562)
+scale = Vector2(0.214767, 0.214767)
+texture = ExtResource("15_dn4tq")
+
+[node name="Polygon2D" type="Polygon2D" parent="Floor/Walls/SkellyBoiTransparent"]
+position = Vector2(107.093, -1503.96)
+scale = Vector2(1e-05, 1e-05)
+color = Color(0.278431, 0.278431, 0.278431, 0.533333)
+polygon = PackedVector2Array(9.31238, -121.062, 195.561, -353.872, 935.899, -302.654, 1098.87, -470.278, 1094.21, -847.431, 889.337, -1019.71, -744.994, -1033.68, -875.368, -805.525, -856.743, -419.059, -679.807, -256.092, -237.467, -251.435, -46.562, -339.904)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -731.025
+offset_top = -945.212
+offset_right = 1033.97
+offset_bottom = -321.212
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 96
+theme_override_font_sizes/bold_font_size = 95
+theme_override_font_sizes/italics_font_size = 95
+theme_override_font_sizes/bold_italics_font_size = 95
+theme_override_font_sizes/mono_font_size = 95
+bbcode_enabled = true
+text = "¡[color=orange_red]Doctor[/color]! tengo un [color=orange_red]picadito[/color] este sabado en la canchita detras del cementerio ¡y [color=orange_red][b]no puedo correr[/b][/color]!"
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SpeechAnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D/RichTextLabel"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_86ele")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D/RichTextLabel"]
+
+[node name="BubbleBobAnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D"]
+autoplay = "idle"
+speed_scale = 0.3
+libraries = {
+"": SubResource("AnimationLibrary_fvc18")
+}
 
 [node name="Table" type="TextureRect" parent="Floor/Walls"]
 layout_mode = 1
@@ -228,6 +691,68 @@ expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
+[node name="Brazo" type="Sprite2D" parent="Floor/Walls/Table"]
+position = Vector2(161.63, 65.9953)
+scale = Vector2(0.050303, 0.050303)
+texture = ExtResource("17_hn5fk")
+
 [node name="Workbench" parent="." instance=ExtResource("1_bjsc8")]
 visible = false
 layout_mode = 1
+
+[node name="Icons" type="Sprite2D" parent="."]
+position = Vector2(1463, 419)
+texture = ExtResource("8_hcxss")
+region_enabled = true
+region_rect = Rect2(8, 0, 185, 156)
+
+[node name="Polygon2D" type="Polygon2D" parent="Icons"]
+position = Vector2(-92, -23)
+color = Color(1, 1, 1, 0.584314)
+polygon = PackedVector2Array(-22, -223, 6, -208, 42, -221, 50, -190, 33, -158, 53, -125, -6, -120, -47, -129, -42, -166, -104, -174, -68, -231)
+
+[node name="Label2" type="Label" parent="Icons/Polygon2D"]
+offset_left = -10.0
+offset_top = -139.0
+offset_right = 44.0
+offset_bottom = -113.0
+text = "⌛0:45"
+metadata/_edit_use_anchors_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="Icons"]
+position = Vector2(133, 1)
+color = Color(1, 1, 1, 0.584314)
+polygon = PackedVector2Array(-22, -223, 6, -208, 42, -221, 50, -190, 33, -158, 53, -125, -6, -120, -47, -129, -42, -166, -104, -174, -68, -231)
+
+[node name="Label3" type="Label" parent="Icons/Polygon2D2"]
+offset_left = -4.0
+offset_top = -145.0
+offset_right = 50.0
+offset_bottom = -119.0
+text = "⌛1:10"
+
+[node name="Polygon2D3" type="Polygon2D" parent="Icons"]
+position = Vector2(-197, 147)
+color = Color(1, 1, 1, 0.584314)
+polygon = PackedVector2Array(-22, -223, 6, -208, 42, -221, 50, -190, 33, -158, 53, -125, -6, -120, -47, -129, -42, -166, -104, -174, -68, -231)
+
+[node name="Label" type="Label" parent="Icons/Polygon2D3"]
+offset_left = -8.0
+offset_top = -146.0
+offset_right = 46.0
+offset_bottom = -120.0
+text = "⌛0:30"
+metadata/_edit_use_anchors_ = true
+
+[node name="Polygon2D4" type="Polygon2D" parent="Icons"]
+position = Vector2(229, 147)
+color = Color(1, 1, 1, 0.584314)
+polygon = PackedVector2Array(-22, -223, 6, -208, 42, -221, 50, -190, 33, -158, 53, -125, -6, -120, -47, -129, -42, -166, -104, -174, -68, -231)
+
+[node name="Label" type="Label" parent="Icons/Polygon2D4"]
+offset_left = -8.0
+offset_top = -146.0
+offset_right = 46.0
+offset_bottom = -120.0
+text = "⌛0:30"
+metadata/_edit_use_anchors_ = true

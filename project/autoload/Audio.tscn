@@ -9,3 +9,4 @@ game_music = ExtResource("3_noswa")
 
 [node name="Bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_noswa")
+bus = &"Music"
