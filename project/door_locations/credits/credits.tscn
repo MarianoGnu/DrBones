@@ -1,0 +1,202 @@
+[gd_scene load_steps=30 format=3 uid="uid://cayvr1042skt8"]
+
+[ext_resource type="Script" path="res://door_locations/credits/credits.gd" id="1_4xa6b"]
+[ext_resource type="PackedScene" uid="uid://7a7shvd5y5mf" path="res://door_locations/credits/networks_icons/networks.tscn" id="1_jxm3s"]
+[ext_resource type="Texture2D" uid="uid://bc7eecnx5lls7" path="res://door_locations/credits/avatars/Angie.webp" id="1_xwlev"]
+[ext_resource type="PackedScene" uid="uid://bny5pf88sqj8c" path="res://door_locations/credits/avatars/avatar_panel.tscn" id="2_ju0nt"]
+[ext_resource type="Resource" uid="uid://d2eqwr68250oo" path="res://door_locations/credits/roles/arte2d.tres" id="4_bls7a"]
+[ext_resource type="Texture2D" uid="uid://byh1poju360c0" path="res://door_locations/credits/networks_icons/twitter.png" id="4_p81hv"]
+[ext_resource type="Texture2D" uid="uid://qx4pm8iyi7k2" path="res://door_locations/credits/networks_icons/webpage.png" id="4_svibn"]
+[ext_resource type="Script" path="res://door_locations/credits/hyperlink_data.gd" id="5_f4ls1"]
+[ext_resource type="Resource" uid="uid://duvs2ipqpytll" path="res://door_locations/credits/roles/animacion.tres" id="5_g7ght"]
+[ext_resource type="Texture2D" uid="uid://qaooyfo1171c" path="res://door_locations/credits/networks_icons/instagram.png" id="6_oi8q3"]
+[ext_resource type="Texture2D" uid="uid://bk41pbw2ti37x" path="res://door_locations/credits/avatars/Ceci.webp" id="6_qryur"]
+[ext_resource type="Texture2D" uid="uid://bhjgt7jr0f1rv" path="res://door_locations/credits/avatars/Mariano.webp" id="7_08eju"]
+[ext_resource type="Texture2D" uid="uid://ja6b8rkuhlb8" path="res://door_locations/credits/rgd.png" id="7_cmhny"]
+[ext_resource type="Resource" uid="uid://dxt4vdcmtt6pa" path="res://door_locations/credits/roles/programacion.tres" id="8_e5aop"]
+[ext_resource type="Texture2D" uid="uid://bgrhsblef2088" path="res://door_locations/credits/networks_icons/artstation.svg" id="8_jg6yg"]
+[ext_resource type="Texture2D" uid="uid://dlju8moyshej" path="res://door_locations/credits/networks_icons/linkedin.png" id="8_mgwfo"]
+[ext_resource type="Texture2D" uid="uid://bhfe6xfob15gk" path="res://door_locations/credits/avatars/Pablo.webp" id="8_totb2"]
+[ext_resource type="Texture2D" uid="uid://bhydrswq32dpa" path="res://door_locations/credits/avatars/Seba.webp" id="9_bip6s"]
+[ext_resource type="Resource" uid="uid://dn7eox1025vf1" path="res://door_locations/credits/roles/musica_sfx.tres" id="10_hnfeq"]
+[ext_resource type="Resource" uid="uid://bgda1orv4kj5j" path="res://door_locations/credits/roles/game_design.tres" id="12_ijqp7"]
+[ext_resource type="Resource" uid="uid://ckwdmq0lo6nv7" path="res://door_locations/credits/roles/narrativa.tres" id="13_hi8yx"]
+[ext_resource type="Texture2D" uid="uid://bwfw4itx7f6oy" path="res://door_locations/credits/networks_icons/github.png" id="15_3un7h"]
+
+[sub_resource type="Resource" id="Resource_mufql"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("8_jg6yg")
+description = "angelinaperotti"
+hyperlink = "https://www.artstation.com/angelinaperotti"
+
+[sub_resource type="Resource" id="Resource_im107"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("6_oi8q3")
+description = "sirce_ap"
+hyperlink = "https://www.instagram.com/sirce_ap/"
+
+[sub_resource type="Resource" id="Resource_spow5"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("4_p81hv")
+description = "@Sirce_ap"
+hyperlink = "https://twitter.com/Sirce_ap"
+
+[sub_resource type="Resource" id="Resource_vd7ll"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("8_mgwfo")
+description = "angelina-perotti"
+hyperlink = "https://www.linkedin.com/in/angelina-perotti/"
+
+[sub_resource type="Resource" id="Resource_baxo6"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("4_svibn")
+description = "angelinaperotti-art.net"
+hyperlink = "https://angelinaperotti-art.net/"
+
+[sub_resource type="Resource" id="Resource_2jgxn"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("4_p81hv")
+description = "@MarianoRGD"
+hyperlink = "https://twitter.com/marianorgd"
+
+[sub_resource type="Resource" id="Resource_kku1v"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("15_3un7h")
+description = "MarianoGnu"
+hyperlink = "https://github.com/MarianoGnu"
+
+[node name="Credits" type="CanvasLayer" node_paths=PackedStringArray("participants")]
+layer = 2
+script = ExtResource("1_4xa6b")
+participants = [NodePath("Credits/ColorRect/VBoxContainer2/ParticipantsContainer/Angie"), NodePath("Credits/ColorRect/VBoxContainer2/ParticipantsContainer/Seba"), NodePath("Credits/ColorRect/VBoxContainer2/ParticipantsContainer/Mariano"), NodePath("Credits/ColorRect/VBoxContainer2/ParticipantsContainer/Pablo"), NodePath("Credits/ColorRect/VBoxContainer2/ParticipantsContainer/Ceci")]
+
+[node name="Credits" type="Control" parent="."]
+custom_minimum_size = Vector2(435, 378)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0661376
+anchor_right = 1.0
+anchor_bottom = 0.851852
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.2, 0.219608, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Credits/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Credits/ColorRect/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="networks" parent="Credits/ColorRect/VBoxContainer2/HBoxContainer" instance=ExtResource("1_jxm3s")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="roles" type="RichTextLabel" parent="Credits/ColorRect/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="ParticipantsContainer" type="HFlowContainer" parent="Credits/ColorRect/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="Angie" parent="Credits/ColorRect/VBoxContainer2/ParticipantsContainer" instance=ExtResource("2_ju0nt")]
+layout_mode = 2
+avatar_texture = ExtResource("1_xwlev")
+discord_name = "Angie"
+discord_color = Color(0.901961, 0.494118, 0.156863, 1)
+networks = Array[ExtResource("5_f4ls1")]([SubResource("Resource_mufql"), SubResource("Resource_im107"), SubResource("Resource_spow5"), SubResource("Resource_vd7ll"), SubResource("Resource_baxo6")])
+roles = Array[Resource("res://door_locations/credits/roles/role.gd")]([ExtResource("4_bls7a"), ExtResource("5_g7ght")])
+
+[node name="Seba" parent="Credits/ColorRect/VBoxContainer2/ParticipantsContainer" instance=ExtResource("2_ju0nt")]
+layout_mode = 2
+avatar_texture = ExtResource("9_bip6s")
+discord_name = "Seba (FoverZeroDragon)"
+discord_color = Color(0.678431, 0.0784314, 0.294118, 1)
+roles = Array[Resource("res://door_locations/credits/roles/role.gd")]([ExtResource("4_bls7a")])
+
+[node name="Mariano" parent="Credits/ColorRect/VBoxContainer2/ParticipantsContainer" instance=ExtResource("2_ju0nt")]
+layout_mode = 2
+avatar_texture = ExtResource("7_08eju")
+discord_name = "Mariano(Godot)"
+discord_color = Color(0.180392, 0.8, 0.372549, 1)
+networks = Array[ExtResource("5_f4ls1")]([SubResource("Resource_2jgxn"), SubResource("Resource_kku1v")])
+roles = Array[Resource("res://door_locations/credits/roles/role.gd")]([ExtResource("8_e5aop")])
+
+[node name="Pablo" parent="Credits/ColorRect/VBoxContainer2/ParticipantsContainer" instance=ExtResource("2_ju0nt")]
+layout_mode = 2
+avatar_texture = ExtResource("8_totb2")
+discord_name = "Pablo Vergara"
+discord_color = Color(0.678431, 0.0784314, 0.294118, 1)
+roles = Array[Resource("res://door_locations/credits/roles/role.gd")]([ExtResource("10_hnfeq")])
+
+[node name="Ceci" parent="Credits/ColorRect/VBoxContainer2/ParticipantsContainer" instance=ExtResource("2_ju0nt")]
+layout_mode = 2
+avatar_texture = ExtResource("6_qryur")
+discord_name = "Cecilia"
+discord_color = Color(0.678431, 0.0784314, 0.294118, 1)
+roles = Array[Resource("res://door_locations/credits/roles/role.gd")]([ExtResource("12_ijqp7"), ExtResource("13_hi8yx")])
+
+[node name="ColorRect2" type="ColorRect" parent="Credits/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0659722
+anchor_top = -0.199531
+anchor_right = 0.934028
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.2, 0.219608, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.851851
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.000152588
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Rgd" type="TextureRect" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_cmhny")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect2" type="ColorRect" parent="Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.945098, 0.32549, 0.14902, 1)

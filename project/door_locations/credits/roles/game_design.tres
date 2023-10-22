@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Role" load_steps=2 format=3 uid="uid://bgda1orv4kj5j"]
+
+[ext_resource type="Script" path="res://door_locations/credits/roles/role.gd" id="1_544o6"]
+
+[resource]
+script = ExtResource("1_544o6")
+emoji = "🧩"
+description = "Game Design"
+role_color = Color(0.32549, 0.423529, 0.470588, 1)

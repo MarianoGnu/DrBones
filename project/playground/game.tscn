@@ -1,11 +1,15 @@
-[gd_scene load_steps=46 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=50 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
 [ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_4bl43"]
+[ext_resource type="PackedScene" uid="uid://c5ybef1cfpp4v" path="res://door_locations/cementery/cementery.tscn" id="4_bt801"]
 [ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="4_pp7uv"]
+[ext_resource type="PackedScene" uid="uid://wu0j02jevtvo" path="res://door_locations/workbench/workbench.tscn" id="5_okhck"]
 [ext_resource type="Texture2D" uid="uid://b03wiqsp1dgf3" path="res://playground/Fondo Assets/Puerta.PNG" id="5_q7oli"]
 [ext_resource type="Texture2D" uid="uid://4p5bu8ebblcn" path="res://playground/Fondo Assets/Marco de puerta.PNG" id="6_tbcva"]
+[ext_resource type="PackedScene" uid="uid://c58c0oo4h85xa" path="res://door_locations/warehouse/warehouse.tscn" id="6_u1l83"]
+[ext_resource type="PackedScene" uid="uid://cayvr1042skt8" path="res://door_locations/credits/credits.tscn" id="7_8w0xl"]
 [ext_resource type="Texture2D" uid="uid://dx5auppo5i70b" path="res://playground/Fondo Assets/Marco Selector.PNG" id="7_mct22"]
 [ext_resource type="Texture2D" uid="uid://0smyq1g3yb30" path="res://playground/Fondo Assets/Placa.PNG" id="8_8yelm"]
 [ext_resource type="Texture2D" uid="uid://c4usl5myysekf" path="res://playground/Icons/Icons.png" id="9_733wu"]
@@ -211,7 +215,7 @@ _data = {
 }
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ivh8r"]
-polygon = PackedVector2Array(13.2226, -15.945, 13.4328, 32.7917, 15.8032, 32.0016, 16.3339, -16.1394)
+polygon = PackedVector2Array(13.2226, -15.945, 13.4328, 84.0027, 15.8032, 84.0027, 16.3339, -16.1394)
 
 [sub_resource type="Animation" id="Animation_lnk0y"]
 length = 0.001
@@ -368,10 +372,90 @@ anchor_top = 0.214815
 anchor_right = 0.898438
 anchor_bottom = 0.798148
 offset_left = 6.10352e-05
+offset_right = -0.000732422
+offset_bottom = 0.000244141
 texture = ExtResource("3_4bl43")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
+
+[node name="SceneSelector" type="TabContainer" parent="Floor/Walls/FondoPuerta"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"InvisibleTabContainer"
+tabs_visible = false
+
+[node name="SubSceneCementery" type="SubViewportContainer" parent="Floor/Walls/FondoPuerta/SceneSelector"]
+layout_mode = 2
+stretch = true
+
+[node name="ViewportCementery" type="SubViewport" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneCementery"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 1
+size = Vector2i(435, 378)
+size_2d_override = Vector2i(870, 756)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Cementery" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneCementery/ViewportCementery" instance=ExtResource("4_bt801")]
+
+[node name="SubSceneWorkbench" type="SubViewportContainer" parent="Floor/Walls/FondoPuerta/SceneSelector"]
+visible = false
+layout_mode = 2
+stretch = true
+
+[node name="ViewportWorkbench" type="SubViewport" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneWorkbench"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 1
+size = Vector2i(2, 2)
+size_2d_override = Vector2i(870, 756)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="Workbench" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneWorkbench/ViewportWorkbench" instance=ExtResource("5_okhck")]
+
+[node name="SubSceneWarehouse" type="SubViewportContainer" parent="Floor/Walls/FondoPuerta/SceneSelector"]
+visible = false
+layout_mode = 2
+stretch = true
+
+[node name="ViewportWarehouse" type="SubViewport" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneWarehouse"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_2d = 1
+size = Vector2i(2, 2)
+size_2d_override = Vector2i(870, 756)
+size_2d_override_stretch = true
+render_target_update_mode = 0
+
+[node name="Warehouse" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneWarehouse/ViewportWarehouse" instance=ExtResource("6_u1l83")]
+
+[node name="SubSceneCredits" type="SubViewportContainer" parent="Floor/Walls/FondoPuerta/SceneSelector"]
+visible = false
+layout_mode = 2
+stretch = true
+
+[node name="ViewportCredits" type="SubViewport" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneCredits"]
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+msaa_2d = 1
+size = Vector2i(2, 2)
+render_target_update_mode = 0
+
+[node name="Credits" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneCredits/ViewportCredits" instance=ExtResource("7_8w0xl")]
 
 [node name="PuertaL" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
 material = SubResource("ShaderMaterial_0j058")
@@ -421,6 +505,7 @@ anchor_top = 0.18254
 anchor_right = 1.11448
 anchor_bottom = 1.00317
 offset_bottom = -6.10352e-05
+mouse_filter = 2
 texture = ExtResource("6_tbcva")
 expand_mode = 1
 stretch_mode = 4
@@ -434,6 +519,7 @@ anchor_top = -0.408124
 anchor_right = 1.0
 anchor_bottom = 0.10058
 grow_horizontal = 2
+mouse_filter = 2
 texture = ExtResource("7_mct22")
 expand_mode = 1
 stretch_mode = 4
@@ -453,7 +539,7 @@ position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_8yelm")
 
-[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign1/Placa"]
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign1/Placa" node_paths=PackedStringArray("door_sub_scene")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -467,6 +553,7 @@ icon = SubResource("AtlasTexture_8kupw")
 flat = true
 icon_alignment = 1
 script = ExtResource("10_i2uhd")
+door_sub_scene = NodePath("../../../../../../SceneSelector/SubSceneCementery")
 
 [node name="Sign2" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1114.72, 162.67)
@@ -478,7 +565,7 @@ position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_8yelm")
 
-[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign2/Placa"]
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign2/Placa" node_paths=PackedStringArray("door_sub_scene")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -492,6 +579,7 @@ icon = SubResource("AtlasTexture_80wl2")
 flat = true
 icon_alignment = 1
 script = ExtResource("10_i2uhd")
+door_sub_scene = NodePath("../../../../../../SceneSelector/SubSceneWorkbench")
 
 [node name="Sign3" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1251.39, 163.256)
@@ -503,7 +591,7 @@ position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_8yelm")
 
-[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign3/Placa"]
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign3/Placa" node_paths=PackedStringArray("door_sub_scene")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -517,6 +605,7 @@ icon = SubResource("AtlasTexture_5wsng")
 flat = true
 icon_alignment = 1
 script = ExtResource("10_i2uhd")
+door_sub_scene = NodePath("../../../../../../SceneSelector/SubSceneWarehouse")
 
 [node name="Sign4" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1376.8, 207.4)
@@ -528,7 +617,7 @@ position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("8_8yelm")
 
-[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign4/Placa"]
+[node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign4/Placa" node_paths=PackedStringArray("door_sub_scene")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -542,6 +631,7 @@ icon = SubResource("AtlasTexture_35orb")
 flat = true
 icon_alignment = 1
 script = ExtResource("10_i2uhd")
+door_sub_scene = NodePath("../../../../../../SceneSelector/SubSceneCredits")
 metadata/_edit_use_anchors_ = true
 
 [node name="Selector" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
@@ -600,6 +690,7 @@ color = Color(0.690196, 0.690196, 0.690196, 1)
 show_behind_parent = true
 position = Vector2(21.4004, 8.79998)
 scale = Vector2(4.41876, 4.41876)
+range_layer_max = 1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_bj1vk")
 texture_scale = 3.11
@@ -624,6 +715,7 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Floor/Walls/Antorcha"]
+visible = false
 position = Vector2(21.4004, 8.79998)
 scale = Vector2(5.14269, 5.14269)
 occluder = SubResource("OccluderPolygon2D_ivh8r")

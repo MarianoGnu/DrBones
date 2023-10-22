@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://c4beiekqxdbk3"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://c4beiekqxdbk3"]
 
 [ext_resource type="Texture2D" uid="uid://dwk813gt54ib1" path="res://playground/Panels/MainPanel.png" id="2_2igkv"]
 [ext_resource type="Texture2D" uid="uid://x26ev5bkqg31" path="res://playground/Panels/LightPanel.png" id="3_xtqfr"]
 [ext_resource type="Texture2D" uid="uid://dyrlwiil0caon" path="res://playground/Panels/DarkPanel.png" id="4_ndrni"]
 [ext_resource type="FontFile" uid="uid://co5ycc3nk1x6y" path="res://playground/pythia.ttf" id="4_xjuqd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iby70"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w61nr"]
 
@@ -18,7 +20,7 @@ texture_margin_top = 40.0
 texture_margin_right = 39.0
 texture_margin_bottom = 40.0
 axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
+axis_stretch_vertical = 2
 region_rect = Rect2(0, 0, 318, 320)
 draw_center = false
 
@@ -57,6 +59,8 @@ vertical = true
 
 [resource]
 default_font = ExtResource("4_xjuqd")
+InvisiblePanelContainer/base_type = &"PanelContainer"
+InvisiblePanelContainer/styles/panel = SubResource("StyleBoxEmpty_iby70")
 InvisibleTabContainer/styles/panel = SubResource("StyleBoxEmpty_w61nr")
 InvisibleTabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_w61nr")
 InvisibleTabContainer/styles/tab_hovered = SubResource("StyleBoxEmpty_w61nr")

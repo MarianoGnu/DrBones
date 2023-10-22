@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://7a7shvd5y5mf"]
+
+[ext_resource type="FontFile" uid="uid://rftnn3v7e1in" path="res://theme/fonts/noto-sans/NotoSans-Regular.ttf" id="1_8cku7"]
+[ext_resource type="FontFile" uid="uid://k35ls8o284b3" path="res://theme/fonts/noto-sans/NotoSans-Bold.ttf" id="2_sbkeb"]
+[ext_resource type="FontFile" uid="uid://jkwbexiqyeek" path="res://theme/fonts/noto-sans/NotoSans-Italic.ttf" id="3_hxw6u"]
+[ext_resource type="FontFile" uid="uid://m7mtqutmxuaj" path="res://theme/fonts/noto-sans/NotoSans-BoldItalic.ttf" id="4_lw148"]
+[ext_resource type="Script" path="res://door_locations/credits/networks_icons/networks.gd" id="5_k4idy"]
+
+[node name="networks" type="RichTextLabel"]
+size_flags_vertical = 3
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = ExtResource("1_8cku7")
+theme_override_fonts/bold_font = ExtResource("2_sbkeb")
+theme_override_fonts/italics_font = ExtResource("3_hxw6u")
+theme_override_fonts/bold_italics_font = ExtResource("4_lw148")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+script = ExtResource("5_k4idy")

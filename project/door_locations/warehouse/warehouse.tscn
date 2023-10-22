@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c58c0oo4h85xa"]
+
+[ext_resource type="Texture2D" uid="uid://chymjhuuk8bhp" path="res://door_locations/warehouse/temp_warehouse.png" id="1_xdx5n"]
+
+[node name="Warehouse" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TempWarehouse" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xdx5n")
+expand_mode = 1

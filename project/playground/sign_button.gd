@@ -1,8 +1,12 @@
 extends Button
 
+@export var door_sub_scene: SubViewportContainer
+
 @onready var path_follow: PathFollow2D = $"../.."
 @onready var selector: PathFollow2D = %Selector
 @onready var door_animation_player: AnimationPlayer = %DoorAnimationPlayer
+@onready var scene_selector: TabContainer = %SceneSelector
+
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 
@@ -13,6 +17,8 @@ func _on_pressed():
 	selector.is_in_use = true
 	door_animation_player.play("close")
 	await door_animation_player.animation_finished
+	var tab_index: int = scene_selector.get_tab_idx_from_control(door_sub_scene)
+	scene_selector.current_tab = tab_index
 	var tween: Tween = create_tween()
 	tween.tween_property(selector, "progress_ratio", path_follow.progress_ratio, 0.6).set_trans(Tween.TRANS_BOUNCE)
 	selector.sfx_move()

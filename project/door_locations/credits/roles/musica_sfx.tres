@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Role" load_steps=2 format=3 uid="uid://dn7eox1025vf1"]
+
+[ext_resource type="Script" path="res://door_locations/credits/roles/role.gd" id="1_ouokk"]
+
+[resource]
+script = ExtResource("1_ouokk")
+emoji = "🎵"
+description = "Música-Sfx"
+role_color = Color(0.376471, 0.490196, 0.545098, 1)

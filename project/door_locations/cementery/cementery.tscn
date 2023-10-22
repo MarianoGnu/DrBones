@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ybef1cfpp4v"]
+
+[sub_resource type="Gradient" id="Gradient_vxlqn"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.596659)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rpu52"]
+gradient = SubResource("Gradient_vxlqn")
+width = 30
+
+[node name="Cementery" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sky" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.336
+offset_top = 29.0
+offset_bottom = 0.271988
+grow_horizontal = 2
+color = Color(0.0705882, 0.207843, 0.423529, 1)
+
+[node name="sky2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 68.0
+offset_right = -83.0
+offset_bottom = 66.0
+grow_horizontal = 2
+color = Color(0.0705882, 0.207843, 0.423529, 1)
+
+[node name="ground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.33642
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.560784, 0.352941, 0.152941, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="fence" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.992157, 0.807843, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.256173
+anchor_right = 1.0
+anchor_bottom = 0.387346
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_rpu52")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="fence" type="ColorRect" parent="fence"]
+self_modulate = Color(0.854902, 0.854902, 0.854902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.270588
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="fence2" type="ColorRect" parent="fence"]
+self_modulate = Color(0.854902, 0.854902, 0.854902, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.764706
+anchor_right = 1.0
+anchor_bottom = 0.835294
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
