@@ -243,7 +243,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_vd526"]
 resource_name = "idle"
 length = 5.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -593,18 +592,17 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Floor/Walls/Antorcha"]
-visible = false
 position = Vector2(21.4004, 8.79998)
 scale = Vector2(5.14269, 5.14269)
 color = Color(0.690196, 0.690196, 0.690196, 1)
 
 [node name="Light" type="PointLight2D" parent="Floor/Walls/Antorcha"]
-visible = false
 show_behind_parent = true
 position = Vector2(21.4004, 8.79998)
 scale = Vector2(4.41876, 4.41876)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_bj1vk")
+texture_scale = 3.11
 height = 390.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/Antorcha/Light"]
@@ -664,7 +662,7 @@ visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="SpeechAnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D/RichTextLabel"]
-autoplay = "idle"
+autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_86ele")
 }
@@ -696,9 +694,10 @@ position = Vector2(161.63, 65.9953)
 scale = Vector2(0.050303, 0.050303)
 texture = ExtResource("17_hn5fk")
 
-[node name="Workbench" parent="." instance=ExtResource("1_bjsc8")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Workbench" parent="CanvasLayer" instance=ExtResource("1_bjsc8")]
 visible = false
-layout_mode = 1
 
 [node name="Icons" type="Sprite2D" parent="."]
 position = Vector2(1463, 419)
