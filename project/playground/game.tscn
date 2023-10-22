@@ -1,31 +1,31 @@
 [gd_scene load_steps=46 format=3 uid="uid://bxuyig65r05md"]
 
-[ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://playground/Puzzle/workbench.tscn" id="1_bjsc8"]
-[ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_gf4a2"]
-[ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="1_nplp3"]
-[ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_waht3"]
-[ext_resource type="Texture2D" uid="uid://b03wiqsp1dgf3" path="res://playground/Fondo Assets/Puerta.PNG" id="4_v6pge"]
-[ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="4_vth6o"]
-[ext_resource type="Texture2D" uid="uid://4p5bu8ebblcn" path="res://playground/Fondo Assets/Marco de puerta.PNG" id="5_dtfvu"]
-[ext_resource type="Texture2D" uid="uid://dx5auppo5i70b" path="res://playground/Fondo Assets/Marco Selector.PNG" id="6_2f6m0"]
-[ext_resource type="Texture2D" uid="uid://0smyq1g3yb30" path="res://playground/Fondo Assets/Placa.PNG" id="7_438th"]
-[ext_resource type="Texture2D" uid="uid://bbdpjroaqswhd" path="res://playground/Fondo Assets/Pua Selectora.PNG" id="8_gtfkd"]
-[ext_resource type="Texture2D" uid="uid://c4usl5myysekf" path="res://playground/Icons/Icons.png" id="8_hcxss"]
-[ext_resource type="Texture2D" uid="uid://cbkwus00i5eso" path="res://playground/Fondo Assets/Back Entrance.PNG" id="9_2xey2"]
-[ext_resource type="Script" path="res://playground/sign_button.gd" id="10_tbbx1"]
-[ext_resource type="Texture2D" uid="uid://74kvaae7n2t2" path="res://playground/Fondo Assets/Fondo Entrada de atras.PNG" id="10_w47f7"]
-[ext_resource type="Texture2D" uid="uid://cqshxwsh48ow" path="res://playground/Fondo Assets/Antorcha.PNG" id="11_2h3xr"]
-[ext_resource type="Script" path="res://playground/selector.gd" id="11_myexd"]
-[ext_resource type="Texture2D" uid="uid://dnnrv1fj1tq0g" path="res://playground/Fondo Assets/Fuego.PNG" id="12_3nujt"]
-[ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="13_lo7bc"]
-[ext_resource type="Texture2D" uid="uid://ckiq6xfdehfb7" path="res://bones/characters/skelly_boi_transparent.png" id="15_dn4tq"]
-[ext_resource type="Texture2D" uid="uid://myu2tku5m5mb" path="res://bones/broken/complete/Brazo.PNG" id="17_hn5fk"]
-[ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="19_q074d"]
-[ext_resource type="AudioStream" uid="uid://2mek1rrrbtpt" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 2.wav" id="20_8jlkv"]
-[ext_resource type="AudioStream" uid="uid://bj8h5is04et87" path="res://audio/sfx/Dr. Bones - SFX - Switch Selector.wav" id="21_j7m0q"]
+[ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
+[ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
+[ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_4bl43"]
+[ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="4_pp7uv"]
+[ext_resource type="Texture2D" uid="uid://b03wiqsp1dgf3" path="res://playground/Fondo Assets/Puerta.PNG" id="5_q7oli"]
+[ext_resource type="Texture2D" uid="uid://4p5bu8ebblcn" path="res://playground/Fondo Assets/Marco de puerta.PNG" id="6_tbcva"]
+[ext_resource type="Texture2D" uid="uid://dx5auppo5i70b" path="res://playground/Fondo Assets/Marco Selector.PNG" id="7_mct22"]
+[ext_resource type="Texture2D" uid="uid://0smyq1g3yb30" path="res://playground/Fondo Assets/Placa.PNG" id="8_8yelm"]
+[ext_resource type="Texture2D" uid="uid://c4usl5myysekf" path="res://playground/Icons/Icons.png" id="9_733wu"]
+[ext_resource type="Script" path="res://playground/sign_button.gd" id="10_i2uhd"]
+[ext_resource type="Script" path="res://playground/selector.gd" id="11_v7vsb"]
+[ext_resource type="Texture2D" uid="uid://bbdpjroaqswhd" path="res://playground/Fondo Assets/Pua Selectora.PNG" id="12_oi3a7"]
+[ext_resource type="AudioStream" uid="uid://bj8h5is04et87" path="res://audio/sfx/Dr. Bones - SFX - Switch Selector.wav" id="13_dv0l8"]
+[ext_resource type="Texture2D" uid="uid://cbkwus00i5eso" path="res://playground/Fondo Assets/Back Entrance.PNG" id="14_q65pn"]
+[ext_resource type="Texture2D" uid="uid://74kvaae7n2t2" path="res://playground/Fondo Assets/Fondo Entrada de atras.PNG" id="15_a37nb"]
+[ext_resource type="Texture2D" uid="uid://cqshxwsh48ow" path="res://playground/Fondo Assets/Antorcha.PNG" id="16_g6g2v"]
+[ext_resource type="Texture2D" uid="uid://dnnrv1fj1tq0g" path="res://playground/Fondo Assets/Fuego.PNG" id="17_pklni"]
+[ext_resource type="Texture2D" uid="uid://ckiq6xfdehfb7" path="res://bones/characters/skelly_boi_transparent.png" id="18_j55t8"]
+[ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="19_eos6w"]
+[ext_resource type="AudioStream" uid="uid://2mek1rrrbtpt" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 2.wav" id="20_gnyuh"]
+[ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="21_hvrsn"]
+[ext_resource type="Texture2D" uid="uid://myu2tku5m5mb" path="res://bones/broken/complete/Brazo.PNG" id="22_pjvm1"]
+[ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://playground/Puzzle/workbench.tscn" id="23_eikue"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
-shader = ExtResource("4_vth6o")
+shader = ExtResource("4_pp7uv")
 
 [sub_resource type="Animation" id="Animation_l45a4"]
 length = 0.001
@@ -124,19 +124,19 @@ _data = {
 point_count = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kupw"]
-atlas = ExtResource("8_hcxss")
+atlas = ExtResource("9_733wu")
 region = Rect2(8, 0, 185, 156)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80wl2"]
-atlas = ExtResource("8_hcxss")
+atlas = ExtResource("9_733wu")
 region = Rect2(354, 9, 158, 131)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wsng"]
-atlas = ExtResource("8_hcxss")
+atlas = ExtResource("9_733wu")
 region = Rect2(313, 198, 217, 168)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35orb"]
-atlas = ExtResource("8_hcxss")
+atlas = ExtResource("9_733wu")
 region = Rect2(0, 225, 193, 136)
 
 [sub_resource type="Gradient" id="Gradient_1o888"]
@@ -277,11 +277,11 @@ tracks/2/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("19_q074d")
+"stream": ExtResource("19_eos6w")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("20_8jlkv")
+"stream": ExtResource("20_gnyuh")
 }],
 "times": PackedFloat32Array(0.6, 1.9)
 }
@@ -331,7 +331,7 @@ _data = {
 "idle": SubResource("Animation_siceq")
 }
 
-[node name="Test" type="Control"]
+[node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -346,7 +346,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_gf4a2")
+texture = ExtResource("1_8utvr")
 expand_mode = 1
 
 [node name="Walls" type="TextureRect" parent="Floor"]
@@ -357,7 +357,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"MainPanel"
-texture = ExtResource("1_nplp3")
+texture = ExtResource("2_tcsp7")
 expand_mode = 1
 
 [node name="FondoPuerta" type="TextureRect" parent="Floor/Walls"]
@@ -368,7 +368,7 @@ anchor_top = 0.214815
 anchor_right = 0.898438
 anchor_bottom = 0.798148
 offset_left = 6.10352e-05
-texture = ExtResource("3_waht3")
+texture = ExtResource("3_4bl43")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
@@ -384,7 +384,7 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(1e-05, 1)
-texture = ExtResource("4_v6pge")
+texture = ExtResource("5_q7oli")
 expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
@@ -401,7 +401,7 @@ grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(1e-05, 1)
 pivot_offset = Vector2(223.8, 188.8)
-texture = ExtResource("4_v6pge")
+texture = ExtResource("5_q7oli")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -421,7 +421,7 @@ anchor_top = 0.18254
 anchor_right = 1.11448
 anchor_bottom = 1.00317
 offset_bottom = -6.10352e-05
-texture = ExtResource("5_dtfvu")
+texture = ExtResource("6_tbcva")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
@@ -434,7 +434,7 @@ anchor_top = -0.408124
 anchor_right = 1.0
 anchor_bottom = 0.10058
 grow_horizontal = 2
-texture = ExtResource("6_2f6m0")
+texture = ExtResource("7_mct22")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
@@ -451,7 +451,7 @@ rotation = -0.570525
 [node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign1"]
 position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_438th")
+texture = ExtResource("8_8yelm")
 
 [node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign1/Placa"]
 anchors_preset = 15
@@ -466,7 +466,7 @@ grow_vertical = 2
 icon = SubResource("AtlasTexture_8kupw")
 flat = true
 icon_alignment = 1
-script = ExtResource("10_tbbx1")
+script = ExtResource("10_i2uhd")
 
 [node name="Sign2" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1114.72, 162.67)
@@ -476,7 +476,7 @@ progress = 135.43
 [node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign2"]
 position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_438th")
+texture = ExtResource("8_8yelm")
 
 [node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign2/Placa"]
 anchors_preset = 15
@@ -491,7 +491,7 @@ grow_vertical = 2
 icon = SubResource("AtlasTexture_80wl2")
 flat = true
 icon_alignment = 1
-script = ExtResource("10_tbbx1")
+script = ExtResource("10_i2uhd")
 
 [node name="Sign3" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1251.39, 163.256)
@@ -501,7 +501,7 @@ progress = 272.391
 [node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign3"]
 position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_438th")
+texture = ExtResource("8_8yelm")
 
 [node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign3/Placa"]
 anchors_preset = 15
@@ -516,7 +516,7 @@ grow_vertical = 2
 icon = SubResource("AtlasTexture_5wsng")
 flat = true
 icon_alignment = 1
-script = ExtResource("10_tbbx1")
+script = ExtResource("10_i2uhd")
 
 [node name="Sign4" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1376.8, 207.4)
@@ -526,7 +526,7 @@ progress = 406.33
 [node name="Placa" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign4"]
 position = Vector2(0, -80)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_438th")
+texture = ExtResource("8_8yelm")
 
 [node name="Button" type="Button" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Sign4/Placa"]
 anchors_preset = 15
@@ -541,22 +541,22 @@ grow_vertical = 2
 icon = SubResource("AtlasTexture_35orb")
 flat = true
 icon_alignment = 1
-script = ExtResource("10_tbbx1")
+script = ExtResource("10_i2uhd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Selector" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 unique_name_in_owner = true
 position = Vector2(986.8, 202.4)
 rotation = -0.570525
-script = ExtResource("11_myexd")
+script = ExtResource("11_v7vsb")
 
 [node name="PuaSelectora" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Selector"]
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_gtfkd")
+texture = ExtResource("12_oi3a7")
 offset = Vector2(0, -104)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Selector"]
-stream = ExtResource("21_j7m0q")
+stream = ExtResource("13_dv0l8")
 
 [node name="BackEntrance" type="TextureRect" parent="Floor/Walls"]
 layout_mode = 1
@@ -565,7 +565,7 @@ anchor_left = 0.1875
 anchor_top = 0.404321
 anchor_right = 0.343229
 anchor_bottom = 0.795062
-texture = ExtResource("9_2xey2")
+texture = ExtResource("14_q65pn")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -576,7 +576,7 @@ anchor_left = 0.183946
 anchor_top = 0.111374
 anchor_right = 0.816054
 anchor_bottom = 0.99763
-texture = ExtResource("10_w47f7")
+texture = ExtResource("15_a37nb")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -586,7 +586,7 @@ anchor_left = 0.352083
 anchor_top = 0.112963
 anchor_right = 0.404167
 anchor_bottom = 0.244444
-texture = ExtResource("11_2h3xr")
+texture = ExtResource("16_g6g2v")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -618,7 +618,7 @@ anchor_left = 0.11
 anchor_top = -0.15493
 anchor_right = 0.59
 anchor_bottom = 0.34507
-texture = ExtResource("12_3nujt")
+texture = ExtResource("17_pklni")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -631,7 +631,7 @@ occluder = SubResource("OccluderPolygon2D_ivh8r")
 [node name="SkellyBoiTransparent" type="Sprite2D" parent="Floor/Walls"]
 position = Vector2(249, 562)
 scale = Vector2(0.214767, 0.214767)
-texture = ExtResource("15_dn4tq")
+texture = ExtResource("18_j55t8")
 
 [node name="Polygon2D" type="Polygon2D" parent="Floor/Walls/SkellyBoiTransparent"]
 position = Vector2(107.093, -1503.96)
@@ -684,7 +684,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("13_lo7bc")
+texture = ExtResource("21_hvrsn")
 expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
@@ -692,16 +692,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Brazo" type="Sprite2D" parent="Floor/Walls/Table"]
 position = Vector2(161.63, 65.9953)
 scale = Vector2(0.050303, 0.050303)
-texture = ExtResource("17_hn5fk")
+texture = ExtResource("22_pjvm1")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Workbench" parent="CanvasLayer" instance=ExtResource("1_bjsc8")]
+[node name="Workbench" parent="CanvasLayer" instance=ExtResource("23_eikue")]
 visible = false
 
 [node name="Icons" type="Sprite2D" parent="."]
 position = Vector2(1463, 419)
-texture = ExtResource("8_hcxss")
+texture = ExtResource("9_733wu")
 region_enabled = true
 region_rect = Rect2(8, 0, 185, 156)
 
