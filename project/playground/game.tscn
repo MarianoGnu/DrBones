@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=51 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
@@ -30,6 +30,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
+shader_parameter/upper_limit = 0.33
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btaxr"]
+shader = ExtResource("4_pp7uv")
+shader_parameter/upper_limit = 0.17
 
 [sub_resource type="Animation" id="Animation_l45a4"]
 length = 0.001
@@ -43,7 +48,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1e-05, 1)]
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -55,7 +60,31 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1e-05, 1)]
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PuertaL:material:shader_parameter/upper_limit")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.17]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PuertaR:material:shader_parameter/upper_limit")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.17]
 }
 
 [sub_resource type="Animation" id="Animation_nmnm7"]
@@ -68,10 +97,10 @@ tracks/0/path = NodePath("PuertaL:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -80,10 +109,34 @@ tracks/1/path = NodePath("PuertaR:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1), Vector2(1, 1)]
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PuertaL:material:shader_parameter/upper_limit")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.17]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PuertaR:material:shader_parameter/upper_limit")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.17]
 }
 
 [sub_resource type="Animation" id="Animation_ri6xv"]
@@ -96,10 +149,10 @@ tracks/0/path = NodePath("PuertaL:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1)]
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(0.001, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -108,10 +161,34 @@ tracks/1/path = NodePath("PuertaR:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector2(-0.001, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PuertaL:material:shader_parameter/upper_limit")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1e-05, 1)]
+"values": [0.17, 0.33]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PuertaR:material:shader_parameter/upper_limit")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.17, 0.33]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s0rkj"]
@@ -143,12 +220,12 @@ region = Rect2(313, 198, 217, 168)
 atlas = ExtResource("9_733wu")
 region = Rect2(0, 225, 193, 136)
 
-[sub_resource type="Gradient" id="Gradient_1o888"]
+[sub_resource type="Gradient" id="Gradient_o7j15"]
 offsets = PackedFloat32Array(0, 0.174224, 0.286396, 0.498807, 1)
 colors = PackedColorArray(1, 1, 1, 0.219608, 1, 1, 1, 0.458824, 1, 1, 1, 0.247059, 1, 1, 1, 0.478431, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bj1vk"]
-gradient = SubResource("Gradient_1o888")
+gradient = SubResource("Gradient_o7j15")
 fill = 1
 fill_from = Vector2(0.5, 0.517094)
 fill_to = Vector2(1, 0.521368)
@@ -467,28 +544,29 @@ anchor_right = 0.501149
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(1e-05, 1)
 texture = ExtResource("5_q7oli")
 expand_mode = 1
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="PuertaR" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
-material = SubResource("ShaderMaterial_0j058")
+material = SubResource("ShaderMaterial_btaxr")
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.485517
+anchor_left = 0.497
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 218.805
+offset_right = 218.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(1e-05, 1)
-pivot_offset = Vector2(223.8, 188.8)
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(0, 189)
 texture = ExtResource("5_q7oli")
 expand_mode = 1
 stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+flip_h = true
 
 [node name="DoorAnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/FondoPuerta"]
 unique_name_in_owner = true
@@ -636,8 +714,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Selector" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 unique_name_in_owner = true
-position = Vector2(986.8, 202.4)
-rotation = -0.570525
+position = Vector2(1182.29, 159.429)
+rotation = 0.0200952
+progress = 203.165
 script = ExtResource("11_v7vsb")
 
 [node name="PuaSelectora" type="Sprite2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D/Selector"]
@@ -715,7 +794,6 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Floor/Walls/Antorcha"]
-visible = false
 position = Vector2(21.4004, 8.79998)
 scale = Vector2(5.14269, 5.14269)
 occluder = SubResource("OccluderPolygon2D_ivh8r")
@@ -792,6 +870,7 @@ texture = ExtResource("22_pjvm1")
 visible = false
 
 [node name="Icons" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1463, 419)
 texture = ExtResource("9_733wu")
 region_enabled = true

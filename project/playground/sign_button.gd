@@ -15,12 +15,13 @@ func _on_pressed():
 		or selector.progress_ratio == path_follow.progress_ratio):
 		return
 	selector.is_in_use = true
-	door_animation_player.play("close")
-	await door_animation_player.animation_finished
+	if not is_equal_approx(selector.progress_ratio, 0.5):
+		door_animation_player.play("close")
+		await door_animation_player.animation_finished
 	var tab_index: int = scene_selector.get_tab_idx_from_control(door_sub_scene)
 	scene_selector.current_tab = tab_index
 	var tween: Tween = create_tween()
-	tween.tween_property(selector, "progress_ratio", path_follow.progress_ratio, 0.6).set_trans(Tween.TRANS_BOUNCE)
+	tween.tween_property(selector, "progress_ratio", path_follow.progress_ratio, 0.6).set_trans(Tween.TRANS_EXPO)
 	selector.sfx_move()
 	await tween.finished
 	door_animation_player.play("open")
