@@ -1,14 +1,18 @@
-[gd_scene load_steps=41 format=3 uid="uid://cayvr1042skt8"]
+[gd_scene load_steps=47 format=3 uid="uid://cayvr1042skt8"]
 
 [ext_resource type="Script" path="res://door_locations/credits/credits.gd" id="1_4xa6b"]
 [ext_resource type="PackedScene" uid="uid://7a7shvd5y5mf" path="res://door_locations/credits/networks_icons/networks.tscn" id="1_jxm3s"]
 [ext_resource type="Texture2D" uid="uid://bc7eecnx5lls7" path="res://door_locations/credits/avatars/Angie.webp" id="1_xwlev"]
 [ext_resource type="PackedScene" uid="uid://bny5pf88sqj8c" path="res://door_locations/credits/avatars/avatar_panel.tscn" id="2_ju0nt"]
+[ext_resource type="FontFile" uid="uid://rftnn3v7e1in" path="res://theme/fonts/noto-sans/NotoSans-Regular.ttf" id="3_0br21"]
 [ext_resource type="Resource" uid="uid://d2eqwr68250oo" path="res://door_locations/credits/roles/arte2d.tres" id="4_bls7a"]
+[ext_resource type="FontFile" uid="uid://k35ls8o284b3" path="res://theme/fonts/noto-sans/NotoSans-Bold.ttf" id="4_o54ta"]
 [ext_resource type="Texture2D" uid="uid://byh1poju360c0" path="res://door_locations/credits/networks_icons/twitter.png" id="4_p81hv"]
 [ext_resource type="Texture2D" uid="uid://qx4pm8iyi7k2" path="res://door_locations/credits/networks_icons/webpage.png" id="4_svibn"]
 [ext_resource type="Script" path="res://door_locations/credits/hyperlink_data.gd" id="5_f4ls1"]
 [ext_resource type="Resource" uid="uid://duvs2ipqpytll" path="res://door_locations/credits/roles/animacion.tres" id="5_g7ght"]
+[ext_resource type="FontFile" uid="uid://jkwbexiqyeek" path="res://theme/fonts/noto-sans/NotoSans-Italic.ttf" id="5_woudb"]
+[ext_resource type="FontFile" uid="uid://m7mtqutmxuaj" path="res://theme/fonts/noto-sans/NotoSans-BoldItalic.ttf" id="6_ln851"]
 [ext_resource type="Texture2D" uid="uid://qaooyfo1171c" path="res://door_locations/credits/networks_icons/instagram.png" id="6_oi8q3"]
 [ext_resource type="Texture2D" uid="uid://bk41pbw2ti37x" path="res://door_locations/credits/avatars/Ceci.webp" id="6_qryur"]
 [ext_resource type="Texture2D" uid="uid://bhjgt7jr0f1rv" path="res://door_locations/credits/avatars/Mariano.webp" id="7_08eju"]
@@ -22,6 +26,7 @@
 [ext_resource type="Resource" uid="uid://bgda1orv4kj5j" path="res://door_locations/credits/roles/game_design.tres" id="12_ijqp7"]
 [ext_resource type="Resource" uid="uid://ckwdmq0lo6nv7" path="res://door_locations/credits/roles/narrativa.tres" id="13_hi8yx"]
 [ext_resource type="Texture2D" uid="uid://bwfw4itx7f6oy" path="res://door_locations/credits/networks_icons/github.png" id="15_3un7h"]
+[ext_resource type="Texture2D" uid="uid://db8neqdqvkeks" path="res://door_locations/credits/networks_icons/linktree.png" id="18_mwx8u"]
 [ext_resource type="Texture2D" uid="uid://c666s64q4ef78" path="res://door_locations/credits/networks_icons/itchio.svg" id="20_s6l0k"]
 [ext_resource type="Script" path="res://door_locations/credits/Light.gd" id="23_3shlw"]
 
@@ -66,6 +71,12 @@ script = ExtResource("5_f4ls1")
 icon = ExtResource("15_3un7h")
 description = "MarianoGnu"
 hyperlink = "https://github.com/MarianoGnu"
+
+[sub_resource type="Resource" id="Resource_ehtsd"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("18_mwx8u")
+description = "pabloavergara"
+hyperlink = "https://linktr.ee/pabloavergara"
 
 [sub_resource type="Resource" id="Resource_a14tk"]
 script = ExtResource("5_f4ls1")
@@ -209,6 +220,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("3_0br21")
+theme_override_fonts/bold_font = ExtResource("4_o54ta")
+theme_override_fonts/italics_font = ExtResource("5_woudb")
+theme_override_fonts/bold_italics_font = ExtResource("6_ln851")
 bbcode_enabled = true
 fit_content = true
 scroll_active = false
@@ -249,6 +264,7 @@ layout_mode = 2
 avatar_texture = ExtResource("8_totb2")
 discord_name = "Pablo Vergara"
 discord_color = Color(0.678431, 0.0784314, 0.294118, 1)
+networks = Array[ExtResource("5_f4ls1")]([SubResource("Resource_ehtsd")])
 roles = Array[Resource("res://door_locations/credits/roles/role.gd")]([ExtResource("10_hnfeq")])
 
 [node name="Ceci" parent="Credits/ColorRect/VBoxContainer2/ParticipantsContainer" instance=ExtResource("2_ju0nt")]

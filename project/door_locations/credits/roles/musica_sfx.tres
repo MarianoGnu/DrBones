@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_ouokk")
-emoji = "🎵"
+emoji = "🎼"
 description = "Música-Sfx"
 role_color = Color(0.376471, 0.490196, 0.545098, 1)
