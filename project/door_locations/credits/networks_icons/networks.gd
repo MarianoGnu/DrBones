@@ -17,7 +17,7 @@ func update() -> void:
 		var n: HyperlinkData = networks[i]
 		if i != 0:
 			add_text("\n")
-		add_image(n.icon, 24, 24)
+		add_image(n.icon, 32, 32)
 		add_text(" ")
 		push_meta(n.hyperlink)
 		add_text(n.description)

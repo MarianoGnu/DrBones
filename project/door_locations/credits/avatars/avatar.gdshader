@@ -9,7 +9,11 @@ void fragment() {
 		vec4 overlay_pixel = texture(selected_overlay, UV);
 		COLOR.rgb = mix(COLOR, overlay_pixel, overlay_pixel.a).rgb;
 	}
-	if (len > .5) {
+	if (len >= .48 && len <= .50) {
+		len -= .48;
+		len /= 0.02;
+		COLOR.a = 1.0 - len;
+	} else if (len > .5) {
 		discard;
 	}
 }

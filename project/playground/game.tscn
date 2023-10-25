@@ -30,7 +30,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
-shader_parameter/upper_limit = 0.33
+shader_parameter/upper_limit = 0.17
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_btaxr"]
 shader = ExtResource("4_pp7uv")
@@ -526,10 +526,10 @@ stretch = true
 disable_3d = true
 transparent_bg = true
 handle_input_locally = false
-snap_2d_transforms_to_pixel = true
-snap_2d_vertices_to_pixel = true
-msaa_2d = 1
+gui_snap_controls_to_pixels = false
 size = Vector2i(2, 2)
+size_2d_override = Vector2i(870, 756)
+size_2d_override_stretch = true
 render_target_update_mode = 0
 
 [node name="Credits" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneCredits/ViewportCredits" instance=ExtResource("7_8w0xl")]
