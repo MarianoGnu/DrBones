@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://duk75biqtqgu6"]
+[gd_scene load_steps=8 format=3 uid="uid://duk75biqtqgu6"]
 
 [ext_resource type="Script" path="res://playground/Puzzle/workbench.gd" id="1_p44sg"]
 [ext_resource type="Texture2D" uid="uid://b8acoh6w3yjpj" path="res://playground/RPG_Icons_Pack_OwlishMedia/hand.png" id="2_0pw1s"]
 [ext_resource type="Texture2D" uid="uid://di6bod8521pp6" path="res://playground/Icons/Square-X-Cross-00.png" id="2_qs7kb"]
 [ext_resource type="Texture2D" uid="uid://hi14lkyqyiwx" path="res://playground/RPG_Icons_Pack_OwlishMedia/potion2.png" id="3_uqp7l"]
 [ext_resource type="Texture2D" uid="uid://cqfghg1efqy78" path="res://playground/RPG_Icons_Pack_OwlishMedia/water.png" id="4_8rtvb"]
-[ext_resource type="PackedScene" uid="uid://ba5shpahw1uhw" path="res://playground/Puzzle/puzzle.tscn" id="5_h84k0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kl4bv"]
 
@@ -109,7 +108,3 @@ theme_type_variation = &"MainPanel"
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"ScenePanel"
-
-[node name="SamplePuzzle" parent="MarginContainer/HBoxContainer/PanelContainer2/PuzzleContainer" instance=ExtResource("5_h84k0")]
-unique_name_in_owner = true
-layout_mode = 2

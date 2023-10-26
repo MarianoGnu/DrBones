@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dky2oegqvmp5m"
+path="res://.godot/imported/Dr. Bones - Menu.ogg-0cfee53d7ef7c39cf491cb59866edc38.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/Dr. Bones - Menu.ogg"
+dest_files=["res://.godot/imported/Dr. Bones - Menu.ogg-0cfee53d7ef7c39cf491cb59866edc38.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

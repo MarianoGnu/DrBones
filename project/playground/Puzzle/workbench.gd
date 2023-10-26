@@ -25,13 +25,7 @@ func _notification(what: int) -> void:
 		tool_button_group.pressed.connect(_on_tool_button_group_pressed)
 
 func _ready() -> void:
-	# FIXME: for testing reasons we are using a sample puzzle on ready
-	# remove this when the workbench is ready for use
-	var sample_puzzle: Puzzle = %SamplePuzzle
-	_puzzle_container.remove_child(sample_puzzle)
-#	load_puzzle(sample_puzzle)
 	hide()
-	Audio.play_game_bgm()
 
 func is_occupied() -> bool:
 	return _puzzle != null
