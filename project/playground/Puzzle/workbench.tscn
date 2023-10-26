@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://playground/Puzzle/workbench.gd" id="1_p44sg"]
 [ext_resource type="Texture2D" uid="uid://b8acoh6w3yjpj" path="res://playground/RPG_Icons_Pack_OwlishMedia/hand.png" id="2_0pw1s"]
 [ext_resource type="Texture2D" uid="uid://di6bod8521pp6" path="res://playground/Icons/Square-X-Cross-00.png" id="2_qs7kb"]
-[ext_resource type="Texture2D" uid="uid://hi14lkyqyiwx" path="res://playground/RPG_Icons_Pack_OwlishMedia/potion2.png" id="3_uqp7l"]
-[ext_resource type="Texture2D" uid="uid://cqfghg1efqy78" path="res://playground/RPG_Icons_Pack_OwlishMedia/water.png" id="4_8rtvb"]
+[ext_resource type="Texture2D" uid="uid://c7yykeeaav8ti" path="res://playground/Puzzle/Glue.png" id="4_3syhk"]
+[ext_resource type="Texture2D" uid="uid://btuieuir66m2x" path="res://playground/Puzzle/Clean.png" id="5_1o7cc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kl4bv"]
 
@@ -84,7 +84,7 @@ size_flags_horizontal = 4
 theme_type_variation = &"ToolBoxButton"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_0vfmh")
-icon = ExtResource("3_uqp7l")
+icon = ExtResource("4_3syhk")
 icon_alignment = 1
 
 [node name="ToolButtonClean" type="Button" parent="MarginContainer/HBoxContainer/PanelContainer3/PanelContainer2/VBoxContainer"]
@@ -95,7 +95,7 @@ size_flags_horizontal = 4
 theme_type_variation = &"ToolBoxButton"
 toggle_mode = true
 button_group = SubResource("ButtonGroup_0vfmh")
-icon = ExtResource("4_8rtvb")
+icon = ExtResource("5_1o7cc")
 icon_alignment = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer"]

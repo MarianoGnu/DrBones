@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1flf7mf4h0em"
-path="res://.godot/imported/temp_workbench.png-7260104da3188b86ede3fe3098eda195.ctex"
+uid="uid://btuieuir66m2x"
+path="res://.godot/imported/Clean.png-60ca6eee0f4c8600b5e97275838ea79c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://door_locations/workbench/temp_workbench.png"
-dest_files=["res://.godot/imported/temp_workbench.png-7260104da3188b86ede3fe3098eda195.ctex"]
+source_file="res://playground/Puzzle/Clean.png"
+dest_files=["res://.godot/imported/Clean.png-60ca6eee0f4c8600b5e97275838ea79c.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=0
+process/size_limit=96
 detect_3d/compress_to=1
