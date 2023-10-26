@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_4bl43"]
 [ext_resource type="PackedScene" uid="uid://c5ybef1cfpp4v" path="res://door_locations/cementery/cementery.tscn" id="4_bt801"]
 [ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="4_pp7uv"]
-[ext_resource type="PackedScene" uid="uid://wu0j02jevtvo" path="res://door_locations/workbench/workbench.tscn" id="5_okhck"]
+[ext_resource type="PackedScene" uid="uid://wu0j02jevtvo" path="res://door_locations/workbench/workbench_location.tscn" id="5_okhck"]
 [ext_resource type="Texture2D" uid="uid://b03wiqsp1dgf3" path="res://playground/Fondo Assets/Puerta.PNG" id="5_q7oli"]
 [ext_resource type="Texture2D" uid="uid://4p5bu8ebblcn" path="res://playground/Fondo Assets/Marco de puerta.PNG" id="6_tbcva"]
 [ext_resource type="PackedScene" uid="uid://c58c0oo4h85xa" path="res://door_locations/warehouse/warehouse.tscn" id="6_u1l83"]
@@ -25,8 +25,8 @@
 [ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="19_eos6w"]
 [ext_resource type="AudioStream" uid="uid://2mek1rrrbtpt" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 2.wav" id="20_gnyuh"]
 [ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="21_hvrsn"]
-[ext_resource type="Texture2D" uid="uid://myu2tku5m5mb" path="res://bones/broken/complete/Brazo.PNG" id="22_pjvm1"]
-[ext_resource type="PackedScene" uid="uid://duk75biqtqgu6" path="res://playground/Puzzle/workbench.tscn" id="23_eikue"]
+[ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="26_16s2m"]
+[ext_resource type="PackedScene" uid="uid://ba5shpahw1uhw" path="res://playground/Puzzle/puzzle.tscn" id="27_hif5u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -483,22 +483,9 @@ render_target_update_mode = 4
 
 [node name="Cementery" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneCementery/ViewportCementery" instance=ExtResource("4_bt801")]
 
-[node name="SubSceneWorkbench" type="SubViewportContainer" parent="Floor/Walls/FondoPuerta/SceneSelector"]
+[node name="WorkbenchLocation" parent="Floor/Walls/FondoPuerta/SceneSelector" instance=ExtResource("5_okhck")]
 visible = false
 layout_mode = 2
-stretch = true
-
-[node name="ViewportWorkbench" type="SubViewport" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneWorkbench"]
-disable_3d = true
-transparent_bg = true
-handle_input_locally = false
-msaa_2d = 1
-size = Vector2i(2, 2)
-size_2d_override = Vector2i(870, 756)
-size_2d_override_stretch = true
-render_target_update_mode = 0
-
-[node name="Workbench" parent="Floor/Walls/FondoPuerta/SceneSelector/SubSceneWorkbench/ViewportWorkbench" instance=ExtResource("5_okhck")]
 
 [node name="SubSceneWarehouse" type="SubViewportContainer" parent="Floor/Walls/FondoPuerta/SceneSelector"]
 visible = false
@@ -657,7 +644,7 @@ icon = SubResource("AtlasTexture_80wl2")
 flat = true
 icon_alignment = 1
 script = ExtResource("10_i2uhd")
-door_sub_scene = NodePath("../../../../../../SceneSelector/SubSceneWorkbench")
+door_sub_scene = NodePath("../../../../../../SceneSelector/WorkbenchLocation")
 
 [node name="Sign3" type="PathFollow2D" parent="Floor/Walls/FondoPuerta/MarcoDePuerta/MarcoSelector/Path2D"]
 position = Vector2(1251.39, 163.256)
@@ -859,15 +846,57 @@ expand_mode = 1
 stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Brazo" type="Sprite2D" parent="Floor/Walls/Table"]
-position = Vector2(161.63, 65.9953)
-scale = Vector2(0.050303, 0.050303)
-texture = ExtResource("22_pjvm1")
+[node name="HBoxContainer" type="HBoxContainer" parent="Floor/Walls/Table"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 20.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="InventorySlot" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
 
-[node name="Workbench" parent="CanvasLayer" instance=ExtResource("23_eikue")]
-visible = false
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview/SubViewport" index="0" instance=ExtResource("27_hif5u")]
+
+[node name="InventorySlot2" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot7/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot7/SlotPreview/SubViewport" index="0" instance=ExtResource("27_hif5u")]
+
+[node name="InventorySlot8" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
+layout_mode = 2
 
 [node name="Icons" type="Sprite2D" parent="."]
 visible = false
@@ -926,3 +955,6 @@ offset_right = 46.0
 offset_bottom = -120.0
 text = "⌛0:30"
 metadata/_edit_use_anchors_ = true
+
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot"]
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot7"]

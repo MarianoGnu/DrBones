@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://byt7rccdiyytl"]
+
+[ext_resource type="Script" path="res://playground/inventory_slot/inventory_slot.gd" id="1_0ilny"]
+
+[node name="InventorySlot" type="Panel"]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0ilny")
+
+[node name="SlotPreview" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SlotPreview"]
+transparent_bg = true
+handle_input_locally = false
+gui_disable_input = true
+size = Vector2i(100, 40)
+size_2d_override = Vector2i(500, 390)
+size_2d_override_stretch = true
+render_target_update_mode = 1

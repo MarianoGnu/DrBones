@@ -1,6 +1,6 @@
 extends Button
 
-@export var door_sub_scene: SubViewportContainer
+@export var door_sub_scene: Control
 
 @onready var path_follow: PathFollow2D = $"../.."
 @onready var selector: PathFollow2D = %Selector

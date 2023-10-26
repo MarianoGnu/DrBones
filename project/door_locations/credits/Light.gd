@@ -8,4 +8,5 @@ func _ready() -> void:
 		set_process(false)
 
 func _process(_delta: float) -> void:
-	global_position = get_viewport().get_mouse_position()
+	if get_viewport().get_parent().is_visible_in_tree():
+		global_position = get_viewport().get_mouse_position()

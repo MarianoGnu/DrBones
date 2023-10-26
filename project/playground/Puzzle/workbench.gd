@@ -1,4 +1,4 @@
-extends CenterContainer
+class_name WorkbenchGame extends CenterContainer
 
 var _exit_button: Button
 var _puzzle_container: PanelContainer
@@ -29,17 +29,27 @@ func _ready() -> void:
 	# remove this when the workbench is ready for use
 	var sample_puzzle: Puzzle = %SamplePuzzle
 	_puzzle_container.remove_child(sample_puzzle)
-	load_puzzle(sample_puzzle)
-#	show()
+#	load_puzzle(sample_puzzle)
 	hide()
 	Audio.play_game_bgm()
 
+func is_occupied() -> bool:
+	return _puzzle != null
+
 func load_puzzle(new_puzzle: Puzzle) -> void:
-	assert(new_puzzle != null and not new_puzzle.is_inside_tree())
+	assert(new_puzzle != null)
+	if new_puzzle.is_inside_tree():
+		new_puzzle.get_parent().remove_child(new_puzzle)
 	if _puzzle:
 		_puzzle.queue_free()
 	_puzzle = new_puzzle
 	_puzzle_container.add_child(new_puzzle)
+	show()
+
+func take_puzzle() -> Puzzle:
+	_puzzle_container.remove_child(_puzzle)
+	set_deferred(&"_puzzle", null)
+	return _puzzle
 
 func _on_exit_button_pressed():
 	hide()
