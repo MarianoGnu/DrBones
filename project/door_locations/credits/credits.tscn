@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cayvr1042skt8"]
+[gd_scene load_steps=49 format=3 uid="uid://cayvr1042skt8"]
 
 [ext_resource type="Script" path="res://door_locations/credits/credits.gd" id="1_4xa6b"]
 [ext_resource type="PackedScene" uid="uid://7a7shvd5y5mf" path="res://door_locations/credits/networks_icons/networks.tscn" id="1_jxm3s"]
@@ -59,6 +59,18 @@ script = ExtResource("5_f4ls1")
 icon = ExtResource("4_svibn")
 description = "angelinaperotti-art.net"
 hyperlink = "https://angelinaperotti-art.net/"
+
+[sub_resource type="Resource" id="Resource_t2sex"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("18_mwx8u")
+description = "ForeverZeroDragon"
+hyperlink = "https://linktr.ee/ForeverZeroDragon"
+
+[sub_resource type="Resource" id="Resource_jwi1p"]
+script = ExtResource("5_f4ls1")
+icon = ExtResource("6_oi8q3")
+description = "foreverzerodragon"
+hyperlink = "https://www.instagram.com/foreverzerodragon/?hl=en"
 
 [sub_resource type="Resource" id="Resource_2jgxn"]
 script = ExtResource("5_f4ls1")
@@ -254,6 +266,7 @@ layout_mode = 2
 avatar_texture = ExtResource("9_bip6s")
 discord_name = "Seba (FoverZeroDragon)"
 discord_color = Color(0.678431, 0.0784314, 0.294118, 1)
+networks = Array[ExtResource("5_f4ls1")]([SubResource("Resource_t2sex"), SubResource("Resource_jwi1p")])
 roles = Array[Resource("res://door_locations/credits/roles/role.gd")]([ExtResource("4_bls7a")])
 
 [node name="Mariano" parent="Credits/ColorRect/VBoxContainer2/ParticipantsContainer" instance=ExtResource("2_ju0nt")]
