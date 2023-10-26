@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ck1sm7gf0vlxd"
+path="res://.godot/imported/Dungeon Door LockUnlock.ogg-e3be98e72e5763fef5e0129ea158906a.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sfx/Dungeon Door LockUnlock.ogg"
+dest_files=["res://.godot/imported/Dungeon Door LockUnlock.ogg-e3be98e72e5763fef5e0129ea158906a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

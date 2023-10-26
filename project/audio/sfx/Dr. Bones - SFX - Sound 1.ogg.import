@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://xqq4ueakw58o"
+path="res://.godot/imported/Dr. Bones - SFX - Sound 1.ogg-bfa0d686c8c8bb4e03442ef094e0d69a.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/sfx/Dr. Bones - SFX - Sound 1.ogg"
+dest_files=["res://.godot/imported/Dr. Bones - SFX - Sound 1.ogg-bfa0d686c8c8bb4e03442ef094e0d69a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
