@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=54 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
@@ -13,7 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dx5auppo5i70b" path="res://playground/Fondo Assets/Marco Selector.PNG" id="7_mct22"]
 [ext_resource type="Texture2D" uid="uid://0smyq1g3yb30" path="res://playground/Fondo Assets/Placa.PNG" id="8_8yelm"]
 [ext_resource type="Texture2D" uid="uid://c4usl5myysekf" path="res://playground/Icons/Icons.png" id="9_733wu"]
+[ext_resource type="AudioStream" uid="uid://c8ra18em05sds" path="res://audio/sfx/Dungeon Door Close.ogg" id="10_6caln"]
 [ext_resource type="Script" path="res://playground/sign_button.gd" id="10_i2uhd"]
+[ext_resource type="AudioStream" uid="uid://h8grfq1fnxke" path="res://audio/sfx/Dungeon Door Open.ogg" id="11_7lcqb"]
 [ext_resource type="Script" path="res://playground/selector.gd" id="11_v7vsb"]
 [ext_resource type="Texture2D" uid="uid://bbdpjroaqswhd" path="res://playground/Fondo Assets/Pua Selectora.PNG" id="12_oi3a7"]
 [ext_resource type="AudioStream" uid="uid://bj8h5is04et87" path="res://audio/sfx/Dr. Bones - SFX - Switch Selector.wav" id="13_dv0l8"]
@@ -90,7 +92,6 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_nmnm7"]
 resource_name = "close"
-length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -99,7 +100,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(0.366021),
 "update": 2,
 "values": [Vector2(1, 1)]
 }
@@ -111,7 +112,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(0.366021),
 "update": 2,
 "values": [Vector2(-1, 1)]
 }
@@ -123,7 +124,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(0.366021),
 "update": 2,
 "values": [0.17]
 }
@@ -135,14 +136,29 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(0.366021),
 "update": 2,
 "values": [0.17]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%DoorAnimationPlayer/AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_6caln")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ri6xv"]
 resource_name = "open"
-length = 0.3
+length = 1.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -150,8 +166,8 @@ tracks/0/path = NodePath("PuertaL:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(0.366021),
 "update": 2,
 "values": [Vector2(0.001, 1)]
 }
@@ -162,8 +178,8 @@ tracks/1/path = NodePath("PuertaR:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(0.366021),
 "update": 2,
 "values": [Vector2(-0.001, 1)]
 }
@@ -174,8 +190,8 @@ tracks/2/path = NodePath("PuertaL:material:shader_parameter/upper_limit")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0.366021),
 "update": 0,
 "values": [0.17, 0.33]
 }
@@ -186,11 +202,26 @@ tracks/3/path = NodePath("PuertaR:material:shader_parameter/upper_limit")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0.366021),
 "update": 0,
 "values": [0.17, 0.33]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%DoorAnimationPlayer/AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_7lcqb")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s0rkj"]
 _data = {
@@ -549,6 +580,8 @@ autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_s0rkj")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Floor/Walls/FondoPuerta/DoorAnimationPlayer"]
 
 [node name="MarcoDePuerta" type="TextureRect" parent="Floor/Walls/FondoPuerta"]
 layout_mode = 1
