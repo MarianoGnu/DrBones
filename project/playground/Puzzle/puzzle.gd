@@ -9,7 +9,7 @@ enum {
 
 const _DEBUG_PRINTS_AND_DRAW_ENABLED: bool = false
 
-@export var parts: Array[PuzzlePart] = []
+var parts: Array[PuzzlePart] = []
 var tool: int = TOOL_MOVE:
 	set(t):
 		assert(t >= 0 and t < TOOL_COUNT, "Invalid tool id %d" % t)
@@ -26,7 +26,12 @@ var _drag_acum: Vector2
 var _drag_part_start_pos: Vector2
 var _drag_part_start_rect: Rect2
 
-func _ready() -> void:
+func _notification(what: int) -> void:
+	if what != NOTIFICATION_SCENE_INSTANTIATED:
+		return
+	for child in get_children():
+		if child is PuzzlePart:
+			parts.push_back(child)
 	for part in parts:
 		for child in part.get_children():
 			if child is PuzzleMousePick:

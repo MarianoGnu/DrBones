@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=52 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="21_hvrsn"]
 [ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="26_16s2m"]
 [ext_resource type="PackedScene" uid="uid://ba5shpahw1uhw" path="res://playground/Puzzle/puzzle.tscn" id="27_hif5u"]
+[ext_resource type="PackedScene" uid="uid://dhdu4so571o30" path="res://bones/puzzles/arm/arm_puzzle.tscn" id="28_7rs2y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -887,7 +888,7 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot7/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot7/SlotPreview/SubViewport" index="0" instance=ExtResource("27_hif5u")]
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot7/SlotPreview/SubViewport" index="0" instance=ExtResource("28_7rs2y")]
 
 [node name="InventorySlot8" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2

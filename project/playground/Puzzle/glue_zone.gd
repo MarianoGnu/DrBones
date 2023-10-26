@@ -42,6 +42,8 @@ func _set_match_id(id) -> void:
 	match_id = id
 	collision_layer = 1 << (id - 1)
 	collision_mask = 1 << (id - 1)
+	if Engine.is_editor_hint():
+		name = "GlueZone%d" % id
 
 func _set_is_glued(glued: bool) -> void:
 	is_glued = glued
@@ -53,10 +55,6 @@ func _set_is_glued(glued: bool) -> void:
 				# Glue zone is a child of a root part, we can skip it
 				continue
 			part.glued_root = get_parent()
-			var glue := RemoteTransform2D.new()
-			glue.name = "Glue_" + part.name
-			add_child(glue)
-			glue.remote_path = part.get_path()
 		is_clean = false
 	elif not is_glued:
 		for part in _joint_parts:

@@ -8,6 +8,8 @@ func _set_match_id(id) -> void:
 	match_id = id
 	collision_layer = 1 << (id - 1)
 	collision_mask = 1 << (id - 1)
+	if Engine.is_editor_hint():
+		name = "Joint%d" % id
 
 func is_joint_connected() -> bool:
 	var candidates: Array[Area2D] = get_overlapping_areas()

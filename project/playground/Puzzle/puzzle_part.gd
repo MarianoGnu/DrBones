@@ -1,21 +1,32 @@
-class_name PuzzlePart extends MeshInstance2D
+class_name PuzzlePart extends Node2D
 
+var mesh_instance: MeshInstance2D
 var glued_root: PuzzlePart = self:
 	get = get_glued_root
 var _rect: Rect2
 
 
 func _ready() -> void:
-	var array_mesh = mesh as ArrayMesh
+	var mesh_is_self: bool = true
+	if (self as Node2D) is MeshInstance2D:
+		mesh_instance = self as Node2D
+	else:
+		assert(get_child(0) is MeshInstance2D)
+		mesh_instance = get_child(0)
+		mesh_is_self = false
+	var array_mesh = mesh_instance.mesh as ArrayMesh
 	if (array_mesh == null):
 		push_error("Can't construct Rect2 of invalid ArrayMesh " + name)
 		return
 	for surface_idx in range(array_mesh.get_surface_count()):
 		for point in array_mesh.surface_get_arrays(surface_idx)[ArrayMesh.ARRAY_VERTEX]:
+			point = point * mesh_instance.global_scale
 			if _rect.position == Vector2.ZERO:
 				_rect.position = Vector2(point.x, point.y)
 			else:
 				_rect = _rect.expand(Vector2(point.x, point.y))
+	if not mesh_is_self:
+		_rect.position += mesh_instance.position
 
 func get_rect():
 	var local_rect: Rect2 = _rect

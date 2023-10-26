@@ -102,7 +102,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray(0, 0, 154, 194, 160, 153, 201, 65, 0, 0, 154, 194, 96, 102, 218, 65, 0, 0, 104, 194, 48, 51, 85, 66, 0, 0, 104, 194, 208, 204, 96, 66, 0, 0, 184, 194, 104, 102, 146, 66, 0, 0, 184, 194, 104, 102, 156, 66, 204, 204, 200, 194, 0, 0, 228, 66, 0, 0, 215, 194, 0, 0, 228, 66, 0, 0, 4, 195, 104, 102, 200, 66, 0, 0, 4, 195, 204, 204, 197, 66, 0, 0, 21, 195, 204, 204, 167, 66, 0, 0, 21, 195, 104, 102, 163, 66, 0, 0, 30, 195, 104, 102, 141, 66, 0, 0, 30, 195, 0, 0, 134, 66, 51, 51, 31, 195, 0, 0, 84, 66, 0, 128, 29, 195, 0, 0, 84, 66, 0, 128, 25, 195, 0, 0, 28, 66, 0, 0, 24, 195, 0, 0, 28, 66, 0, 0, 14, 195, 0, 0, 208, 65, 154, 25, 10, 195, 0, 0, 208, 65, 0, 0, 210, 194, 208, 204, 192, 65, 0, 0, 210, 194, 96, 102, 182, 65)
 }]
 
-[node name="Puzzle" type="Control" node_paths=PackedStringArray("parts")]
+[node name="Puzzle" type="Control"]
 material = SubResource("ShaderMaterial_jmepx")
 custom_minimum_size = Vector2(500, 390)
 layout_mode = 3
@@ -110,7 +110,6 @@ anchors_preset = 0
 offset_right = 500.0
 offset_bottom = 390.0
 script = ExtResource("2_qu34q")
-parts = [NodePath("Part1"), NodePath("Part2"), NodePath("Part3"), NodePath("Part4"), NodePath("Part5")]
 
 [node name="Complete" type="MeshInstance2D" parent="."]
 visible = false

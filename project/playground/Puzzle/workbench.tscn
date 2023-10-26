@@ -58,7 +58,7 @@ theme_type_variation = &"MainPanel"
 
 [node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer3"]
 layout_mode = 2
-theme_type_variation = &"ScenePanel"
+theme_type_variation = &"PanelLight"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/PanelContainer3/PanelContainer2"]
 layout_mode = 2
@@ -108,7 +108,7 @@ theme_type_variation = &"MainPanel"
 [node name="PuzzleContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer/PanelContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_type_variation = &"PanelLight"
+theme_type_variation = &"ScenePanel"
 
 [node name="SamplePuzzle" parent="MarginContainer/HBoxContainer/PanelContainer2/PuzzleContainer" instance=ExtResource("5_h84k0")]
 unique_name_in_owner = true
