@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=62 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
@@ -28,11 +28,16 @@
 [ext_resource type="AudioStream" uid="uid://2mek1rrrbtpt" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 2.wav" id="20_gnyuh"]
 [ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="21_hvrsn"]
 [ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="26_16s2m"]
-[ext_resource type="PackedScene" uid="uid://ba5shpahw1uhw" path="res://playground/Puzzle/puzzle.tscn" id="27_hif5u"]
 [ext_resource type="PackedScene" uid="uid://dhdu4so571o30" path="res://bones/puzzles/arm/arm_puzzle.tscn" id="28_7rs2y"]
+[ext_resource type="PackedScene" uid="uid://bidn52d4v2oau" path="res://bones/puzzles/rare/hat_puzzle.tscn" id="29_4umwg"]
 [ext_resource type="PackedScene" uid="uid://cttcnap64p0ue" path="res://bones/puzzles/femur/femur_puzzle.tscn" id="30_gu0w4"]
 [ext_resource type="PackedScene" uid="uid://4hu685t688h3" path="res://bones/puzzles/hand/hand_puzzle.tscn" id="30_kfs04"]
+[ext_resource type="PackedScene" uid="uid://c668jdgenff8f" path="res://bones/puzzles/rare/mask_puzzle.tscn" id="30_mhdm5"]
+[ext_resource type="PackedScene" uid="uid://ru7kv72vy53" path="res://bones/puzzles/rare/tie_puzzle.tscn" id="32_fjtes"]
 [ext_resource type="PackedScene" uid="uid://bdv8cew7e5dgl" path="res://bones/puzzles/pelvis/pelvis_puzzle.tscn" id="33_6niw3"]
+[ext_resource type="PackedScene" uid="uid://cmjvqd877ijw5" path="res://bones/puzzles/rare/ribbon_puzzle.tscn" id="34_4vlak"]
+[ext_resource type="PackedScene" uid="uid://d3nnoncy5qxwo" path="res://bones/puzzles/rare/wig_puzzle.tscn" id="36_8x2q6"]
+[ext_resource type="PackedScene" uid="uid://chyrlr36jq8nw" path="res://bones/puzzles/rare/trumpet_puzzle.tscn" id="38_8oxyh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -888,10 +893,15 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview/SubViewport" index="0" instance=ExtResource("27_hif5u")]
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview/SubViewport" index="0" instance=ExtResource("29_4umwg")]
 
 [node name="InventorySlot2" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
+
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot2/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot2/SlotPreview/SubViewport" index="0" instance=ExtResource("30_mhdm5")]
 
 [node name="InventorySlot3" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
@@ -904,6 +914,11 @@ size = Vector2i(100, 93)
 [node name="InventorySlot4" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot4/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot4/SlotPreview/SubViewport" index="0" instance=ExtResource("32_fjtes")]
+
 [node name="InventorySlot5" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
@@ -914,6 +929,11 @@ size = Vector2i(100, 93)
 
 [node name="InventorySlot6" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
+
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot6/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot6/SlotPreview/SubViewport" index="0" instance=ExtResource("34_4vlak")]
 
 [node name="InventorySlot7" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
@@ -926,6 +946,11 @@ size = Vector2i(100, 93)
 [node name="InventorySlot8" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot8/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot8/SlotPreview/SubViewport" index="0" instance=ExtResource("36_8x2q6")]
+
 [node name="InventorySlot9" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
@@ -936,6 +961,11 @@ size = Vector2i(100, 93)
 
 [node name="InventorySlot10" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
+
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot10/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot10/SlotPreview/SubViewport" index="0" instance=ExtResource("38_8oxyh")]
 
 [node name="Icons" type="Sprite2D" parent="."]
 visible = false
@@ -996,7 +1026,12 @@ text = "⌛0:30"
 metadata/_edit_use_anchors_ = true
 
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot"]
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot2"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot3"]
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot4"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot5"]
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot6"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot7"]
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot8"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot9"]
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot10"]
