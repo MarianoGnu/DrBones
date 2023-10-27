@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=3 uid="uid://deed46jkgfql4"]
+
+[ext_resource type="Shader" path="res://playground/Puzzle/puzzle_part.gdshader" id="1_2yrts"]
+[ext_resource type="Script" path="res://playground/Puzzle/puzzle.gd" id="2_p34x4"]
+[ext_resource type="Script" path="res://playground/Puzzle/joint.gd" id="3_a6ovo"]
+[ext_resource type="Script" path="res://playground/Puzzle/glue_zone.gd" id="4_tj5to"]
+[ext_resource type="Script" path="res://playground/Puzzle/puzzle_part.gd" id="5_3i3cq"]
+[ext_resource type="Script" path="res://playground/Puzzle/mouse_pick.gd" id="6_leux6"]
+[ext_resource type="Texture2D" uid="uid://cej63q3bhd4uc" path="res://bones/broken/complete/Mano.PNG" id="7_aa4bi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmepx"]
+shader = ExtResource("1_2yrts")
+shader_parameter/Smooth = true
+shader_parameter/on = true
+shader_parameter/width = 15.188
+shader_parameter/outline_color = Color(0.215686, 0.109804, 0.0470588, 1)
+shader_parameter/pixel_size = 4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vy7t"]
+radius = 5.09902
+
+[node name="Puzzle" type="Control"]
+material = SubResource("ShaderMaterial_jmepx")
+custom_minimum_size = Vector2(500, 390)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 500.0
+offset_bottom = 390.0
+script = ExtResource("2_p34x4")
+metadata/_edit_lock_ = true
+
+[node name="Joint5" type="Area2D" parent="."]
+position = Vector2(134, 311)
+collision_layer = 16
+collision_mask = 16
+input_pickable = false
+script = ExtResource("3_a6ovo")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Joint5"]
+shape = SubResource("CircleShape2D_0vy7t")
+
+[node name="GlueZone5" type="Area2D" parent="."]
+position = Vector2(204, 194)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("4_tj5to")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GlueZone5"]
+
+[node name="Part1" type="Node2D" parent="."]
+position = Vector2(226, 194)
+script = ExtResource("5_3i3cq")
+metadata/_edit_lock_ = true
+
+[node name="MousePick" type="Area2D" parent="Part1"]
+script = ExtResource("6_leux6")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part1/MousePick"]
+metadata/_edit_lock_ = true
+
+[node name="Part2" type="Node2D" parent="."]
+position = Vector2(226, 194)
+script = ExtResource("5_3i3cq")
+metadata/_edit_lock_ = true
+
+[node name="MousePick" type="Area2D" parent="Part2"]
+script = ExtResource("6_leux6")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part2/MousePick"]
+metadata/_edit_lock_ = true
+
+[node name="Part3" type="Node2D" parent="."]
+position = Vector2(226, 194)
+script = ExtResource("5_3i3cq")
+metadata/_edit_lock_ = true
+
+[node name="MousePick" type="Area2D" parent="Part3"]
+script = ExtResource("6_leux6")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part3/MousePick"]
+metadata/_edit_lock_ = true
+
+[node name="Part4" type="Node2D" parent="."]
+position = Vector2(226, 194)
+script = ExtResource("5_3i3cq")
+metadata/_edit_lock_ = true
+
+[node name="MousePick" type="Area2D" parent="Part4"]
+script = ExtResource("6_leux6")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Part4/MousePick"]
+metadata/_edit_lock_ = true
+
+[node name="Complete" type="Sprite2D" parent="."]
+self_modulate = Color(0.352941, 0.352941, 1, 0.4)
+position = Vector2(226, 194)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("7_aa4bi")
+metadata/_edit_lock_ = true
