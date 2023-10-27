@@ -110,7 +110,7 @@ func get_parts_with_match_id(p_match_id: int) -> Array[PuzzlePart]:
 				matching_parts.push_back(part)
 				break
 	assert(matching_parts.size() >= 2, "Unexpected size of collection, there should be at least " +
-			"2 parts with the same ID in order to glue them")
+			"2 parts with the same ID %d in order to glue them" % p_match_id)
 	return matching_parts
 
 func get_parts_glued_to(p_glue_root) -> Array[PuzzlePart]:

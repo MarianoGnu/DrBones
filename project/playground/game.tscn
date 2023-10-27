@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=57 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
@@ -32,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://dhdu4so571o30" path="res://bones/puzzles/arm/arm_puzzle.tscn" id="28_7rs2y"]
 [ext_resource type="PackedScene" uid="uid://cttcnap64p0ue" path="res://bones/puzzles/femur/femur_puzzle.tscn" id="30_gu0w4"]
 [ext_resource type="PackedScene" uid="uid://4hu685t688h3" path="res://bones/puzzles/hand/hand_puzzle.tscn" id="30_kfs04"]
+[ext_resource type="PackedScene" uid="uid://bdv8cew7e5dgl" path="res://bones/puzzles/pelvis/pelvis_puzzle.tscn" id="33_6niw3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -928,6 +929,11 @@ layout_mode = 2
 [node name="InventorySlot9" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
+[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot9/SlotPreview" index="0"]
+size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot9/SlotPreview/SubViewport" index="0" instance=ExtResource("33_6niw3")]
+
 [node name="InventorySlot10" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
@@ -993,3 +999,4 @@ metadata/_edit_use_anchors_ = true
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot3"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot5"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot7"]
+[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot9"]
