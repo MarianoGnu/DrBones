@@ -2,7 +2,8 @@ class_name PuzzlePart extends Node2D
 
 var mesh_instance: MeshInstance2D
 var glued_root: PuzzlePart = self:
-	get = get_glued_root
+	get = get_glued_root,
+	set = set_glued_root
 var _rect: Rect2
 
 
@@ -11,7 +12,7 @@ func _ready() -> void:
 	if (self as Node2D) is MeshInstance2D:
 		mesh_instance = self as Node2D
 	else:
-		assert(get_child(0) is MeshInstance2D)
+		assert(get_child(0) is MeshInstance2D, "Invalid child 0 of part %s at %s" % [name, owner.scene_file_path])
 		mesh_instance = get_child(0)
 		mesh_is_self = false
 	var array_mesh = mesh_instance.mesh as ArrayMesh
@@ -71,3 +72,12 @@ func get_glued_root() -> PuzzlePart:
 	if glued_root == self:
 		return self
 	return glued_root.get_glued_root()
+
+func set_glued_root(p_root: PuzzlePart):
+	var prev_root: PuzzlePart = glued_root
+	if p_root == prev_root:
+		return
+	glued_root = p_root
+	if prev_root != self and prev_root != p_root:
+		prev_root.glued_root = p_root
+	

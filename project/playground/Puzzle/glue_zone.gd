@@ -51,10 +51,7 @@ func _set_is_glued(glued: bool) -> void:
 		return
 	if is_glued:
 		for part in _joint_parts:
-			if part == get_parent():
-				# Glue zone is a child of a root part, we can skip it
-				continue
-			part.glued_root = get_parent()
+			part.glued_root = get_parent().glued_root
 		is_clean = false
 	elif not is_glued:
 		for part in _joint_parts:
@@ -62,7 +59,7 @@ func _set_is_glued(glued: bool) -> void:
 				# Glue zone is a child of a root part
 				continue
 			# drag and drop root becomes itself
-			part.glued_root = part 
+			part.glued_root = part
 		is_clean = true
 
 func _set_is_clean(clean: bool) -> void:
