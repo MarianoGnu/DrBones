@@ -41,6 +41,9 @@ func _notification(what: int) -> void:
 				child.mouse_entered.connect(_on_glue_zone_mouse_entered.bind(child))
 				child.mouse_exited.connect(_on_glue_zone_mouse_exited.bind(child))
 
+func _ready() -> void:
+	shuffle()
+
 func _gui_input(event: InputEvent) -> void:
 	match tool:
 		TOOL_MOVE:
@@ -119,6 +122,31 @@ func get_parts_glued_to(p_glue_root) -> Array[PuzzlePart]:
 		if part.glued_root == p_glue_root:
 			glued_parts.append(part)
 	return glued_parts
+
+func shuffle():
+	assert(parts.size(), "This puzzle have no pieces to shuffle")
+	if parts.size() == 1:
+		# Dont shuffle rares or dirties
+		return
+	var offset_range: Vector2 = size / 2.0
+	for part in parts:
+		var offset := Vector2(
+			randf_range(-offset_range.x, offset_range.x),
+			randf_range(-offset_range.y, offset_range.y))
+		var target_position: Vector2 = part.position + offset
+		var puzzle_rect := Rect2(Vector2(), size)
+		var rect: Rect2 = part.get_rect()
+		rect.position += offset
+		if rect.position.x < puzzle_rect.position.x:
+			target_position.x += puzzle_rect.position.x - rect.position.x
+		elif rect.end.x > puzzle_rect.end.x:
+			target_position.x += puzzle_rect.end.x - rect.end.x
+		if rect.position.y < puzzle_rect.position.y:
+			target_position.y += puzzle_rect.position.y - rect.position.y
+		elif rect.end.y > puzzle_rect.end.y:
+			target_position.y += puzzle_rect.end.y - rect.end.y
+		part.position = target_position
+	queue_redraw()
 
 func _on_mouse_pick_mouse_entered(picker: PuzzleMousePick):
 	if not _hovered_mouse_pick.has(picker):
