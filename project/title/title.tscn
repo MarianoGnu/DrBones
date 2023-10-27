@@ -1,0 +1,432 @@
+[gd_scene load_steps=24 format=3 uid="uid://cpcta5p67c4i"]
+
+[ext_resource type="Texture2D" uid="uid://dl184waf3ijkk" path="res://title/scenary/Pantalla Titulo- fondo.png" id="1_4bv3y"]
+[ext_resource type="Script" path="res://title/title.gd" id="1_mfqmn"]
+[ext_resource type="Texture2D" uid="uid://dqyb11a8voy1k" path="res://title/scenary/Pantalla Titulo- Boton.png" id="2_4la22"]
+[ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="2_ehiju"]
+[ext_resource type="Texture2D" uid="uid://dvvqlrmj4aifd" path="res://title/scenary/Pantalla Titulo- Antorcha.png" id="3_i28xw"]
+[ext_resource type="Texture2D" uid="uid://c0jx4c5ude5dw" path="res://title/scenary/Pantalla Titulo- Letra.png" id="4_kklec"]
+[ext_resource type="Texture2D" uid="uid://mvc4ftm8rw2m" path="res://title/scenary/Puerta.PNG" id="6_usx48"]
+[ext_resource type="AudioStream" uid="uid://xqq4ueakw58o" path="res://audio/sfx/Dr. Bones - SFX - Sound 1.ogg" id="8_5fgmd"]
+[ext_resource type="AudioStream" uid="uid://ck1sm7gf0vlxd" path="res://audio/sfx/Dungeon Door LockUnlock.ogg" id="9_bp4yw"]
+[ext_resource type="AudioStream" uid="uid://h8grfq1fnxke" path="res://audio/sfx/Dungeon Door Open.ogg" id="10_ur13l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qfdsf"]
+shader = ExtResource("2_ehiju")
+shader_parameter/upper_limit = 0.0
+
+[sub_resource type="Animation" id="Animation_jeyof"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1, 1), Vector2(1e-05, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rsj5h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ctlbu"]
+_data = {
+"Open": SubResource("Animation_jeyof"),
+"RESET": SubResource("Animation_rsj5h")
+}
+
+[sub_resource type="Gradient" id="Gradient_o7j15"]
+offsets = PackedFloat32Array(0, 0.174224, 0.286396, 0.498807, 1)
+colors = PackedColorArray(1, 1, 1, 0.219608, 1, 1, 1, 0.458824, 1, 1, 1, 0.247059, 1, 1, 1, 0.478431, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hc6gc"]
+gradient = SubResource("Gradient_o7j15")
+fill = 1
+fill_from = Vector2(0.5, 0.517094)
+fill_to = Vector2(1, 0.521368)
+
+[sub_resource type="Animation" id="Animation_qe5st"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.41876, 4.41876)]
+}
+
+[sub_resource type="Animation" id="Animation_exn5w"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.643137), Color(1, 1, 1, 1), Color(1, 1, 1, 0.858824), Color(1, 1, 1, 0.8), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4.41876, 4.41876), Vector2(5.384, 5.384), Vector2(4.90138, 4.90138), Vector2(4.419, 4.419)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rbaw"]
+_data = {
+"RESET": SubResource("Animation_qe5st"),
+"idle": SubResource("Animation_exn5w")
+}
+
+[sub_resource type="Animation" id="Animation_x50l7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DrBones:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0666667, 0.117647, 0.192157, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Light:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:mouse_filter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pofqq"]
+resource_name = "intro"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0666667, 0.117647, 0.192157, 1), Color(0.0666667, 0.117647, 0.192157, 1), Color(0.0666667, 0.117647, 0.192157, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Light:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_p8y3l"]
+resource_name = "start_game"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DrBones:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StartAnimation/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_5fgmd")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_bp4yw")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_ur13l")
+}],
+"times": PackedFloat32Array(0, 1.3, 2.2)
+}
+tracks/1/use_blend = true
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Puerta/DoorAnim")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("RESET", "Open"),
+"times": PackedFloat32Array(0, 2.2)
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3, 4.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0666667, 0.117647, 0.192157, 0), Color(0.0666667, 0.117647, 0.192157, 0), Color(0.0666667, 0.117647, 0.192157, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Light:energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.4, 5.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjmc3"]
+_data = {
+"RESET": SubResource("Animation_x50l7"),
+"intro": SubResource("Animation_pofqq"),
+"start_game": SubResource("Animation_p8y3l")
+}
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfqmn")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.117647, 0.192157, 1)
+
+[node name="Puerta" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_qfdsf")
+layout_mode = 0
+offset_left = 923.0
+offset_top = 293.0
+offset_right = 1079.0
+offset_bottom = 606.0
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(6.10352e-05, 156.5)
+texture = ExtResource("6_usx48")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="DoorAnim" type="AnimationPlayer" parent="Puerta"]
+libraries = {
+"": SubResource("AnimationLibrary_ctlbu")
+}
+
+[node name="Fondo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4bv3y")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Boton" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4la22")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Antorcha" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i28xw")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="DrBones" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kklec")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(0.0664062, 0.117188, 0.191406, 1)
+layout_mode = 0
+anchor_left = 0.318576
+anchor_top = 0.621914
+anchor_right = 0.512153
+anchor_bottom = 0.794753
+offset_top = 3.05176e-05
+focus_mode = 0
+theme_override_font_sizes/font_size = 36
+text = "ABRIR
+TIENDA"
+flat = true
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(21.4004, 8.79998)
+scale = Vector2(5.14269, 5.14269)
+color = Color(0.690196, 0.690196, 0.690196, 1)
+metadata/_edit_lock_ = true
+
+[node name="Light" type="PointLight2D" parent="."]
+show_behind_parent = true
+position = Vector2(1030, 136)
+scale = Vector2(4.41876, 4.41876)
+range_layer_max = 1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_hc6gc")
+texture_scale = 5.1
+height = 390.0
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_1rbaw")
+}
+
+[node name="StartAnimation" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+libraries = {
+"": SubResource("AnimationLibrary_hjmc3")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StartAnimation"]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.117647, 0.192157, 0)

@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Dr Bones"
-run/main_scene="res://playground/game.tscn"
+run/main_scene="res://title/title.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://bones/normal/Cabeza Merged.PNG"
+config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
