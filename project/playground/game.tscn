@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=63 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjvqd877ijw5" path="res://bones/puzzles/rare/ribbon_puzzle.tscn" id="34_4vlak"]
 [ext_resource type="PackedScene" uid="uid://d3nnoncy5qxwo" path="res://bones/puzzles/rare/wig_puzzle.tscn" id="36_8x2q6"]
 [ext_resource type="PackedScene" uid="uid://chyrlr36jq8nw" path="res://bones/puzzles/rare/trumpet_puzzle.tscn" id="38_8oxyh"]
+[ext_resource type="PackedScene" uid="uid://bhakwd4x4d2vg" path="res://mandatorys/spuder/spuder.tscn" id="39_7rfs2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -1024,6 +1025,10 @@ offset_right = 46.0
 offset_bottom = -120.0
 text = "⌛0:30"
 metadata/_edit_use_anchors_ = true
+
+[node name="Spuder" parent="." instance=ExtResource("39_7rfs2")]
+position = Vector2(173, 286)
+scale = Vector2(0.2, 0.2)
 
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot2"]

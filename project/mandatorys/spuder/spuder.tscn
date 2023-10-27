@@ -1,0 +1,211 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhakwd4x4d2vg"]
+
+[ext_resource type="Texture2D" uid="uid://b6onnrmkabrp" path="res://mandatorys/spuder/Spuder0000.png" id="1_taq7t"]
+[ext_resource type="Texture2D" uid="uid://doba8g7xguadn" path="res://mandatorys/spuder/Spuder0001.png" id="2_hryx4"]
+[ext_resource type="Texture2D" uid="uid://bwlbj044o7a2m" path="res://mandatorys/spuder/Spuder0002.png" id="3_rtqw1"]
+[ext_resource type="Texture2D" uid="uid://cv643s8qufyw0" path="res://mandatorys/spuder/Spuder0003.png" id="4_143ni"]
+[ext_resource type="Texture2D" uid="uid://beah2un3cd8uv" path="res://mandatorys/spuder/Spuder0004.png" id="5_sibma"]
+[ext_resource type="Texture2D" uid="uid://bq3n6q8rh3t17" path="res://mandatorys/spuder/Spuder0005.png" id="6_4l1dt"]
+[ext_resource type="Texture2D" uid="uid://4c78r1joiy6m" path="res://mandatorys/spuder/Spuder0006.png" id="7_ydam1"]
+[ext_resource type="Texture2D" uid="uid://daabi5s7rksdr" path="res://mandatorys/spuder/Spuder0007.png" id="8_8ldfk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfaw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_taq7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hryx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rtqw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_143ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sibma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4l1dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ydam1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8ldfk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="Animation" id="Animation_3t24c"]
+resource_name = "climdown_and_dance"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("down:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -2845), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("down:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 3.1, 3.5, 4.1, 4.4),
+"transitions": PackedFloat32Array(1, 1, 0.353553, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -1), Vector2(1, -1), Vector2(1, 1), Vector2(1, 0.84), Vector2(1, 0.84), Vector2(1.2, 1.2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Line2D:points")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 3.7, 4),
+"transitions": PackedFloat32Array(1, 1, 0.37893, 1),
+"update": 0,
+"values": [PackedVector2Array(0, 0, 0, 0), PackedVector2Array(0, 0, 0, -2845), PackedVector2Array(0, 0, 0, -2845), PackedVector2Array(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("down:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_r0s84"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("down:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("down:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Line2D:points")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(0, 0, 0, -2845)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("down:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0ne3g"]
+_data = {
+"RESET": SubResource("Animation_r0s84"),
+"climdown_and_dance": SubResource("Animation_3t24c")
+}
+
+[node name="Spuder" type="Node2D"]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_rfaw5")
+autoplay = "default"
+frame_progress = 0.340152
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(0, -2845)
+scale = Vector2(1, -1)
+points = PackedVector2Array(0, 0, 0, -2845)
+default_color = Color(0.929412, 0.858824, 0.854902, 1)
+
+[node name="down" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="down"]
+texture = ExtResource("3_rtqw1")
+offset = Vector2(-47, -8)
+region_enabled = true
+region_rect = Rect2(31, 106, 89, 151)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="down"]
+texture = ExtResource("4_143ni")
+offset = Vector2(42, -8)
+region_enabled = true
+region_rect = Rect2(210, 106, 88, 151)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "climdown_and_dance"
+libraries = {
+"": SubResource("AnimationLibrary_0ne3g")
+}
