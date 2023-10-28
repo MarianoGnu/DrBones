@@ -1,28 +1,97 @@
-[gd_scene load_steps=2 format=3 uid="uid://byj4lqrxxtmcy"]
+[gd_scene load_steps=5 format=3 uid="uid://byj4lqrxxtmcy"]
 
 [ext_resource type="PackedScene" uid="uid://dkln42gt5ctot" path="res://bones/characters/character_base.tscn" id="1_n8f25"]
+[ext_resource type="PackedScene" uid="uid://4hu685t688h3" path="res://bones/puzzles/hand/hand_puzzle.tscn" id="2_1nbnp"]
+
+[sub_resource type="Animation" id="Animation_1vv1t"]
+resource_name = "success"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/ManoB:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/Meñique:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/Dedo3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/Anular:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/Indice:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/Pulgar:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xdj7o"]
+_data = {
+"success": SubResource("Animation_1vv1t")
+}
 
 [node name="Servantes" instance=ExtResource("1_n8f25")]
-dialog_key = "MISSING_ARM_TON"
+dialog_key = &"MISSING_ARM_TON"
+wants = ExtResource("2_1nbnp")
 visible_ribon = true
-
-[node name="ManoB" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="0"]
-visible = false
-
-[node name="Meñique" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="1"]
-visible = false
-
-[node name="Dedo3" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="2"]
-visible = false
-
-[node name="Anular" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="3"]
-visible = false
-
-[node name="Indice" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="4"]
-visible = false
-
-[node name="Pulgar" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="5"]
-visible = false
 
 [node name="Moñito" parent="Skeleton2D/hip/chest/neck" index="2"]
 visible = true
+
+[node name="SuccessAnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_xdj7o")
+}

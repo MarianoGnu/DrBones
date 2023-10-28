@@ -1,25 +1,72 @@
-[gd_scene load_steps=4 format=3 uid="uid://6t1n0bs1s5y"]
+[gd_scene load_steps=7 format=3 uid="uid://6t1n0bs1s5y"]
 
 [ext_resource type="PackedScene" uid="uid://dkln42gt5ctot" path="res://bones/characters/character_base.tscn" id="1_hfyc4"]
+[ext_resource type="PackedScene" uid="uid://cttcnap64p0ue" path="res://bones/puzzles/femur/femur_puzzle.tscn" id="2_3tgnx"]
 [ext_resource type="Texture2D" uid="uid://b0mm6kh0s5ng" path="res://bones/normal/Pierna B.PNG" id="2_rrv0g"]
 [ext_resource type="Texture2D" uid="uid://ciwsvr8mdl3do" path="res://bones/normal/Pie B.PNG" id="3_7wtiu"]
 
+[sub_resource type="Animation" id="Animation_h28du"]
+resource_name = "success"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/PiernaB:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand/PieB:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton2D/hip/thigh_L:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdsej"]
+_data = {
+"success": SubResource("Animation_h28du")
+}
+
 [node name="CharacterBase" instance=ExtResource("1_hfyc4")]
 dialog_key = &"MISSING_FEMUR_TON"
-
-[node name="wrist" parent="Skeleton2D/hip/chest/shoulder_L/elbow" index="1"]
-rotation = -0.261799
+wants = ExtResource("2_3tgnx")
 
 [node name="PiernaB" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="6"]
+visible = false
 position = Vector2(-30.0959, -134.193)
 rotation = 1.57079
 texture = ExtResource("2_rrv0g")
 
 [node name="PieB" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="7"]
+visible = false
 position = Vector2(481.77, -247.432)
 rotation = -1.309
 scale = Vector2(0.999999, 0.999999)
 texture = ExtResource("3_7wtiu")
 
-[node name="thigh_L" parent="Skeleton2D/hip" index="1"]
-visible = false
+[node name="SuccessAnimationPlayer" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_pdsej")
+}

@@ -11,6 +11,8 @@ signal enraged()
 			return
 		dialog_key = v
 @export var highlight_text_color: Color = Color.DARK_ORANGE
+@export var wants: PackedScene
+
 
 @export_group("Accesories", "visible_")
 @export var visible_tie: bool = false:
@@ -43,6 +45,11 @@ var spuder: InstancePlaceholder
 var speech_text_label: RichTextLabel
 var speech_animation_player: AnimationPlayer
 
+var drop_zone: Control
+var success_animation_player: AnimationPlayer
+
+var fail_count = 0
+
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_SCENE_INSTANTIATED:
 		corbata = %Corbata
@@ -59,6 +66,8 @@ func _notification(what: int) -> void:
 			spuder = %Spuder
 		speech_text_label = %SpeechTextLabel
 		speech_animation_player = %SpeechAnimationPlayer
+		drop_zone = $DropZone
+		success_animation_player = $SuccessAnimationPlayer
 		corbata.visible = visible_tie
 		mo_ito.visible = visible_ribon
 		antifaz.visible = visible_mask
@@ -70,6 +79,11 @@ func _notification(what: int) -> void:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+		drop_zone.set_drag_forwarding(
+			_get_drag_data,
+			_can_drop_data,
+			_drop_data
+		)
 	modulate.a = 0
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 1.0)
@@ -85,6 +99,35 @@ func say(p_text: String):
 	bbcode = bbcode.replace("%", "[color=%s]" % highlight_text_color.to_html(false))
 	speech_text_label.text = bbcode
 	speech_animation_player.play(&"speak")
+
+func _get_drag_data(_at_position: Vector2) -> Variant:
+	return null
+
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	return &"puzzle" in data and data.puzzle is Puzzle
+
+func _drop_data(_at_position: Vector2, data: Variant) -> void:
+	var puzzle: Puzzle = data.puzzle as Puzzle
+	if not puzzle.scene_file_path == wants.resource_path and puzzle.is_complete():
+		fail_count += 1
+		var tween: Tween = create_tween()
+		tween.tween_property(self, "modulate", Color.DARK_RED / 3.0 * fail_count, 1).set_trans(Tween.TRANS_ELASTIC)
+		await tween.finished
+		if fail_count == 3:
+			enraged.emit()
+		return
+	else:
+		if &"success_callback" in data:
+			data.success_callback.call()
+		$Nyehehe.play()
+		if puzzle.get_parent() != null:
+			puzzle.get_parent().remove_child(puzzle)
+		if success_animation_player.has_animation(&"success"):
+			success_animation_player.play(&"success")
+			await success_animation_player.animation_finished
+		satisfied.emit()
+		
+
 
 func _set_visible_tie(p_visible: bool):
 	visible_tie = p_visible

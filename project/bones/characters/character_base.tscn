@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dkln42gt5ctot"]
+[gd_scene load_steps=49 format=3 uid="uid://dkln42gt5ctot"]
 
 [ext_resource type="Script" path="res://bones/characters/character_base.gd" id="1_kiyii"]
 [ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="2_0bllq"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://wleclrcc2hmx" path="res://bones/rare/Cabeza Lobo/Mandibula Lobo.PNG" id="26_jurkf"]
 [ext_resource type="Texture2D" uid="uid://crywltrl4bvkg" path="res://bones/rare/Cabeza Lobo/Cabeza Lobo .PNG" id="27_jdbev"]
 [ext_resource type="Texture2D" uid="uid://b2etd326k0xh4" path="res://bones/rare/Trompeta.PNG" id="36_cb4k6"]
+[ext_resource type="AudioStream" uid="uid://dabsd83gtumsl" path="res://audio/sfx/Dr. Bones - SFX - Risa Calavera.wav" id="42_5fofi"]
 
 [sub_resource type="Animation" id="Animation_eh6b6"]
 length = 0.001
@@ -268,6 +269,14 @@ _data = {
 [node name="CharacterBase" type="CanvasGroup"]
 position = Vector2(249, 562)
 script = ExtResource("1_kiyii")
+
+[node name="DropZone" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -142.0
+offset_top = -391.0
+offset_right = 86.0
+offset_bottom = 104.0
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 scale = Vector2(0.215, 0.215)
@@ -587,3 +596,8 @@ libraries = {
 unique_name_in_owner = true
 position = Vector2(-78, -272)
 scale = Vector2(0.2, 0.2)
+
+[node name="SuccessAnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Nyehehe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("42_5fofi")

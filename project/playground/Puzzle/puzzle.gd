@@ -18,6 +18,7 @@ var tool: int = TOOL_MOVE:
 
 var _hovered_mouse_pick: Array[PuzzleMousePick] = []
 var _hovered_glue_zone: Array[GlueZone] = []
+var _all_glue_zone: Array[GlueZone] = []
 var _dragging_part: PuzzlePart = null
 var _is_dragging: bool = false:
 	get: return _dragging_part != null
@@ -38,6 +39,7 @@ func _notification(what: int) -> void:
 				child.mouse_entered.connect(_on_mouse_pick_mouse_entered.bind(child))
 				child.mouse_exited.connect(_on_mouse_pick_mouse_exited.bind(child))
 			if child is GlueZone:
+				_all_glue_zone.append(child)
 				child.mouse_entered.connect(_on_glue_zone_mouse_entered.bind(child))
 				child.mouse_exited.connect(_on_glue_zone_mouse_exited.bind(child))
 
@@ -104,6 +106,12 @@ func _draw() -> void:
 	rect.position -= global_position
 	draw_rect(rect, Color.ORANGE_RED, false, 2)
 	draw_rect(Rect2(Vector2(), size), Color.LIGHT_SEA_GREEN, false, 2)
+
+func is_complete() -> bool:
+	for glue_zone in _all_glue_zone:
+		if not glue_zone.is_glued: # or not glue_zone.is_clean:
+			return false
+	return true
 
 func get_parts_with_match_id(p_match_id: int) -> Array[PuzzlePart]:
 	var matching_parts: Array[PuzzlePart] = []
