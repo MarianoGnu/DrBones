@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5ybef1cfpp4v"]
+[gd_scene load_steps=3 format=3 uid="uid://c5ybef1cfpp4v"]
 
 [ext_resource type="Texture2D" uid="uid://235bif2edtuo" path="res://door_locations/cementery/Escenarios Cementerio.png" id="1_hygmg"]
-[ext_resource type="Texture2D" uid="uid://bjgvh7e1u3fh2" path="res://door_locations/cementery/Escenarios Cementerio Tumba.png" id="2_scxfr"]
-[ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="3_2jau3"]
+[ext_resource type="PackedScene" uid="uid://b6ifg1fwkqy3t" path="res://door_locations/cementery/tomb.tscn" id="2_b564c"]
 
 [node name="Cementery" type="Control"]
 layout_mode = 3
@@ -22,112 +21,12 @@ grow_vertical = 2
 texture = ExtResource("1_hygmg")
 expand_mode = 1
 
-[node name="EscenariosCementerioTumba" type="TextureRect" parent="."]
+[node name="Tomb" parent="." instance=ExtResource("2_b564c")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0015206
-anchor_top = 0.532849
-anchor_right = 0.236548
-anchor_bottom = 0.898018
-offset_left = 13.6615
-offset_top = -0.416946
-offset_right = 486.102
-offset_bottom = 625.549
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_scxfr")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="InventorySlot" parent="EscenariosCementerioTumba" instance=ExtResource("3_2jau3")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -319.667
-offset_top = -250.001
-offset_right = 321.333
-offset_bottom = 321.999
-grow_horizontal = 2
-
-[node name="EscenariosCementerioTumba2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.233722
-anchor_top = 0.463404
-anchor_right = 0.471791
-anchor_bottom = 0.828573
-offset_left = 14.3309
-offset_top = -0.166733
-offset_right = 484.771
-offset_bottom = 627.799
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_scxfr")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="InventorySlot" parent="EscenariosCementerioTumba2" instance=ExtResource("3_2jau3")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -319.667
-offset_top = -250.001
-offset_right = 321.333
-offset_bottom = 321.999
-grow_horizontal = 2
-
-[node name="EscenariosCementerioTumba3" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.468966
-anchor_top = 0.463404
-anchor_right = 0.707035
-anchor_bottom = 0.828573
-offset_left = 13.9998
-offset_top = -0.166733
-offset_right = 488.44
-offset_bottom = 627.799
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_scxfr")
-expand_mode = 1
-stretch_mode = 5
-flip_h = true
-
-[node name="InventorySlot" parent="EscenariosCementerioTumba3" instance=ExtResource("3_2jau3")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -319.667
-offset_top = -250.001
-offset_right = 321.333
-offset_bottom = 321.999
-grow_horizontal = 2
-
-[node name="EscenariosCementerioTumba4" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.704209
-anchor_top = 0.532848
-anchor_right = 0.942279
-anchor_bottom = 0.898017
-offset_left = 13.669
-offset_top = -0.416565
-offset_right = 486.109
-offset_bottom = 625.55
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("2_scxfr")
-expand_mode = 1
-stretch_mode = 5
-flip_h = true
-
-[node name="InventorySlot" parent="EscenariosCementerioTumba4" instance=ExtResource("3_2jau3")]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -319.667
-offset_top = -250.001
-offset_right = 321.333
-offset_bottom = 321.999
-grow_horizontal = 2
+anchor_left = 0.136285
+anchor_top = 0.458333
+anchor_right = 0.379566
+anchor_bottom = 0.776111
+offset_left = 0.0
+offset_right = 1276.74
+offset_bottom = 938.08

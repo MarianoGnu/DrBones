@@ -1,7 +1,13 @@
 class_name InventorySlot extends Panel
 
+signal item_taken()
+
 @onready var sub_viewport: SubViewport = $SlotPreview/SubViewport
-var puzzle: Control = null
+var puzzle: Control = null:
+	set(v):
+		if puzzle != null and v == null:
+			item_taken.emit()
+		puzzle = v
 
 func _ready() -> void:
 	if sub_viewport.get_child_count():

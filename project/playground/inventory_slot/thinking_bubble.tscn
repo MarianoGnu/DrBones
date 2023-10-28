@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtgx6r5b1a51c"]
+
+[ext_resource type="Texture2D" uid="uid://suwj30hyymgu" path="res://playground/Icons/ThinkingBubble.png" id="1_m48lu"]
+[ext_resource type="Texture2D" uid="uid://dfbec7hbu7l8p" path="res://playground/Icons/ThinkingBubbleTail2.png" id="2_5jsrv"]
+[ext_resource type="Script" path="res://playground/inventory_slot/thinking_bubble.gd" id="2_762n8"]
+[ext_resource type="Texture2D" uid="uid://2uyunhoxcqhu" path="res://playground/Icons/ThinkingBubbleTail1.png" id="3_j155h"]
+
+[node name="ThinkingBubble" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1589.0
+offset_top = -916.0
+offset_right = -628.999
+offset_bottom = 43.9998
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m48lu")
+script = ExtResource("2_762n8")
+
+[node name="ThinkingBubbleTail2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 347.778
+offset_top = -198.889
+offset_right = 470.778
+offset_bottom = -80.8892
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_5jsrv")
+
+[node name="ThinkingBubbleTail1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 481.111
+offset_top = -32.2222
+offset_right = 560.111
+offset_bottom = 41.7778
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_j155h")

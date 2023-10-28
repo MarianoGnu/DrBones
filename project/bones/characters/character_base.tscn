@@ -271,9 +271,6 @@ _data = {
 [node name="CharacterBase" type="CanvasGroup"]
 position = Vector2(249, 562)
 script = ExtResource("1_kiyii")
-reward_no_fails = null
-reward_1_fail = null
-reward_2_fails = null
 
 [node name="DropZone" type="Control" parent="."]
 layout_mode = 3
@@ -312,7 +309,6 @@ texture = ExtResource("2_mw1ho")
 
 [node name="wrist" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow"]
 position = Vector2(0, 493.023)
-scale = Vector2(1, 1)
 rest = Transform2D(0.965926, -0.258819, 0.258819, 0.965926, 0, 493.023)
 
 [node name="hand" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist"]

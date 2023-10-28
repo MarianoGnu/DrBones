@@ -1,0 +1,328 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6ifg1fwkqy3t"]
+
+[ext_resource type="Texture2D" uid="uid://bjgvh7e1u3fh2" path="res://door_locations/cementery/Escenarios Cementerio Tumba.png" id="1_4tgpb"]
+[ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="2_lmyga"]
+[ext_resource type="Script" path="res://door_locations/cementery/tomb.gd" id="2_pxwhs"]
+[ext_resource type="PackedScene" uid="uid://dtgx6r5b1a51c" path="res://playground/inventory_slot/thinking_bubble.tscn" id="3_c0npf"]
+[ext_resource type="Texture2D" uid="uid://cej63q3bhd4uc" path="res://bones/broken/complete/Mano.PNG" id="4_c361p"]
+[ext_resource type="Script" path="res://door_locations/cementery/tomb_button.gd" id="5_heerw"]
+[ext_resource type="Texture2D" uid="uid://0ojbwia0h5bi" path="res://bones/broken/complete/Femur.PNG" id="5_jpk03"]
+[ext_resource type="Texture2D" uid="uid://dotshkrgrjq4f" path="res://bones/normal/Mandibula.PNG" id="6_cub7u"]
+[ext_resource type="PackedScene" uid="uid://4hu685t688h3" path="res://bones/puzzles/hand/hand_puzzle.tscn" id="7_jfnw1"]
+[ext_resource type="PackedScene" uid="uid://cttcnap64p0ue" path="res://bones/puzzles/femur/femur_puzzle.tscn" id="9_7jw14"]
+[ext_resource type="PackedScene" uid="uid://43nukj7t4gpu" path="res://bones/puzzles/jaw/jaw_puzzle.tscn" id="11_3rgsb"]
+[ext_resource type="Texture2D" uid="uid://b3dcc1w5gqvdw" path="res://bones/normal/Antebrazo B.PNG" id="11_5m5c8"]
+[ext_resource type="PackedScene" uid="uid://dhdu4so571o30" path="res://bones/puzzles/arm/arm_puzzle.tscn" id="12_4qmr6"]
+
+[sub_resource type="Gradient" id="Gradient_v8mc7"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.807018)
+colors = PackedColorArray(0, 0, 0, 0, 0.0588235, 0.486275, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7w24w"]
+gradient = SubResource("Gradient_v8mc7")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+repeat = 1
+metadata/_snap_enabled = true
+
+[node name="Tomb" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.592882
+anchor_top = 0.462963
+anchor_right = 0.839444
+anchor_bottom = 0.971852
+offset_left = -6.10352e-05
+offset_right = 1293.96
+offset_bottom = 1502.24
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_4tgpb")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+script = ExtResource("2_pxwhs")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="InventorySlot" parent="." instance=ExtResource("2_lmyga")]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -319.667
+offset_top = -250.001
+offset_right = 321.333
+offset_bottom = 321.999
+grow_horizontal = 2
+
+[node name="ProductionBubble" parent="." instance=ExtResource("3_c0npf")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105196
+anchor_top = -0.46452
+anchor_right = 0.92649
+anchor_bottom = 0.242904
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Icon" type="TextureRect" parent="ProductionBubble"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.342593
+anchor_top = 0.309414
+anchor_right = 0.655864
+anchor_bottom = 0.622685
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_cub7u")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="ProductionBubble"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.464
+anchor_right = 0.508
+anchor_bottom = 0.464
+offset_left = -346.368
+offset_top = -345.344
+offset_right = 336.632
+offset_bottom = 337.656
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 15.0
+step = 0.0
+value = 11.0
+fill_mode = 4
+nine_patch_stretch = true
+texture_progress = SubResource("GradientTexture2D_7w24w")
+
+[node name="ThinkingBubble" parent="." instance=ExtResource("3_c0npf")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.446825
+anchor_top = -0.000414853
+anchor_right = 0.161175
+anchor_bottom = 0.523585
+offset_left = 527.313
+offset_top = 378.538
+offset_right = 527.89
+offset_bottom = 378.57
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+
+[node name="TombButton" type="Button" parent="ThinkingBubble"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288541
+anchor_top = 0.266204
+anchor_right = 0.712499
+anchor_bottom = 0.690162
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+icon = ExtResource("4_c361p")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_heerw")
+produces = ExtResource("7_jfnw1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ThinkingBubble/TombButton"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.778076
+offset_top = -18.1111
+offset_right = 0.778076
+offset_bottom = 89.8889
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.0507812, 0.0898438, 0.148438, 1)
+theme_override_font_sizes/font_size = 76
+text = "⌛00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThinkingBubble2" parent="." instance=ExtResource("3_c0npf")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 394.444
+offset_top = -116.666
+offset_right = 1354.44
+offset_bottom = 843.334
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+
+[node name="TombButton" type="Button" parent="ThinkingBubble2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288541
+anchor_top = 0.266204
+anchor_right = 0.712499
+anchor_bottom = 0.690162
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+icon = ExtResource("5_jpk03")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_heerw")
+produces = ExtResource("9_7jw14")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ThinkingBubble2/TombButton"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.778076
+offset_top = -18.1111
+offset_right = 0.778076
+offset_bottom = 89.8889
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.0507812, 0.0898438, 0.148438, 1)
+theme_override_font_sizes/font_size = 76
+text = "⌛00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThinkingBubble3" parent="." instance=ExtResource("3_c0npf")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1022.22
+offset_top = -44.4448
+offset_right = 1982.23
+offset_bottom = 915.555
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+
+[node name="TombButton" type="Button" parent="ThinkingBubble3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288541
+anchor_top = 0.266204
+anchor_right = 0.712499
+anchor_bottom = 0.690162
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+icon = ExtResource("6_cub7u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_heerw")
+produces = ExtResource("11_3rgsb")
+time = 25.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ThinkingBubble3/TombButton"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.778076
+offset_top = -18.1111
+offset_right = 0.778076
+offset_bottom = 89.8889
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.0507812, 0.0898438, 0.148438, 1)
+theme_override_font_sizes/font_size = 76
+text = "⌛00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThinkingBubble4" parent="." instance=ExtResource("3_c0npf")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1294.45
+offset_top = 638.889
+offset_right = 2254.45
+offset_bottom = 1598.89
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.5, 0.5)
+
+[node name="TombButton" type="Button" parent="ThinkingBubble4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288541
+anchor_top = 0.266204
+anchor_right = 0.712499
+anchor_bottom = 0.690162
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+icon = ExtResource("11_5m5c8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_heerw")
+produces = ExtResource("12_4qmr6")
+time = 25.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ThinkingBubble4/TombButton"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.778076
+offset_top = -18.1111
+offset_right = 0.778076
+offset_bottom = 89.8889
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.0507812, 0.0898438, 0.148438, 1)
+theme_override_font_sizes/font_size = 76
+text = "⌛00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TombToggleButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.179975
+anchor_top = 0.290939
+anchor_right = 0.820659
+anchor_bottom = 0.830786
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+flat = true
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
