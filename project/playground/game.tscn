@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=50 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Script" path="res://playground/game.gd" id="1_ohxp3"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://dnnrv1fj1tq0g" path="res://playground/Fondo Assets/Fuego.PNG" id="17_pklni"]
 [ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="21_hvrsn"]
 [ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="26_16s2m"]
+[ext_resource type="PackedScene" uid="uid://cttcnap64p0ue" path="res://bones/puzzles/femur/femur_puzzle.tscn" id="30_gu0w4"]
+[ext_resource type="PackedScene" uid="uid://4hu685t688h3" path="res://bones/puzzles/hand/hand_puzzle.tscn" id="30_kfs04"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -814,11 +816,15 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview/SubViewport" index="0" instance=ExtResource("30_gu0w4")]
+
 [node name="InventorySlot2" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot2/SlotPreview" index="0"]
 size = Vector2i(100, 93)
+
+[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot2/SlotPreview/SubViewport" index="0" instance=ExtResource("30_kfs04")]
 
 [node name="InventorySlot3" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
@@ -927,6 +933,7 @@ text = "⌛0:30"
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

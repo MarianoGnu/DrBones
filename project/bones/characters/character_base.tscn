@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dkln42gt5ctot"]
+[gd_scene load_steps=51 format=3 uid="uid://dkln42gt5ctot"]
 
 [ext_resource type="Script" path="res://bones/characters/character_base.gd" id="1_kiyii"]
 [ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="2_0bllq"]
@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://crywltrl4bvkg" path="res://bones/rare/Cabeza Lobo/Cabeza Lobo .PNG" id="27_jdbev"]
 [ext_resource type="Texture2D" uid="uid://b2etd326k0xh4" path="res://bones/rare/Trompeta.PNG" id="36_cb4k6"]
 [ext_resource type="AudioStream" uid="uid://dabsd83gtumsl" path="res://audio/sfx/Dr. Bones - SFX - Risa Calavera.wav" id="42_5fofi"]
+[ext_resource type="AudioStream" uid="uid://co2ra1ottghkp" path="res://audio/sfx/Dr. Bones - SFX - Huesos Rotos 2.wav" id="43_832uh"]
+[ext_resource type="AudioStream" uid="uid://mkj6v4xqabhl" path="res://audio/sfx/Dr. Bones - SFX - Huesos Rotos 1.wav" id="43_q4gb8"]
 
 [sub_resource type="Animation" id="Animation_eh6b6"]
 length = 0.001
@@ -601,3 +603,9 @@ scale = Vector2(0.2, 0.2)
 
 [node name="Nyehehe" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("42_5fofi")
+
+[node name="Fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("43_q4gb8")
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("43_832uh")

@@ -79,11 +79,11 @@ func _notification(what: int) -> void:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
-		drop_zone.set_drag_forwarding(
-			_get_drag_data,
-			_can_drop_data,
-			_drop_data
-		)
+	drop_zone.set_drag_forwarding(
+		_get_drag_data,
+		_can_drop_data,
+		_drop_data
+	)
 	modulate.a = 0
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 1.0)
@@ -108,13 +108,21 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var puzzle: Puzzle = data.puzzle as Puzzle
-	if not puzzle.scene_file_path == wants.resource_path and puzzle.is_complete():
+	if not puzzle.scene_file_path == wants.resource_path or not puzzle.is_complete():
 		fail_count += 1
+		$Fail.play()
 		var tween: Tween = create_tween()
-		tween.tween_property(self, "modulate", Color.DARK_RED / 3.0 * fail_count, 1).set_trans(Tween.TRANS_ELASTIC)
+		tween.tween_property(self, "modulate:r",  1 + fail_count * 0.5, 1).set_trans(Tween.TRANS_ELASTIC)
 		await tween.finished
 		if fail_count == 3:
+			$Die.play()
 			enraged.emit()
+			drop_zone.queue_free()
+			tween.kill()
+			tween = create_tween()
+			tween.tween_property(self, "modulate:a", 0.0, 1.0)
+			await tween.finished
+			queue_free()
 		return
 	else:
 		if &"success_callback" in data:
