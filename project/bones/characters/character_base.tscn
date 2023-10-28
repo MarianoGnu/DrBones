@@ -1,0 +1,637 @@
+[gd_scene load_steps=51 format=3 uid="uid://dkln42gt5ctot"]
+
+[ext_resource type="Script" path="res://bones/characters/character_base.gd" id="1_kiyii"]
+[ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="2_0bllq"]
+[ext_resource type="Texture2D" uid="uid://b3dcc1w5gqvdw" path="res://bones/normal/Antebrazo B.PNG" id="2_mw1ho"]
+[ext_resource type="AudioStream" uid="uid://2mek1rrrbtpt" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 2.wav" id="3_00vmk"]
+[ext_resource type="Texture2D" uid="uid://cjcbjrryige2n" path="res://bones/normal/Antebrazo F .PNG" id="3_mybnw"]
+[ext_resource type="Texture2D" uid="uid://d3ajf7os7a0tu" path="res://bones/normal/Brazo B.PNG" id="4_7hcdb"]
+[ext_resource type="Texture2D" uid="uid://c3q6af3mnoyq0" path="res://bones/normal/Brazo F .PNG" id="5_m75gs"]
+[ext_resource type="Texture2D" uid="uid://b5valh7g1vukk" path="res://bones/normal/Cabeza Merged.PNG" id="6_wtwuh"]
+[ext_resource type="Texture2D" uid="uid://bt8cohx3as77l" path="res://bones/normal/Dedos B/Meñique .PNG" id="7_dmvfi"]
+[ext_resource type="Texture2D" uid="uid://bbrnsumh8xd2w" path="res://bones/normal/Cuello Cervical.PNG" id="7_uxu5d"]
+[ext_resource type="Texture2D" uid="uid://dgtwi0sor4dr6" path="res://bones/normal/Espina dorsal.PNG" id="8_jy2av"]
+[ext_resource type="Texture2D" uid="uid://dqlckgnps7a5a" path="res://bones/normal/Dedos B/Dedo 3.PNG" id="8_xy3e3"]
+[ext_resource type="Texture2D" uid="uid://bhhtjpjthrbbn" path="res://bones/normal/Dedos B/Anular.PNG" id="9_0so5f"]
+[ext_resource type="Texture2D" uid="uid://dsj8kyn8ipnqo" path="res://bones/normal/Femur B.PNG" id="9_0vbsj"]
+[ext_resource type="Texture2D" uid="uid://bfx1aho3r48ns" path="res://bones/normal/Femur F .PNG" id="10_4y6ww"]
+[ext_resource type="Texture2D" uid="uid://owmd4c4xab04" path="res://bones/normal/Dedos B/Indice.PNG" id="10_6bias"]
+[ext_resource type="Texture2D" uid="uid://bl3glqgb5igww" path="res://bones/normal/Dedos F/Meñique .PNG" id="10_bk2rc"]
+[ext_resource type="Texture2D" uid="uid://dotshkrgrjq4f" path="res://bones/normal/Mandibula.PNG" id="11_hswsf"]
+[ext_resource type="Texture2D" uid="uid://bhflaqn3g5j0v" path="res://bones/normal/Dedos F/Dedo 3.PNG" id="11_i7crd"]
+[ext_resource type="Texture2D" uid="uid://ig2ow77qv2i2" path="res://bones/normal/Dedos B/Pulgar.PNG" id="11_t3lil"]
+[ext_resource type="Texture2D" uid="uid://vfhuy8718k26" path="res://bones/normal/Mano B.PNG" id="12_6dq6e"]
+[ext_resource type="Texture2D" uid="uid://cgbkndhxg4u0e" path="res://bones/normal/Dedos F/Anular.PNG" id="12_jaqd8"]
+[ext_resource type="Texture2D" uid="uid://7wjx5ue6swt0" path="res://bones/rare/Corbata.PNG" id="12_mcgpj"]
+[ext_resource type="Texture2D" uid="uid://eprhcsjtq5fm" path="res://bones/normal/Dedos F/Indice.PNG" id="13_d14hn"]
+[ext_resource type="Texture2D" uid="uid://d2l38d0sfb02w" path="res://bones/rare/Moñito.PNG" id="13_rwhla"]
+[ext_resource type="Texture2D" uid="uid://rynyb7jvhh7s" path="res://bones/normal/Mano F .PNG" id="13_xttff"]
+[ext_resource type="Texture2D" uid="uid://dpuoeiejf8sex" path="res://bones/normal/Pelvis.PNG" id="14_bwpxn"]
+[ext_resource type="Texture2D" uid="uid://dxam6ku6j4px6" path="res://bones/normal/Dedos F/Pulgar.PNG" id="14_nn8mf"]
+[ext_resource type="Texture2D" uid="uid://ciwsvr8mdl3do" path="res://bones/normal/Pie B.PNG" id="15_07hfb"]
+[ext_resource type="Texture2D" uid="uid://18sy6ycibdub" path="res://bones/normal/Pie F.PNG" id="16_401sg"]
+[ext_resource type="Texture2D" uid="uid://bfax4x2b53qrt" path="res://bones/rare/Antifaz.PNG" id="17_pelmj"]
+[ext_resource type="Texture2D" uid="uid://b0mm6kh0s5ng" path="res://bones/normal/Pierna B.PNG" id="17_qnrmr"]
+[ext_resource type="Texture2D" uid="uid://dpjsqdihoselj" path="res://bones/rare/Peluca.PNG" id="18_kh2rp"]
+[ext_resource type="Texture2D" uid="uid://b6a3ije024p3o" path="res://bones/normal/Pierna F .PNG" id="18_qy56f"]
+[ext_resource type="Texture2D" uid="uid://b5ia07eu2w41g" path="res://bones/rare/Piluso.PNG" id="19_opw7d"]
+[ext_resource type="Texture2D" uid="uid://bn1axoi08fnp0" path="res://bones/normal/Rodilla B.PNG" id="19_vh7ji"]
+[ext_resource type="Texture2D" uid="uid://c7rfifsoml2rc" path="res://bones/normal/Rodilla F.PNG" id="20_svhnb"]
+[ext_resource type="Texture2D" uid="uid://xmkna328goel" path="res://bones/normal/Torso.PNG" id="21_e02ul"]
+[ext_resource type="Texture2D" uid="uid://wleclrcc2hmx" path="res://bones/rare/Cabeza Lobo/Mandibula Lobo.PNG" id="26_jurkf"]
+[ext_resource type="Texture2D" uid="uid://crywltrl4bvkg" path="res://bones/rare/Cabeza Lobo/Cabeza Lobo .PNG" id="27_jdbev"]
+[ext_resource type="Texture2D" uid="uid://b2etd326k0xh4" path="res://bones/rare/Trompeta.PNG" id="36_cb4k6"]
+
+[sub_resource type="Animation" id="Animation_yagh1"]
+resource_name = "speak"
+length = 2.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0, 0.261799, 0.0]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../../../SkullAnimationPlayer/AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_0bllq")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_00vmk")
+}],
+"times": PackedFloat32Array(0, 1.6)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.8, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 2,
+"values": [-0.261799, 0.261799, 0.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../shoulder_L:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [-0.523598, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../shoulder_L/elbow:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.2, 1.4, 1.6, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 2,
+"values": [-1.309, -1.83259, -1.57079, -1.83259, -1.57079, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../shoulder_L/elbow/wrist:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.2, 1.4, 1.6, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 2,
+"values": [-0.261799, -0.785397, 0.0, -0.785397, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_eh6b6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../shoulder_L:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../shoulder_L/elbow:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../shoulder_L/elbow/wrist:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qelte"]
+_data = {
+"RESET": SubResource("Animation_eh6b6"),
+"speak": SubResource("Animation_yagh1")
+}
+
+[sub_resource type="Animation" id="Animation_lnk0y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_vd526"]
+resource_name = "speak"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 3, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 1.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../SkullAnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("speak", "[stop]"),
+"times": PackedFloat32Array(0.4, 3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86ele"]
+_data = {
+"RESET": SubResource("Animation_lnk0y"),
+"speak": SubResource("Animation_vd526")
+}
+
+[sub_resource type="Animation" id="Animation_uupr3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(107.093, -1503.96)]
+}
+
+[sub_resource type="Animation" id="Animation_siceq"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(107.093, -1503.96), Vector2(107.093, -1493.96), Vector2(107.093, -1523.96), Vector2(107.093, -1503.96)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvc18"]
+_data = {
+"RESET": SubResource("Animation_uupr3"),
+"idle": SubResource("Animation_siceq")
+}
+
+[node name="CharacterBase" type="Node2D"]
+position = Vector2(249, 562)
+script = ExtResource("1_kiyii")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+scale = Vector2(0.215, 0.215)
+
+[node name="hip" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(-69.7675, -116.279)
+rest = Transform2D(1, 0, 0, 1, -69.7675, -116.279)
+
+[node name="chest" type="Bone2D" parent="Skeleton2D/hip"]
+position = Vector2(0, -1074.42)
+rest = Transform2D(1, 0, 0, 1, 0, -1074.42)
+
+[node name="shoulder_L" type="Bone2D" parent="Skeleton2D/hip/chest"]
+position = Vector2(195.349, 88.3715)
+rest = Transform2D(1, 0, 0, 1, 195.349, 88.3715)
+
+[node name="BrazoB" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L"]
+position = Vector2(32.5583, 241.861)
+texture = ExtResource("4_7hcdb")
+
+[node name="elbow" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_L"]
+position = Vector2(23.2559, 530.233)
+rest = Transform2D(1, 0, 0, 1, 23.2559, 530.233)
+
+[node name="AntebrazoB" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow"]
+position = Vector2(18.6047, 246.512)
+texture = ExtResource("2_mw1ho")
+
+[node name="wrist" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow"]
+position = Vector2(0, 493.023)
+rest = Transform2D(0.965926, -0.258819, 0.258819, 0.965926, 0, 493.023)
+
+[node name="hand" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist"]
+position = Vector2(0, 246.512)
+rest = Transform2D(1, 0, 0, 1, 0, 246.512)
+
+[node name="ManoB" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand"]
+position = Vector2(9.30237, -162.791)
+texture = ExtResource("12_6dq6e")
+
+[node name="Meñique" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand"]
+position = Vector2(-88.3721, -41.8606)
+texture = ExtResource("7_dmvfi")
+
+[node name="Dedo3" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand"]
+position = Vector2(-65.1162, 0)
+texture = ExtResource("8_xy3e3")
+
+[node name="Anular" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand"]
+position = Vector2(-23.2559, 32.5583)
+texture = ExtResource("9_0so5f")
+
+[node name="Indice" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand"]
+position = Vector2(23.2559, 37.2092)
+texture = ExtResource("10_6bias")
+
+[node name="Pulgar" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand"]
+position = Vector2(93.0232, -4.65112)
+texture = ExtResource("11_t3lil")
+
+[node name="Pelvis" type="Sprite2D" parent="Skeleton2D/hip/chest"]
+position = Vector2(-23.2559, 930.232)
+texture = ExtResource("14_bwpxn")
+
+[node name="EspinaDorsal" type="Sprite2D" parent="Skeleton2D/hip/chest"]
+position = Vector2(4.65112, 651.162)
+texture = ExtResource("8_jy2av")
+
+[node name="Torso" type="Sprite2D" parent="Skeleton2D/hip/chest"]
+position = Vector2(-79.0697, 288.372)
+texture = ExtResource("21_e02ul")
+
+[node name="shoulder_R" type="Bone2D" parent="Skeleton2D/hip/chest"]
+position = Vector2(-381.395, 46.511)
+rest = Transform2D(1, 0, 0, 1, -381.395, 46.511)
+
+[node name="BrazoF" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R"]
+position = Vector2(-18.6046, 283.721)
+texture = ExtResource("5_m75gs")
+
+[node name="elbow" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_R"]
+position = Vector2(-37.2093, 609.302)
+rest = Transform2D(1, 0, 0, 1, -37.2093, 609.302)
+
+[node name="AntebrazoF" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow"]
+position = Vector2(13.9535, 251.163)
+texture = ExtResource("3_mybnw")
+
+[node name="wrist" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow"]
+position = Vector2(37.2093, 506.976)
+rest = Transform2D(1, 0, 0, 1, 37.2093, 506.976)
+
+[node name="hand" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow/wrist"]
+position = Vector2(0, 195.349)
+rest = Transform2D(1, 0, 0, 1, 0, 195.349)
+
+[node name="ManoF" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow/wrist"]
+position = Vector2(0, 79.0701)
+texture = ExtResource("13_xttff")
+
+[node name="Meñique" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow/wrist"]
+position = Vector2(-37.2093, 251.163)
+texture = ExtResource("10_bk2rc")
+
+[node name="Dedo3" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow/wrist"]
+position = Vector2(-4.65106, 274.419)
+texture = ExtResource("11_i7crd")
+
+[node name="Anular" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow/wrist"]
+position = Vector2(-32.5581, 269.768)
+texture = ExtResource("12_jaqd8")
+
+[node name="Indice" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow/wrist"]
+position = Vector2(-4.65106, 265.116)
+texture = ExtResource("13_d14hn")
+
+[node name="Pulgar" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_R/elbow/wrist"]
+position = Vector2(55.814, 227.907)
+texture = ExtResource("14_nn8mf")
+
+[node name="neck" type="Bone2D" parent="Skeleton2D/hip/chest"]
+position = Vector2(0, -46.5122)
+rest = Transform2D(1, 0, 0, 1, 0, -46.5122)
+
+[node name="Corbata" type="Sprite2D" parent="Skeleton2D/hip/chest/neck"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(32.5581, 279.07)
+texture = ExtResource("12_mcgpj")
+
+[node name="Moñito" type="Sprite2D" parent="Skeleton2D/hip/chest/neck"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-0.00012207, -0.00012207)
+texture = ExtResource("13_rwhla")
+
+[node name="head" type="Bone2D" parent="Skeleton2D/hip/chest/neck"]
+position = Vector2(0, -251.163)
+rest = Transform2D(1, 0, 0, 1, 0, -251.163)
+
+[node name="CuelloCervical" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head"]
+position = Vector2(-27.907, 144.186)
+texture = ExtResource("7_uxu5d")
+
+[node name="jaw" type="Bone2D" parent="Skeleton2D/hip/chest/neck/head"]
+position = Vector2(-88.372, 69.7696)
+scale = Vector2(1, 1)
+rest = Transform2D(1, 0, 0, 1, -88.372, 69.7696)
+
+[node name="MandibulaLobo" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head/jaw"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(37.2089, -116.28)
+rotation = -0.523598
+scale = Vector2(1, 1)
+texture = ExtResource("26_jurkf")
+offset = Vector2(116.279, 237.209)
+
+[node name="Mandibula" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head/jaw"]
+unique_name_in_owner = true
+position = Vector2(167.442, 41.8585)
+scale = Vector2(1, 1)
+texture = ExtResource("11_hswsf")
+
+[node name="teth" type="Bone2D" parent="Skeleton2D/hip/chest/neck/head/jaw"]
+position = Vector2(265.116, 120.93)
+scale = Vector2(1, 1)
+rest = Transform2D(1, 0, 0, 1, 265.116, 120.93)
+
+[node name="CabezaMerged" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head"]
+unique_name_in_owner = true
+position = Vector2(51.1628, -88.3723)
+texture = ExtResource("6_wtwuh")
+
+[node name="CabezaLobo" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, -41.8582)
+rotation = -0.261799
+texture = ExtResource("27_jdbev")
+offset = Vector2(144.186, 51.1628)
+
+[node name="Antifaz" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(97.6744, -97.6743)
+texture = ExtResource("17_pelmj")
+
+[node name="Peluca" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-0.00012207, 544.186)
+texture = ExtResource("18_kh2rp")
+
+[node name="Piluso" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(32.5582, -237.21)
+texture = ExtResource("19_opw7d")
+
+[node name="thigh_L" type="Bone2D" parent="Skeleton2D/hip"]
+position = Vector2(195.349, 0)
+rest = Transform2D(1, 0, 0, 1, 195.349, 0)
+
+[node name="FemurB" type="Sprite2D" parent="Skeleton2D/hip/thigh_L"]
+position = Vector2(-13.9535, 386.046)
+texture = ExtResource("9_0vbsj")
+
+[node name="knee" type="Bone2D" parent="Skeleton2D/hip/thigh_L"]
+position = Vector2(23.2557, 846.511)
+rest = Transform2D(1, 0, 0, 1, 23.2557, 846.511)
+
+[node name="RodillaB" type="Sprite2D" parent="Skeleton2D/hip/thigh_L/knee"]
+position = Vector2(0, 13.9534)
+texture = ExtResource("19_vh7ji")
+
+[node name="PiernaB" type="Sprite2D" parent="Skeleton2D/hip/thigh_L/knee"]
+position = Vector2(-23.2559, 409.302)
+texture = ExtResource("17_qnrmr")
+
+[node name="heel" type="Bone2D" parent="Skeleton2D/hip/thigh_L/knee"]
+position = Vector2(-51.1628, 883.721)
+rest = Transform2D(1, 0, 0, 1, -51.1628, 883.721)
+
+[node name="feet" type="Bone2D" parent="Skeleton2D/hip/thigh_L/knee/heel"]
+position = Vector2(246.512, 69.7671)
+rest = Transform2D(1, 0, 0, 1, 246.512, 69.7671)
+
+[node name="PieB" type="Sprite2D" parent="Skeleton2D/hip/thigh_L/knee/heel"]
+position = Vector2(130.233, 9.30273)
+scale = Vector2(0.999999, 0.999999)
+texture = ExtResource("15_07hfb")
+
+[node name="thigh_R" type="Bone2D" parent="Skeleton2D/hip"]
+position = Vector2(-241.86, 23.2559)
+rest = Transform2D(1, 0, 0, 1, -241.86, 23.2559)
+
+[node name="FemurF" type="Sprite2D" parent="Skeleton2D/hip/thigh_R"]
+position = Vector2(41.8604, 358.139)
+texture = ExtResource("10_4y6ww")
+
+[node name="knee" type="Bone2D" parent="Skeleton2D/hip/thigh_R"]
+position = Vector2(79.0697, 837.209)
+rest = Transform2D(1, 0, 0, 1, 79.0697, 837.209)
+
+[node name="RodillaF" type="Sprite2D" parent="Skeleton2D/hip/thigh_R/knee"]
+scale = Vector2(0.999999, 0.999999)
+texture = ExtResource("20_svhnb")
+
+[node name="PiernaF" type="Sprite2D" parent="Skeleton2D/hip/thigh_R/knee"]
+position = Vector2(-13.9537, 395.349)
+scale = Vector2(0.999999, 0.999999)
+texture = ExtResource("18_qy56f")
+
+[node name="heel" type="Bone2D" parent="Skeleton2D/hip/thigh_R/knee"]
+position = Vector2(-55.8139, 869.767)
+rest = Transform2D(1, 0, 0, 1, -55.8139, 869.767)
+
+[node name="PieF" type="Sprite2D" parent="Skeleton2D/hip/thigh_R/knee/heel"]
+position = Vector2(120.93, 4.65186)
+scale = Vector2(0.999999, 0.999999)
+texture = ExtResource("16_401sg")
+
+[node name="feet" type="Bone2D" parent="Skeleton2D/hip/thigh_R/knee/heel"]
+position = Vector2(251.162, 69.7676)
+rest = Transform2D(1, 0, 0, 1, 251.162, 69.7676)
+
+[node name="Trompeta" type="Sprite2D" parent="Skeleton2D"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(13.9535, 237.209)
+rotation = 2.35619
+texture = ExtResource("36_cb4k6")
+
+[node name="SkullAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Skeleton2D/hip/chest/neck/head/jaw")
+libraries = {
+"": SubResource("AnimationLibrary_qelte")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SkullAnimationPlayer"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(107.093, -1503.96)
+scale = Vector2(1e-05, 1e-05)
+color = Color(0.278431, 0.278431, 0.278431, 0.533333)
+polygon = PackedVector2Array(9.31238, -121.062, 195.561, -353.872, 935.899, -302.654, 1098.87, -470.278, 1094.21, -847.431, 889.337, -1019.71, -744.994, -1033.68, -875.368, -805.525, -856.743, -419.059, -679.807, -256.092, -237.467, -251.435, -46.562, -339.904)
+
+[node name="SpeechTextLabel" type="RichTextLabel" parent="Polygon2D"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -731.025
+offset_top = -945.212
+offset_right = 1033.97
+offset_bottom = -321.212
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 96
+theme_override_font_sizes/bold_font_size = 95
+theme_override_font_sizes/italics_font_size = 95
+theme_override_font_sizes/bold_italics_font_size = 95
+theme_override_font_sizes/mono_font_size = 95
+bbcode_enabled = true
+text = "¡[color=orange_red]Doctor[/color]! tengo un [color=orange_red]picadito[/color] este sabado en la canchita detras del cementerio ¡y [color=orange_red][b]no puedo correr[/b][/color]!"
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SpeechAnimationPlayer" type="AnimationPlayer" parent="Polygon2D/SpeechTextLabel"]
+unique_name_in_owner = true
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_86ele")
+}
+
+[node name="BubbleBobAnimationPlayer" type="AnimationPlayer" parent="Polygon2D"]
+autoplay = "idle"
+speed_scale = 0.3
+libraries = {
+"": SubResource("AnimationLibrary_fvc18")
+}
+
+[node name="Spuder" parent="." instance_placeholder="res://mandatorys/spuder/spuder.tscn"]
+unique_name_in_owner = true
+position = Vector2(-78, -272)
+scale = Vector2(0.2, 0.2)

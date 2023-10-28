@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=54 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
@@ -23,10 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://74kvaae7n2t2" path="res://playground/Fondo Assets/Fondo Entrada de atras.PNG" id="15_a37nb"]
 [ext_resource type="Texture2D" uid="uid://cqshxwsh48ow" path="res://playground/Fondo Assets/Antorcha.PNG" id="16_g6g2v"]
 [ext_resource type="Texture2D" uid="uid://dnnrv1fj1tq0g" path="res://playground/Fondo Assets/Fuego.PNG" id="17_pklni"]
-[ext_resource type="Texture2D" uid="uid://ckiq6xfdehfb7" path="res://bones/characters/skelly_boi_transparent.png" id="18_j55t8"]
-[ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="19_eos6w"]
-[ext_resource type="AudioStream" uid="uid://2mek1rrrbtpt" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 2.wav" id="20_gnyuh"]
 [ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="21_hvrsn"]
+[ext_resource type="PackedScene" uid="uid://dkln42gt5ctot" path="res://bones/characters/character_base.tscn" id="24_77ty5"]
 [ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="26_16s2m"]
 [ext_resource type="PackedScene" uid="uid://dhdu4so571o30" path="res://bones/puzzles/arm/arm_puzzle.tscn" id="28_7rs2y"]
 [ext_resource type="PackedScene" uid="uid://bidn52d4v2oau" path="res://bones/puzzles/rare/hat_puzzle.tscn" id="29_4umwg"]
@@ -38,7 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://cmjvqd877ijw5" path="res://bones/puzzles/rare/ribbon_puzzle.tscn" id="34_4vlak"]
 [ext_resource type="PackedScene" uid="uid://d3nnoncy5qxwo" path="res://bones/puzzles/rare/wig_puzzle.tscn" id="36_8x2q6"]
 [ext_resource type="PackedScene" uid="uid://chyrlr36jq8nw" path="res://bones/puzzles/rare/trumpet_puzzle.tscn" id="38_8oxyh"]
-[ext_resource type="PackedScene" uid="uid://bhakwd4x4d2vg" path="res://mandatorys/spuder/spuder.tscn" id="39_7rfs2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -334,124 +331,6 @@ _data = {
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ivh8r"]
 polygon = PackedVector2Array(13.2226, -15.945, 13.4328, 84.0027, 15.8032, 84.0027, 16.3339, -16.1394)
-
-[sub_resource type="Animation" id="Animation_lnk0y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-
-[sub_resource type="Animation" id="Animation_vd526"]
-resource_name = "idle"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 3, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 1.0, 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1)]
-}
-tracks/2/type = "audio"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("19_eos6w")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("20_gnyuh")
-}],
-"times": PackedFloat32Array(0.6, 1.9)
-}
-tracks/2/use_blend = true
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_86ele"]
-_data = {
-"RESET": SubResource("Animation_lnk0y"),
-"idle": SubResource("Animation_vd526")
-}
-
-[sub_resource type="Animation" id="Animation_uupr3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(107.093, -1503.96)]
-}
-
-[sub_resource type="Animation" id="Animation_siceq"]
-resource_name = "idle"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(107.093, -1503.96), Vector2(107.093, -1493.96), Vector2(107.093, -1523.96), Vector2(107.093, -1503.96)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvc18"]
-_data = {
-"RESET": SubResource("Animation_uupr3"),
-"idle": SubResource("Animation_siceq")
-}
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -815,53 +694,7 @@ position = Vector2(21.4004, 8.79998)
 scale = Vector2(5.14269, 5.14269)
 occluder = SubResource("OccluderPolygon2D_ivh8r")
 
-[node name="SkellyBoiTransparent" type="Sprite2D" parent="Floor/Walls"]
-position = Vector2(249, 562)
-scale = Vector2(0.214767, 0.214767)
-texture = ExtResource("18_j55t8")
-
-[node name="Polygon2D" type="Polygon2D" parent="Floor/Walls/SkellyBoiTransparent"]
-position = Vector2(107.093, -1503.96)
-scale = Vector2(1e-05, 1e-05)
-color = Color(0.278431, 0.278431, 0.278431, 0.533333)
-polygon = PackedVector2Array(9.31238, -121.062, 195.561, -353.872, 935.899, -302.654, 1098.87, -470.278, 1094.21, -847.431, 889.337, -1019.71, -744.994, -1033.68, -875.368, -805.525, -856.743, -419.059, -679.807, -256.092, -237.467, -251.435, -46.562, -339.904)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -731.025
-offset_top = -945.212
-offset_right = 1033.97
-offset_bottom = -321.212
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 96
-theme_override_font_sizes/bold_font_size = 95
-theme_override_font_sizes/italics_font_size = 95
-theme_override_font_sizes/bold_italics_font_size = 95
-theme_override_font_sizes/mono_font_size = 95
-bbcode_enabled = true
-text = "¡[color=orange_red]Doctor[/color]! tengo un [color=orange_red]picadito[/color] este sabado en la canchita detras del cementerio ¡y [color=orange_red][b]no puedo correr[/b][/color]!"
-visible_characters = 0
-visible_characters_behavior = 1
-visible_ratio = 0.0
-metadata/_edit_use_anchors_ = true
-
-[node name="SpeechAnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D/RichTextLabel"]
-autoplay = "RESET"
-libraries = {
-"": SubResource("AnimationLibrary_86ele")
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D/RichTextLabel"]
-
-[node name="BubbleBobAnimationPlayer" type="AnimationPlayer" parent="Floor/Walls/SkellyBoiTransparent/Polygon2D"]
-autoplay = "idle"
-speed_scale = 0.3
-libraries = {
-"": SubResource("AnimationLibrary_fvc18")
-}
+[node name="CharacterBase" parent="Floor/Walls" instance=ExtResource("24_77ty5")]
 
 [node name="Table" type="TextureRect" parent="Floor/Walls"]
 layout_mode = 1
@@ -1025,10 +858,6 @@ offset_right = 46.0
 offset_bottom = -120.0
 text = "⌛0:30"
 metadata/_edit_use_anchors_ = true
-
-[node name="Spuder" parent="." instance=ExtResource("39_7rfs2")]
-position = Vector2(173, 286)
-scale = Vector2(0.2, 0.2)
 
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot2"]
