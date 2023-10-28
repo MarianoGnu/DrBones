@@ -12,7 +12,10 @@ signal enraged()
 		dialog_key = v
 @export var highlight_text_color: Color = Color.DARK_ORANGE
 @export var wants: PackedScene
-
+@export_group("Rewards", "reward_")
+@export var reward_no_fails: int = 500 
+@export var reward_1_fail: int = 300 
+@export var reward_2_fails: int = 100 
 
 @export_group("Accesories", "visible_")
 @export var visible_tie: bool = false:
@@ -133,7 +136,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		if success_animation_player.has_animation(&"success"):
 			success_animation_player.play(&"success")
 			await success_animation_player.animation_finished
-		satisfied.emit()
+		var reward:  int = [reward_no_fails, reward_1_fail,reward_2_fails][fail_count]
+		satisfied.emit(reward)
 		
 
 

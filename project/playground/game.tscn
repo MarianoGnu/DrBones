@@ -1,20 +1,27 @@
-[gd_scene load_steps=50 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=57 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
 [ext_resource type="Script" path="res://playground/game.gd" id="1_ohxp3"]
+[ext_resource type="PackedScene" uid="uid://byj4lqrxxtmcy" path="res://bones/characters/servantes.tscn" id="2_3yk47"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
 [ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_4bl43"]
 [ext_resource type="PackedScene" uid="uid://6t1n0bs1s5y" path="res://bones/characters/picadito.tscn" id="3_jirjb"]
+[ext_resource type="AudioStream" uid="uid://xqq4ueakw58o" path="res://audio/sfx/Dr. Bones - SFX - Sound 1.ogg" id="4_8ops2"]
 [ext_resource type="PackedScene" uid="uid://c5ybef1cfpp4v" path="res://door_locations/cementery/cementery.tscn" id="4_bt801"]
 [ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="4_pp7uv"]
 [ext_resource type="PackedScene" uid="uid://wu0j02jevtvo" path="res://door_locations/workbench/workbench_location.tscn" id="5_okhck"]
 [ext_resource type="Texture2D" uid="uid://b03wiqsp1dgf3" path="res://playground/Fondo Assets/Puerta.PNG" id="5_q7oli"]
+[ext_resource type="AudioStream" uid="uid://ch6ojvckbw2vs" path="res://audio/sfx/Dr. Bones - SFX - Sound 2.ogg" id="5_w53s5"]
+[ext_resource type="AudioStream" uid="uid://cnyu3lfwvks42" path="res://audio/sfx/Dr. Bones - SFX - Sound 3.ogg" id="6_ld2l4"]
 [ext_resource type="Texture2D" uid="uid://4p5bu8ebblcn" path="res://playground/Fondo Assets/Marco de puerta.PNG" id="6_tbcva"]
 [ext_resource type="PackedScene" uid="uid://c58c0oo4h85xa" path="res://door_locations/warehouse/warehouse.tscn" id="6_u1l83"]
 [ext_resource type="PackedScene" uid="uid://cayvr1042skt8" path="res://door_locations/credits/credits.tscn" id="7_8w0xl"]
+[ext_resource type="AudioStream" uid="uid://n1n4qoaog2yg" path="res://audio/sfx/Dr. Bones - SFX - Sound 4.ogg" id="7_l8pgx"]
 [ext_resource type="Texture2D" uid="uid://dx5auppo5i70b" path="res://playground/Fondo Assets/Marco Selector.PNG" id="7_mct22"]
 [ext_resource type="Texture2D" uid="uid://0smyq1g3yb30" path="res://playground/Fondo Assets/Placa.PNG" id="8_8yelm"]
+[ext_resource type="AudioStream" uid="uid://du7nmn1hadltc" path="res://audio/sfx/Dr. Bones - SFX - Sound 5.ogg" id="8_bqr02"]
 [ext_resource type="Texture2D" uid="uid://c4usl5myysekf" path="res://playground/Icons/Icons.png" id="9_733wu"]
+[ext_resource type="AudioStream" uid="uid://ddx7508wox21r" path="res://audio/sfx/Dr. Bones - SFX - Sound 6.ogg" id="9_m240e"]
 [ext_resource type="AudioStream" uid="uid://c8ra18em05sds" path="res://audio/sfx/Dungeon Door Close.ogg" id="10_6caln"]
 [ext_resource type="Script" path="res://playground/sign_button.gd" id="10_i2uhd"]
 [ext_resource type="AudioStream" uid="uid://h8grfq1fnxke" path="res://audio/sfx/Dungeon Door Open.ogg" id="11_7lcqb"]
@@ -327,7 +334,7 @@ polygon = PackedVector2Array(13.2226, -15.945, 13.4328, 84.0027, 15.8032, 84.002
 
 [sub_resource type="Animation" id="Animation_r8h7f"]
 resource_name = "intro"
-length = 3.0
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -347,7 +354,7 @@ tracks/1/path = NodePath("../Floor/Walls/Antorcha/Light:energy")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -418,7 +425,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ohxp3")
-tier_1_skelettons = Array[PackedScene]([ExtResource("3_jirjb"), ExtResource("3_jirjb")])
+tier_1_skelettons = Array[PackedScene]([ExtResource("3_jirjb"), ExtResource("2_3yk47")])
+gold_sfx = Array[AudioStream]([ExtResource("4_8ops2"), ExtResource("5_w53s5"), ExtResource("6_ld2l4"), ExtResource("7_l8pgx"), ExtResource("8_bqr02"), ExtResource("9_m240e")])
 
 [node name="Floor" type="TextureRect" parent="."]
 layout_mode = 1
@@ -779,11 +787,17 @@ occluder = SubResource("OccluderPolygon2D_ivh8r")
 unique_name_in_owner = true
 position = Vector2(145, 525)
 scale = Vector2(0.636705, 0.636705)
+reward_no_fails = 500
+reward_1_fail = 300
+reward_2_fails = 100
 
 [node name="SkelleSlot2" parent="Floor/Walls" instance_placeholder="res://bones/characters/character_base.tscn"]
 unique_name_in_owner = true
 position = Vector2(382, 525)
 scale = Vector2(0.636705, 0.636705)
+reward_no_fails = 500
+reward_1_fail = 300
+reward_2_fails = 100
 
 [node name="Table" type="TextureRect" parent="Floor/Walls"]
 layout_mode = 1
@@ -862,18 +876,6 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot8/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="InventorySlot9" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
-layout_mode = 2
-
-[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot9/SlotPreview" index="0"]
-size = Vector2i(100, 93)
-
-[node name="InventorySlot10" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
-layout_mode = 2
-
-[node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot10/SlotPreview" index="0"]
-size = Vector2i(100, 93)
-
 [node name="Icons" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(1463, 419)
@@ -948,6 +950,23 @@ libraries = {
 "": SubResource("AnimationLibrary_petex")
 }
 
+[node name="GoldLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -83.0
+offset_bottom = -39.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 29
+text = "🪙$0"
+
+[node name="GoldAudio" type="AudioStreamPlayer" parent="GoldLabel"]
+
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot2"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot3"]
@@ -956,5 +975,3 @@ libraries = {
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot6"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot7"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot8"]
-[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot9"]
-[editable path="Floor/Walls/Table/HBoxContainer/InventorySlot10"]

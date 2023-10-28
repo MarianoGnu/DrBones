@@ -271,6 +271,9 @@ _data = {
 [node name="CharacterBase" type="CanvasGroup"]
 position = Vector2(249, 562)
 script = ExtResource("1_kiyii")
+reward_no_fails = null
+reward_1_fail = null
+reward_2_fails = null
 
 [node name="DropZone" type="Control" parent="."]
 layout_mode = 3
