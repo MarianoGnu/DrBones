@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c58c0oo4h85xa"]
+[gd_scene load_steps=3 format=3 uid="uid://c58c0oo4h85xa"]
 
 [ext_resource type="Texture2D" uid="uid://chymjhuuk8bhp" path="res://door_locations/warehouse/temp_warehouse.png" id="1_xdx5n"]
+[ext_resource type="Texture2D" uid="uid://baatiaxvw7sm1" path="res://mandatorys/Osito.png" id="2_rr1f0"]
 
 [node name="Warehouse" type="Control"]
 layout_mode = 3
@@ -19,3 +20,20 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_xdx5n")
 expand_mode = 1
+
+[node name="Osito" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -391.0
+offset_right = -74.0
+offset_bottom = -306.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_rr1f0")
+expand_mode = 1
+stretch_mode = 5
