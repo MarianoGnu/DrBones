@@ -1,8 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://bxuyig65r05md"]
+[gd_scene load_steps=48 format=3 uid="uid://bxuyig65r05md"]
 
 [ext_resource type="Texture2D" uid="uid://d17uh8uvlq66f" path="res://playground/Fondo Assets/Floor.PNG" id="1_8utvr"]
+[ext_resource type="Script" path="res://playground/game.gd" id="1_ohxp3"]
 [ext_resource type="Texture2D" uid="uid://bcvnlafqrq2vn" path="res://playground/Fondo Assets/Walls.PNG" id="2_tcsp7"]
 [ext_resource type="Texture2D" uid="uid://t4vwrw4sbjl4" path="res://playground/Fondo Assets/Fondo Puerta.PNG" id="3_4bl43"]
+[ext_resource type="PackedScene" uid="uid://6t1n0bs1s5y" path="res://bones/characters/picadito.tscn" id="3_jirjb"]
 [ext_resource type="PackedScene" uid="uid://c5ybef1cfpp4v" path="res://door_locations/cementery/cementery.tscn" id="4_bt801"]
 [ext_resource type="Shader" path="res://playground/Fondo Assets/Puerta.gdshader" id="4_pp7uv"]
 [ext_resource type="PackedScene" uid="uid://wu0j02jevtvo" path="res://door_locations/workbench/workbench_location.tscn" id="5_okhck"]
@@ -24,18 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cqshxwsh48ow" path="res://playground/Fondo Assets/Antorcha.PNG" id="16_g6g2v"]
 [ext_resource type="Texture2D" uid="uid://dnnrv1fj1tq0g" path="res://playground/Fondo Assets/Fuego.PNG" id="17_pklni"]
 [ext_resource type="Texture2D" uid="uid://bdod3f57cqmhj" path="res://playground/Fondo Assets/Table.PNG" id="21_hvrsn"]
-[ext_resource type="PackedScene" uid="uid://dkln42gt5ctot" path="res://bones/characters/character_base.tscn" id="24_77ty5"]
 [ext_resource type="PackedScene" uid="uid://byt7rccdiyytl" path="res://playground/inventory_slot/inventory_slot.tscn" id="26_16s2m"]
-[ext_resource type="PackedScene" uid="uid://dhdu4so571o30" path="res://bones/puzzles/arm/arm_puzzle.tscn" id="28_7rs2y"]
-[ext_resource type="PackedScene" uid="uid://bidn52d4v2oau" path="res://bones/puzzles/rare/hat_puzzle.tscn" id="29_4umwg"]
-[ext_resource type="PackedScene" uid="uid://cttcnap64p0ue" path="res://bones/puzzles/femur/femur_puzzle.tscn" id="30_gu0w4"]
-[ext_resource type="PackedScene" uid="uid://4hu685t688h3" path="res://bones/puzzles/hand/hand_puzzle.tscn" id="30_kfs04"]
-[ext_resource type="PackedScene" uid="uid://c668jdgenff8f" path="res://bones/puzzles/rare/mask_puzzle.tscn" id="30_mhdm5"]
-[ext_resource type="PackedScene" uid="uid://ru7kv72vy53" path="res://bones/puzzles/rare/tie_puzzle.tscn" id="32_fjtes"]
-[ext_resource type="PackedScene" uid="uid://bdv8cew7e5dgl" path="res://bones/puzzles/pelvis/pelvis_puzzle.tscn" id="33_6niw3"]
-[ext_resource type="PackedScene" uid="uid://cmjvqd877ijw5" path="res://bones/puzzles/rare/ribbon_puzzle.tscn" id="34_4vlak"]
-[ext_resource type="PackedScene" uid="uid://d3nnoncy5qxwo" path="res://bones/puzzles/rare/wig_puzzle.tscn" id="36_8x2q6"]
-[ext_resource type="PackedScene" uid="uid://chyrlr36jq8nw" path="res://bones/puzzles/rare/trumpet_puzzle.tscn" id="38_8oxyh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0j058"]
 shader = ExtResource("4_pp7uv")
@@ -332,6 +323,91 @@ _data = {
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ivh8r"]
 polygon = PackedVector2Array(13.2226, -15.945, 13.4328, 84.0027, 15.8032, 84.0027, 16.3339, -16.1394)
 
+[sub_resource type="Animation" id="Animation_r8h7f"]
+resource_name = "intro"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0666667, 0.117647, 0.192157, 1), Color(0.0666667, 0.117647, 0.192157, 1), Color(0.0666667, 0.117647, 0.192157, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Floor/Walls/Antorcha/Light:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_5hyq5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0666667, 0.117647, 0.192157, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Floor/Walls/Antorcha/Light:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:mouse_filter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_petex"]
+_data = {
+"RESET": SubResource("Animation_5hyq5"),
+"intro": SubResource("Animation_r8h7f")
+}
+
 [node name="Game" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -339,6 +415,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ohxp3")
+tier_1_skelettons = Array[PackedScene]([ExtResource("3_jirjb"), ExtResource("3_jirjb")])
 
 [node name="Floor" type="TextureRect" parent="."]
 layout_mode = 1
@@ -665,6 +743,7 @@ color = Color(0.690196, 0.690196, 0.690196, 1)
 show_behind_parent = true
 position = Vector2(21.4004, 8.79998)
 scale = Vector2(4.41876, 4.41876)
+energy = 0.0
 range_layer_max = 1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_bj1vk")
@@ -694,7 +773,15 @@ position = Vector2(21.4004, 8.79998)
 scale = Vector2(5.14269, 5.14269)
 occluder = SubResource("OccluderPolygon2D_ivh8r")
 
-[node name="CharacterBase" parent="Floor/Walls" instance=ExtResource("24_77ty5")]
+[node name="SkelleSlot1" parent="Floor/Walls" instance_placeholder="res://bones/characters/character_base.tscn"]
+unique_name_in_owner = true
+position = Vector2(145, 525)
+scale = Vector2(0.636705, 0.636705)
+
+[node name="SkelleSlot2" parent="Floor/Walls" instance_placeholder="res://bones/characters/character_base.tscn"]
+unique_name_in_owner = true
+position = Vector2(382, 525)
+scale = Vector2(0.636705, 0.636705)
 
 [node name="Table" type="TextureRect" parent="Floor/Walls"]
 layout_mode = 1
@@ -727,15 +814,11 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot/SlotPreview/SubViewport" index="0" instance=ExtResource("29_4umwg")]
-
 [node name="InventorySlot2" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot2/SlotPreview" index="0"]
 size = Vector2i(100, 93)
-
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot2/SlotPreview/SubViewport" index="0" instance=ExtResource("30_mhdm5")]
 
 [node name="InventorySlot3" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
@@ -743,15 +826,11 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot3/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot3/SlotPreview/SubViewport" index="0" instance=ExtResource("30_kfs04")]
-
 [node name="InventorySlot4" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot4/SlotPreview" index="0"]
 size = Vector2i(100, 93)
-
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot4/SlotPreview/SubViewport" index="0" instance=ExtResource("32_fjtes")]
 
 [node name="InventorySlot5" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
@@ -759,15 +838,11 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot5/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot5/SlotPreview/SubViewport" index="0" instance=ExtResource("30_gu0w4")]
-
 [node name="InventorySlot6" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot6/SlotPreview" index="0"]
 size = Vector2i(100, 93)
-
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot6/SlotPreview/SubViewport" index="0" instance=ExtResource("34_4vlak")]
 
 [node name="InventorySlot7" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
@@ -775,15 +850,11 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot7/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot7/SlotPreview/SubViewport" index="0" instance=ExtResource("28_7rs2y")]
-
 [node name="InventorySlot8" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot8/SlotPreview" index="0"]
 size = Vector2i(100, 93)
-
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot8/SlotPreview/SubViewport" index="0" instance=ExtResource("36_8x2q6")]
 
 [node name="InventorySlot9" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
@@ -791,15 +862,11 @@ layout_mode = 2
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot9/SlotPreview" index="0"]
 size = Vector2i(100, 93)
 
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot9/SlotPreview/SubViewport" index="0" instance=ExtResource("33_6niw3")]
-
 [node name="InventorySlot10" parent="Floor/Walls/Table/HBoxContainer" instance=ExtResource("26_16s2m")]
 layout_mode = 2
 
 [node name="SubViewport" parent="Floor/Walls/Table/HBoxContainer/InventorySlot10/SlotPreview" index="0"]
 size = Vector2i(100, 93)
-
-[node name="Puzzle" parent="Floor/Walls/Table/HBoxContainer/InventorySlot10/SlotPreview/SubViewport" index="0" instance=ExtResource("38_8oxyh")]
 
 [node name="Icons" type="Sprite2D" parent="."]
 visible = false
@@ -858,6 +925,21 @@ offset_right = 46.0
 offset_bottom = -120.0
 text = "⌛0:30"
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.117647, 0.192157, 0)
+
+[node name="IntroAnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_petex")
+}
 
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot"]
 [editable path="Floor/Walls/Table/HBoxContainer/InventorySlot2"]

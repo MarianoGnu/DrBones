@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://byj4lqrxxtmcy"]
+
+[ext_resource type="PackedScene" uid="uid://dkln42gt5ctot" path="res://bones/characters/character_base.tscn" id="1_n8f25"]
+
+[node name="Servantes" instance=ExtResource("1_n8f25")]
+dialog_key = "MISSING_ARM_TON"
+visible_ribon = true
+
+[node name="ManoB" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="0"]
+visible = false
+
+[node name="Meñique" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="1"]
+visible = false
+
+[node name="Dedo3" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="2"]
+visible = false
+
+[node name="Anular" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="3"]
+visible = false
+
+[node name="Indice" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="4"]
+visible = false
+
+[node name="Pulgar" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="5"]
+visible = false
+
+[node name="Moñito" parent="Skeleton2D/hip/chest/neck" index="2"]
+visible = true

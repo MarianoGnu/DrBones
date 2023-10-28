@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://6t1n0bs1s5y"]
+
+[ext_resource type="PackedScene" uid="uid://dkln42gt5ctot" path="res://bones/characters/character_base.tscn" id="1_hfyc4"]
+[ext_resource type="Texture2D" uid="uid://b0mm6kh0s5ng" path="res://bones/normal/Pierna B.PNG" id="2_rrv0g"]
+[ext_resource type="Texture2D" uid="uid://ciwsvr8mdl3do" path="res://bones/normal/Pie B.PNG" id="3_7wtiu"]
+
+[node name="CharacterBase" instance=ExtResource("1_hfyc4")]
+dialog_key = &"MISSING_FEMUR_TON"
+
+[node name="wrist" parent="Skeleton2D/hip/chest/shoulder_L/elbow" index="1"]
+rotation = -0.261799
+
+[node name="PiernaB" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="6"]
+position = Vector2(-30.0959, -134.193)
+rotation = 1.57079
+texture = ExtResource("2_rrv0g")
+
+[node name="PieB" type="Sprite2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist/hand" index="7"]
+position = Vector2(481.77, -247.432)
+rotation = -1.309
+scale = Vector2(0.999999, 0.999999)
+texture = ExtResource("3_7wtiu")
+
+[node name="thigh_L" parent="Skeleton2D/hip" index="1"]
+visible = false

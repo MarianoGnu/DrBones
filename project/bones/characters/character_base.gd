@@ -1,5 +1,16 @@
 @tool
-extends Node2D
+class_name SkellyBoy extends CanvasGroup
+
+signal satisfied(gold: int)
+signal enraged()
+
+@export var dialog_key: StringName:
+	set(v):
+		if v.is_empty():
+			# Don't know what is going on...
+			return
+		dialog_key = v
+@export var highlight_text_color: Color = Color.DARK_ORANGE
 
 @export_group("Accesories", "visible_")
 @export var visible_tie: bool = false:
@@ -16,9 +27,6 @@ extends Node2D
 	set = _set_visible_trumpet
 @export var visible_wolf_head: bool = false:
 	set = _set_visible_wolf_head
-
-@export var highlight_text_color: Color = Color.DARK_ORANGE
-@export var dialog_key: String = ""
 
 var corbata: Sprite2D
 var mo_ito: Sprite2D
@@ -64,7 +72,7 @@ func _ready() -> void:
 		return
 	modulate.a = 0
 	var tween: Tween = create_tween()
-	tween.tween_property(self, "modulate.a", 1.0, 1.0)
+	tween.tween_property(self, "modulate:a", 1.0, 1.0)
 	await tween.finished
 	say(tr(dialog_key))
 	var spuder_chance = randf()

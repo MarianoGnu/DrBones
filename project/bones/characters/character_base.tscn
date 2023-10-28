@@ -268,7 +268,6 @@ _data = {
 [node name="CharacterBase" type="CanvasGroup"]
 position = Vector2(249, 562)
 script = ExtResource("1_kiyii")
-dialog_key = null
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 scale = Vector2(0.215, 0.215)
@@ -299,6 +298,7 @@ texture = ExtResource("2_mw1ho")
 
 [node name="wrist" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow"]
 position = Vector2(0, 493.023)
+scale = Vector2(1, 1)
 rest = Transform2D(0.965926, -0.258819, 0.258819, 0.965926, 0, 493.023)
 
 [node name="hand" type="Bone2D" parent="Skeleton2D/hip/chest/shoulder_L/elbow/wrist"]
@@ -393,18 +393,6 @@ texture = ExtResource("14_nn8mf")
 position = Vector2(0, -46.5122)
 rest = Transform2D(1, 0, 0, 1, 0, -46.5122)
 
-[node name="Corbata" type="Sprite2D" parent="Skeleton2D/hip/chest/neck"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(32.5581, 279.07)
-texture = ExtResource("12_mcgpj")
-
-[node name="Moñito" type="Sprite2D" parent="Skeleton2D/hip/chest/neck"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(-0.00012207, -0.00012207)
-texture = ExtResource("13_rwhla")
-
 [node name="head" type="Bone2D" parent="Skeleton2D/hip/chest/neck"]
 position = Vector2(0, -251.163)
 rest = Transform2D(1, 0, 0, 1, 0, -251.163)
@@ -464,6 +452,18 @@ unique_name_in_owner = true
 visible = false
 position = Vector2(32.5582, -237.21)
 texture = ExtResource("19_opw7d")
+
+[node name="Corbata" type="Sprite2D" parent="Skeleton2D/hip/chest/neck"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(32.5581, 279.07)
+texture = ExtResource("12_mcgpj")
+
+[node name="Moñito" type="Sprite2D" parent="Skeleton2D/hip/chest/neck"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-0.00012207, -0.00012207)
+texture = ExtResource("13_rwhla")
 
 [node name="thigh_L" type="Bone2D" parent="Skeleton2D/hip"]
 position = Vector2(195.349, 0)
