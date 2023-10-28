@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dkln42gt5ctot"]
+[gd_scene load_steps=48 format=3 uid="uid://dkln42gt5ctot"]
 
 [ext_resource type="Script" path="res://bones/characters/character_base.gd" id="1_kiyii"]
 [ext_resource type="AudioStream" uid="uid://r3hd1kpl68vs" path="res://audio/sfx/Dr. Bones - SFX - Mandibulas 1.wav" id="2_0bllq"]
@@ -41,6 +41,69 @@
 [ext_resource type="Texture2D" uid="uid://wleclrcc2hmx" path="res://bones/rare/Cabeza Lobo/Mandibula Lobo.PNG" id="26_jurkf"]
 [ext_resource type="Texture2D" uid="uid://crywltrl4bvkg" path="res://bones/rare/Cabeza Lobo/Cabeza Lobo .PNG" id="27_jdbev"]
 [ext_resource type="Texture2D" uid="uid://b2etd326k0xh4" path="res://bones/rare/Trompeta.PNG" id="36_cb4k6"]
+
+[sub_resource type="Animation" id="Animation_eh6b6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../shoulder_L:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../shoulder_L/elbow:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../shoulder_L/elbow/wrist:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_yagh1"]
 resource_name = "speak"
@@ -125,69 +188,6 @@ tracks/5/keys = {
 "values": [-0.261799, -0.785397, 0.0, -0.785397, 0.0, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_eh6b6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../..:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../../shoulder_L:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../../shoulder_L/elbow:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../../shoulder_L/elbow/wrist:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qelte"]
 _data = {
 "RESET": SubResource("Animation_eh6b6"),
@@ -246,7 +246,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.4, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1)]
+"values": [Vector2(1e-05, 1e-05), Vector2(0.215, 0.215), Vector2(0.215, 0.215)]
 }
 tracks/2/type = "animation"
 tracks/2/imported = false
@@ -265,47 +265,10 @@ _data = {
 "speak": SubResource("Animation_vd526")
 }
 
-[sub_resource type="Animation" id="Animation_uupr3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(107.093, -1503.96)]
-}
-
-[sub_resource type="Animation" id="Animation_siceq"]
-resource_name = "idle"
-length = 1.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(107.093, -1503.96), Vector2(107.093, -1493.96), Vector2(107.093, -1523.96), Vector2(107.093, -1503.96)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvc18"]
-_data = {
-"RESET": SubResource("Animation_uupr3"),
-"idle": SubResource("Animation_siceq")
-}
-
-[node name="CharacterBase" type="Node2D"]
+[node name="CharacterBase" type="CanvasGroup"]
 position = Vector2(249, 562)
 script = ExtResource("1_kiyii")
+dialog_key = null
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 scale = Vector2(0.215, 0.215)
@@ -452,7 +415,6 @@ texture = ExtResource("7_uxu5d")
 
 [node name="jaw" type="Bone2D" parent="Skeleton2D/hip/chest/neck/head"]
 position = Vector2(-88.372, 69.7696)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -88.372, 69.7696)
 
 [node name="MandibulaLobo" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head/jaw"]
@@ -460,19 +422,16 @@ unique_name_in_owner = true
 visible = false
 position = Vector2(37.2089, -116.28)
 rotation = -0.523598
-scale = Vector2(1, 1)
 texture = ExtResource("26_jurkf")
 offset = Vector2(116.279, 237.209)
 
 [node name="Mandibula" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head/jaw"]
 unique_name_in_owner = true
 position = Vector2(167.442, 41.8585)
-scale = Vector2(1, 1)
 texture = ExtResource("11_hswsf")
 
 [node name="teth" type="Bone2D" parent="Skeleton2D/hip/chest/neck/head/jaw"]
 position = Vector2(265.116, 120.93)
-scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, 265.116, 120.93)
 
 [node name="CabezaMerged" type="Sprite2D" parent="Skeleton2D/hip/chest/neck/head"]
@@ -589,7 +548,7 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SkullAnimationPlayer"]
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(107.093, -1503.96)
+position = Vector2(0, -324)
 scale = Vector2(1e-05, 1e-05)
 color = Color(0.278431, 0.278431, 0.278431, 0.533333)
 polygon = PackedVector2Array(9.31238, -121.062, 195.561, -353.872, 935.899, -302.654, 1098.87, -470.278, 1094.21, -847.431, 889.337, -1019.71, -744.994, -1033.68, -875.368, -805.525, -856.743, -419.059, -679.807, -256.092, -237.467, -251.435, -46.562, -339.904)
@@ -622,13 +581,6 @@ unique_name_in_owner = true
 autoplay = "RESET"
 libraries = {
 "": SubResource("AnimationLibrary_86ele")
-}
-
-[node name="BubbleBobAnimationPlayer" type="AnimationPlayer" parent="Polygon2D"]
-autoplay = "idle"
-speed_scale = 0.3
-libraries = {
-"": SubResource("AnimationLibrary_fvc18")
 }
 
 [node name="Spuder" parent="." instance_placeholder="res://mandatorys/spuder/spuder.tscn"]

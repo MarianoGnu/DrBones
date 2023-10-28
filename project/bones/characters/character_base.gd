@@ -17,6 +17,9 @@ extends Node2D
 @export var visible_wolf_head: bool = false:
 	set = _set_visible_wolf_head
 
+@export var highlight_text_color: Color = Color.DARK_ORANGE
+@export var dialog_key: String = ""
+
 var corbata: Sprite2D
 var mo_ito: Sprite2D
 var antifaz: Sprite2D
@@ -44,7 +47,8 @@ func _notification(what: int) -> void:
 		mandibula = %Mandibula
 		cabeza_lobo = %CabezaLobo
 		mandibula_lobo = %MandibulaLobo
-		spuder = %Spuder
+		if not Engine.is_editor_hint():
+			spuder = %Spuder
 		speech_text_label = %SpeechTextLabel
 		speech_animation_player = %SpeechAnimationPlayer
 		corbata.visible = visible_tie
@@ -58,13 +62,20 @@ func _notification(what: int) -> void:
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	modulate.a = 0
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "modulate.a", 1.0, 1.0)
+	await tween.finished
+	say(tr(dialog_key))
 	var spuder_chance = randf()
 	if spuder_chance < 0.1:
 		await get_tree().create_timer(randf_range(2.0, 4.0)).timeout
 		spuder.create_instance(true)
 
 func say(p_text: String):
-	speech_text_label.text = p_text
+	var bbcode = p_text.replace("#", "[/color]")
+	bbcode = bbcode.replace("%", "[color=%s]" % highlight_text_color.to_html(false))
+	speech_text_label.text = bbcode
 	speech_animation_player.play(&"speak")
 
 func _set_visible_tie(p_visible: bool):

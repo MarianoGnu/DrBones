@@ -28,3 +28,8 @@ window/stretch/mode="canvas_items"
 [gui]
 
 theme/custom="res://playground/theme.tres"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/dialogs.es.translation")
+locale/fallback="es"
